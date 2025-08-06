@@ -14,7 +14,10 @@ const Footer = () => {
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold mb-4">CraftCode</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <img src="/favicon_white.ico" alt="CraftCode Logo" className="w-8 h-8" />
+              <h3 className="text-2xl font-bold">CraftCode</h3>
+            </div>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">
               Tecnologia com propósito. Soluções com impacto.
             </p>
@@ -115,7 +118,12 @@ const Footer = () => {
                 Planejamento de refeições automatizado via WhatsApp
               </p>
             </div>
-            <Button variant="secondary" size="lg" className="mt-4 md:mt-0 group">
+            <Button 
+              variant="secondary" 
+              size="lg" 
+              className="mt-4 md:mt-0 group"
+              onClick={() => window.open('https://cardapiofacil.online', '_blank')}
+            >
               Visitar produto
               <ExternalLink className="group-hover:scale-110 transition-transform" size={16} />
             </Button>

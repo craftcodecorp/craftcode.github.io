@@ -6,6 +6,7 @@ import {
   Blocks, 
   TrendingUp 
 } from "lucide-react";
+import { LazyLoad } from "@/components/ui/lazy-load";
 
 const solutions = [
   {
@@ -21,12 +22,6 @@ const solutions = [
     features: ["Smart contracts", "DeFi", "Tokenização"]
   },
   {
-    icon: Database,
-    title: "Business Intelligence",
-    description: "Dashboards inteligentes e análise de dados que geram insights acionáveis para seu negócio.",
-    features: ["Dashboards em tempo real", "Data visualization", "Analytics avançados"]
-  },
-  {
     icon: Brain,
     title: "IA Aplicada",
     description: "Soluções de inteligência artificial para automação, predição e personalização de experiências.",
@@ -37,7 +32,13 @@ const solutions = [
     title: "Modernização de Sistemas",
     description: "Migração e reestruturação de sistemas legados com tecnologias modernas e UX atualizada.",
     features: ["Migração segura", "APIs RESTful", "UX moderna"]
-  }
+  },
+  {
+    icon: Database,
+    title: "Business Intelligence",
+    description: "Dashboards inteligentes e análise de dados que geram insights acionáveis para seu negócio.",
+    features: ["Dashboards em tempo real", "Data visualization", "Analytics avançados"]
+  },
 ];
 
 const Solutions = () => {
@@ -56,48 +57,63 @@ const Solutions = () => {
         </div>
 
         {/* Solutions Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {solutions.map((solution, index) => {
             const Icon = solution.icon;
             return (
-              <Card 
+              <LazyLoad 
                 key={index} 
-                className="group hover:shadow-large transition-all duration-300 hover:-translate-y-2 border-border/50 bg-gradient-card"
+                className="h-full"
+                threshold={0.1}
+                rootMargin="200px"
               >
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
-                    <Icon className="w-8 h-8 text-secondary" />
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-foreground mb-4">
-                    {solution.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {solution.description}
-                  </p>
-                  
-                  <ul className="space-y-2">
-                    {solution.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+                <Card 
+                  className="group hover:shadow-large transition-all duration-300 hover:-translate-y-2 border-border bg-white shadow-medium h-full"
+                >
+                  <CardContent className="p-4 sm:p-6 lg:p-8 flex flex-col h-full">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-secondary rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-secondary/90 transition-colors shadow-md">
+                      <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                    </div>
+                    
+                    <h3 className="text-lg sm:text-xl font-bold text-primary mb-2 sm:mb-4">
+                      {solution.title}
+                    </h3>
+                    
+                    <p className="text-foreground mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+                      {solution.description}
+                    </p>
+                    
+                    <ul className="space-y-2 mt-auto">
+                      {solution.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-xs sm:text-sm text-foreground/80">
+                          <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-2 sm:mr-3 flex-shrink-0"></div>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </LazyLoad>
             );
           })}
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
-          <p className="text-lg text-muted-foreground mb-6">
-            Precisa de uma solução personalizada?
-          </p>
-          <div className="inline-flex items-center px-6 py-3 bg-primary/5 border border-primary/20 rounded-lg">
-            <span className="text-primary font-medium">Vamos conversar sobre seu projeto</span>
+        <div className="text-center mt-12 md:mt-16 max-w-xl mx-auto">
+          <div className="bg-gradient-to-r from-background to-muted p-6 md:p-8 rounded-xl border border-border/50 shadow-md">
+            <p className="text-lg md:text-xl text-foreground font-medium mb-4 md:mb-6">
+              Precisa de uma solução personalizada?
+            </p>
+            <div 
+              className="flex items-center justify-center px-6 py-3 bg-secondary/10 border border-secondary rounded-lg cursor-pointer hover:bg-secondary/20 transition-colors w-full sm:w-auto sm:inline-flex"
+              onClick={() => window.location.href = '#contact'}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && (window.location.href = '#contact')}
+              aria-label="Vamos conversar sobre seu projeto - Ir para formulário de contato"
+            >
+              <span className="text-secondary font-medium">Vamos conversar sobre seu projeto</span>
+            </div>
           </div>
         </div>
       </div>

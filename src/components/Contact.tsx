@@ -8,10 +8,69 @@ import {
   Phone, 
   MapPin, 
   Send,
-  Linkedin 
+  Linkedin,
+  AlertCircle
 } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { useState } from "react";
+
+// Define the form validation schema
+const formSchema = z.object({
+  name: z.string().min(2, { message: "Nome deve ter pelo menos 2 caracteres" }),
+  email: z.string().email({ message: "Email inválido" }),
+  company: z.string().optional(),
+  message: z.string().min(10, { message: "Mensagem deve ter pelo menos 10 caracteres" })
+});
+
+// Define the form data type
+type FormData = z.infer<typeof formSchema>;
 
 const Contact = () => {
+  // Form submission states
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  // Initialize form with react-hook-form and zod validation
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      company: "",
+      message: ""
+    }
+  });
+
+  // Form submission handler
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+    setSubmitSuccess(false);
+    setSubmitError(null);
+    
+    try {
+      // In a real application, you would send this data to your backend
+      // For now, we'll simulate a successful submission after a delay
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      console.log("Form submitted:", data);
+      setSubmitSuccess(true);
+      reset(); // Reset form fields after successful submission
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitError("Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
@@ -29,61 +88,125 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Form */}
           <div>
-            <Card className="shadow-large border-border/50 bg-gradient-card">
+            <Card className="shadow-large border-border bg-white">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-6">
+                <h3 className="text-2xl font-bold text-primary mb-6">
                   Conte-nos sobre seu projeto
                 </h3>
                 
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
+                  {/* Success message */}
+                  {submitSuccess && (
+                    <div className="p-4 mb-4 bg-green-50 border border-green-200 rounded-lg">
+                      <div className="flex items-center">
+                        <div className="flex-shrink-0">
+                          <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <div className="ml-3">
+                          <p className="text-sm font-medium text-green-800">Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Error message */}
+                  {submitError && (
+                    <div className="p-4 mb-4 bg-red-50 border border-red-200 rounded-lg">
+                      <div className="flex items-center">
+                        <div className="flex-shrink-0">
+                          <AlertCircle className="w-5 h-5 text-red-600" />
+                        </div>
+                        <div className="ml-3">
+                          <p className="text-sm font-medium text-red-800">{submitError}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
                         Nome *
                       </label>
                       <Input 
+                        {...register("name")}
                         placeholder="Seu nome completo"
-                        className="h-12"
+                        className={`h-12 border ${errors.name ? "border-red-500 focus:ring-red-500" : "border-gray-300"}`}
+                        aria-invalid={errors.name ? "true" : "false"}
                       />
+                      {errors.name && (
+                        <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+                      )}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
                         Email *
                       </label>
                       <Input 
+                        {...register("email")}
                         type="email"
                         placeholder="seu@email.com"
-                        className="h-12"
+                        className={`h-12 border ${errors.email ? "border-red-500 focus:ring-red-500" : "border-gray-300"}`}
+                        aria-invalid={errors.email ? "true" : "false"}
                       />
+                      {errors.email && (
+                        <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
+                      )}
                     </div>
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       Empresa
                     </label>
                     <Input 
+                      {...register("company")}
                       placeholder="Nome da sua empresa"
-                      className="h-12"
+                      className="h-12 border border-gray-300"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       Mensagem *
                     </label>
                     <Textarea 
+                      {...register("message")}
                       placeholder="Conte-nos sobre seu projeto, desafios ou necessidades..."
-                      className="min-h-[120px]"
+                      className={`min-h-[120px] border ${errors.message ? "border-red-500 focus:ring-red-500" : "border-gray-300"}`}
+                      aria-invalid={errors.message ? "true" : "false"}
                     />
+                    {errors.message && (
+                      <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
+                    )}
                   </div>
                   
-                  <Button variant="hero" size="lg" className="w-full group">
-                    Enviar mensagem
-                    <Send className="group-hover:translate-x-1 transition-transform" size={20} />
+                  <Button 
+                    type="submit" 
+                    variant="hero" 
+                    size="lg" 
+                    className="w-full group" 
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Enviando...
+                      </>
+                    ) : (
+                      <>
+                        Enviar mensagem
+                        <Send className="group-hover:translate-x-1 transition-transform ml-2" size={20} />
+                      </>
+                    )}
                   </Button>
                   
-                  <p className="text-sm text-muted-foreground text-center">
+                  <p className="text-sm text-gray-600 text-center">
                     Responderemos em até 24 horas úteis
                   </p>
                 </form>

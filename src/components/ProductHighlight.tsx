@@ -41,11 +41,20 @@ const ProductHighlight = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="cta" size="lg" className="group">
+              <Button 
+                variant="cta" 
+                size="lg" 
+                className="group"
+                onClick={() => window.open('https://cardapiofacil.online', '_blank')}
+              >
                 Visitar CardápioFácil
                 <ExternalLink className="group-hover:scale-110 transition-transform" size={20} />
               </Button>
-              <Button variant="outline" size="lg">
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={() => window.location.href = '/cardapio-facil'}
+              >
                 Saber mais
               </Button>
             </div>

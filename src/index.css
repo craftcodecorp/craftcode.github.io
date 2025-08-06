@@ -8,48 +8,63 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* CraftCode Brand Colors */
-    --background: 0 0% 100%;
-    --foreground: 215 60% 15%;
+    /* CraftCode Brand Colors - Based on Brand Guide */
+    
+    /* Primary Colors */
+    --background: 0 0% 100%; /* Branco Neutro: #FFFFFF - For digital interfaces */
+    --foreground: 0 0% 7%; /* Preto Fosco: #121212 - Main text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 60% 15%;
+    --card: 0 0% 17%; /* Cinza Grafite: #2C2C2C - Card backgrounds */
+    --card-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF - Card text */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 60% 15%;
+    --popover: 0 0% 17%; /* Cinza Grafite: #2C2C2C - Popover backgrounds */
+    --popover-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF - Popover text */
 
-    /* Deep Blue Primary */
-    --primary: 215 60% 15%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary & Secondary Colors */
+    --primary: 0 0% 7%; /* Preto Fosco: #121212 - Primary brand color */
+    --primary-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF - Text on primary */
 
-    /* Electric Blue Secondary */
-    --secondary: 212 100% 50%;
-    --secondary-foreground: 0 0% 100%;
+    /* Azul Petróleo - CTA & Links */
+    --secondary: 210 77% 46%; /* Azul Petróleo: #1976D2 - Digital buttons */
+    --secondary-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF - Text on secondary */
 
-    --muted: 220 13% 96%;
-    --muted-foreground: 215 30% 45%;
+    /* Muted & Accent Colors */
+    --muted: 0 0% 85%; /* Cinza Claro: #DADADA - Lines, dividers */
+    --muted-foreground: 0 0% 17%; /* Cinza Grafite: #2C2C2C - Subtle text */
 
-    --accent: 212 100% 96%;
-    --accent-foreground: 215 60% 15%;
+    --accent: 0 0% 17%; /* Cinza Grafite: #2C2C2C - Accent areas */
+    --accent-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF - Text on accent */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Functional Colors */
+    --success: 145 69% 49%; /* Verde Esmeralda: #2ECC71 - Success indicators */
+    --success-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF - Text on success */
+    
+    --warning: 23 56% 56%; /* Cobre Industrial: #C97E52 - Warning/highlight elements */
+    --warning-foreground: 0 0% 7%; /* Preto Fosco: #121212 - Text on warning */
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 212 100% 50%;
+    --info: 210 77% 46%; /* Azul Petróleo: #1976D2 - Info indicators */
+    --info-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF - Text on info */
+    
+    --destructive: 0 84.2% 60.2%; /* Standard destructive */
+    --destructive-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF - Text on destructive */
+
+    /* Borders & Form Elements */
+    --border: 0 0% 85%; /* Cinza Claro: #DADADA - Borders and separators */
+    --input: 0 0% 100%; /* Branco Neutro: #FFFFFF - Input backgrounds */
+    --ring: 210 77% 46%; /* Azul Petróleo: #1976D2 - Focus rings */
 
     --radius: 0.75rem;
 
-    /* Custom Design Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(215 60% 15%), hsl(212 100% 40%));
-    --gradient-hero: linear-gradient(135deg, hsl(215 60% 15%) 0%, hsl(212 100% 25%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 13% 98%) 100%);
+    /* Custom Design Tokens - Brand-aligned Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 7%), hsl(0 0% 17%)); /* Preto Fosco to Cinza Grafite */
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 7%) 0%, hsl(0 0% 20%) 100%); /* Preto Fosco to darker Cinza Grafite */
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 17%) 0%, hsl(0 0% 22%) 100%); /* Cinza Grafite gradient */
     
-    --shadow-soft: 0 4px 6px -1px hsl(215 60% 15% / 0.05), 0 2px 4px -1px hsl(215 60% 15% / 0.03);
-    --shadow-medium: 0 10px 15px -3px hsl(215 60% 15% / 0.08), 0 4px 6px -2px hsl(215 60% 15% / 0.03);
-    --shadow-large: 0 25px 50px -12px hsl(215 60% 15% / 0.15);
-    --shadow-glow: 0 0 0 1px hsl(212 100% 50% / 0.1), 0 10px 30px hsl(212 100% 50% / 0.15);
+    /* Brand-aligned shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06); /* Soft shadow */
+    --shadow-medium: 0 10px 15px -3px hsl(0 0% 0% / 0.12), 0 4px 6px -2px hsl(0 0% 0% / 0.05); /* Medium shadow */
+    --shadow-large: 0 25px 50px -12px hsl(0 0% 0% / 0.25); /* Large shadow */
+    --shadow-glow: 0 0 0 1px hsl(210 77% 46% / 0.2), 0 10px 30px hsl(210 77% 46% / 0.2); /* Azul Petróleo glow */
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -72,33 +87,45 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Mode - Inverting light/dark relationships per brand guide */
+    --background: 0 0% 7%; /* Preto Fosco: #121212 - Dark mode background */
+    --foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF - Dark mode text */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 12%; /* Darker than Preto Fosco for cards */
+    --card-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 12%; /* Matching card */
+    --popover-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF */
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 0% 100%; /* Branco Neutro: #FFFFFF - Inverted for dark mode */
+    --primary-foreground: 0 0% 7%; /* Preto Fosco: #121212 - Text on primary */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 77% 50%; /* Brighter Azul Petróleo for dark mode */
+    --secondary-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 25%; /* Darker muted for dark mode */
+    --muted-foreground: 0 0% 85%; /* Cinza Claro: #DADADA - Text on muted */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 0% 25%; /* Dark accent areas */
+    --accent-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Functional Colors - Dark Mode */
+    --success: 145 69% 40%; /* Darker Verde Esmeralda */
+    --success-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF */
+    
+    --warning: 23 56% 46%; /* Darker Cobre Industrial */
+    --warning-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF */
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --info: 210 77% 40%; /* Darker Azul Petróleo */
+    --info-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF */
+    
+    --destructive: 0 70% 50%; /* Darker destructive */
+    --destructive-foreground: 0 0% 100%; /* Branco Neutro: #FFFFFF */
+
+    /* Borders & Form Elements - Dark Mode */
+    --border: 0 0% 30%; /* Dark borders */
+    --input: 0 0% 12%; /* Dark input backgrounds */
+    --ring: 210 77% 50%; /* Brighter Azul Petróleo for rings */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -115,13 +142,31 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  /* Import brand fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Source Sans 3', sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  
+  /* Typography according to CraftCode brand guide */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Subtitle styling */
+  .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
   }
 
   /* Custom animations */
