@@ -1,10 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import { SEO, generateProductJsonLd } from "@/lib/seo-utils";
 
 const CardapioFacil = () => {
+  // Product structured data for SEO
+  const cardapioFacilJsonLd = generateProductJsonLd({
+    name: "Cardápio Fácil",
+    description: "Planejamento de refeições automatizado, saudável e do jeitinho da sua família. Cardápios personalizados enviados semanalmente via WhatsApp.",
+    image: "/images/og-cardapio-facil.jpg",
+    url: "https://craftcode.com.br/cardapio-facil"
+  });
+
   return (
     <div className="min-h-screen bg-background pt-24 pb-16">
+      <SEO 
+        title="Cardápio Fácil | Planejamento de Refeições com IA"
+        description="Planejamento de refeições automatizado, saudável e do jeitinho da sua família. Cardápios personalizados enviados semanalmente via WhatsApp."
+        ogType="website"
+        ogImage="/images/og-cardapio-facil.jpg"
+        twitterCard="summary_large_image"
+        jsonLd={cardapioFacilJsonLd}
+      />
       <div className="container mx-auto px-4 lg:px-8">
         {/* Navigation */}
         <div className="mb-8">

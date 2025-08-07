@@ -3,27 +3,30 @@
 /**
  * WebP Conversion Script
  * 
- * This script converts all images in the public directory to WebP format
- * and saves them in the public/images/webp directory.
+ * Script to convert images to WebP format
+ * This script will convert all images in the public folder to WebP format
  * 
- * Usage:
- * npm install sharp
- * node scripts/convert-to-webp.js
+ * Usage: node scripts/convert-to-webp.js
  */
 
-const fs = require('fs');
-const path = require('path');
-const sharp = require('sharp');
+import fs from 'fs';
+import path from 'path';
+import sharp from 'sharp';
+import { fileURLToPath } from 'url';
+
+// Get current directory name in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Configuration
-const sourceDir = path.join(__dirname, '../public');
-const targetDir = path.join(__dirname, '../public/images/webp');
+const SOURCE_DIR = path.join(__dirname, '../public');
+const TARGET_DIR = path.join(__dirname, '../public/images/webp');
 const extensions = ['.jpg', '.jpeg', '.png', '.gif'];
 const quality = 80; // WebP quality (0-100)
 
 // Create target directory if it doesn't exist
-if (!fs.existsSync(targetDir)) {
-  fs.mkdirSync(targetDir, { recursive: true });
+if (!fs.existsSync(TARGET_DIR)) {
+  fs.mkdirSync(TARGET_DIR, { recursive: true });
 }
 
 // Function to recursively find all image files
@@ -51,11 +54,11 @@ function findImageFiles(dir, fileList = []) {
 async function convertToWebP(filePath) {
   try {
     const fileName = path.basename(filePath, path.extname(filePath));
-    const relativePath = path.relative(sourceDir, filePath);
+    const relativePath = path.relative(SOURCE_DIR, filePath);
     const relativeDir = path.dirname(relativePath);
     
     // Create subdirectory structure in target directory if needed
-    const targetSubDir = path.join(targetDir, relativeDir);
+    const targetSubDir = path.join(TARGET_DIR, relativeDir);
     if (!fs.existsSync(targetSubDir)) {
       fs.mkdirSync(targetSubDir, { recursive: true });
     }
@@ -107,7 +110,7 @@ async function convertToWebP(filePath) {
 // Main function
 async function main() {
   console.log('Finding images...');
-  const imageFiles = findImageFiles(sourceDir);
+  const imageFiles = findImageFiles(SOURCE_DIR);
   console.log(`Found ${imageFiles.length} images to convert`);
   
   // Process images sequentially to avoid memory issues
