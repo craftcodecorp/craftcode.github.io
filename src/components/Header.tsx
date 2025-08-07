@@ -14,14 +14,13 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <OptimizedImage 
+            <img 
               src="/favicon.ico" 
-              webpSrc="/favicon.ico"
               alt="CraftCode Logo" 
               width={32} 
               height={32} 
               className="w-8 h-8" 
-              loadingStrategy="eager" 
+              loading="eager" 
             />
             <h1 className="text-2xl font-bold text-primary">CraftCode Technology</h1>
           </div>
