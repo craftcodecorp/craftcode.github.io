@@ -16,14 +16,14 @@ const Header = () => {
           <div className="flex items-center gap-2">
             <OptimizedImage 
               src="/favicon.ico" 
-              webpSrc="/images/webp/favicon.webp"
+              webpSrc="/favicon.ico"
               alt="CraftCode Logo" 
               width={32} 
               height={32} 
               className="w-8 h-8" 
               loadingStrategy="eager" 
             />
-            <h1 className="text-2xl font-bold text-primary">CraftCode</h1>
+            <h1 className="text-2xl font-bold text-primary">CraftCode Technology</h1>
           </div>
 
           {/* Desktop Navigation */}
