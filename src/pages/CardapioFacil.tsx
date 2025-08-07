@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SEO, generateProductJsonLd } from "@/lib/seo-utils";
+import { Helmet } from "react-helmet-async";
 
 const CardapioFacil = () => {
   // Product structured data for SEO
@@ -13,7 +14,10 @@ const CardapioFacil = () => {
   });
 
   return (
-    <div className="min-h-screen bg-background pt-24 pb-16">
+    <div className="min-h-screen bg-background pb-16">
+      <Helmet>
+        <link rel="icon" href="/images/cardapiofacil/favicon.ico" />
+      </Helmet>
       <SEO 
         title="Cardápio Fácil | Planejamento de Refeições com IA"
         description="Planejamento de refeições automatizado, saudável e do jeitinho da sua família. Cardápios personalizados enviados semanalmente via WhatsApp."
@@ -22,7 +26,26 @@ const CardapioFacil = () => {
         twitterCard="summary_large_image"
         jsonLd={cardapioFacilJsonLd}
       />
-      <div className="container mx-auto px-4 lg:px-8">
+      {/* Cover Image */}
+      <div className="relative w-full h-[50vh] overflow-hidden">
+        <img 
+          src="/images/cardapiofacil/mothers-meal-planning.jpg" 
+          alt="Planejamento de refeições para famílias" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent flex items-center">
+          <div className="container mx-auto px-4 lg:px-8 pt-24">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Cardápio Fácil: Alimentação descomplicada com a força da IA
+            </h1>
+            <p className="text-xl text-white/90 mb-8 max-w-2xl">
+              Planejamento de refeições automatizado, saudável e do jeitinho da sua família
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 lg:px-8 mt-8">
         {/* Navigation */}
         <div className="mb-8">
           <Link to="/">
@@ -33,14 +56,8 @@ const CardapioFacil = () => {
           </Link>
         </div>
 
-        {/* Hero */}
+        {/* Introduction */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            Cardápio Fácil: Alimentação descomplicada com a força da IA
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            Planejamento de refeições automatizado, saudável e do jeitinho da sua família
-          </p>
           
           <div className="bg-muted/30 rounded-xl p-8 mb-12">
             <p className="text-lg text-foreground leading-relaxed mb-6">
