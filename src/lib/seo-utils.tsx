@@ -35,8 +35,8 @@ export const defaultSeo: SeoProps = {
   description: 'Desenvolvemos software robusto, inteligência de dados e soluções inovadoras com excelência técnica para negócios com propósito.',
   openGraph: {
     type: 'website',
-    image: '/images/og-craftcode-digital-hub.png', // Using the PNG version in the images directory
-    siteName: 'CraftCode Technology'
+    image: '/images/og-craftcode.png', // Using the new PNG version with updated branding
+    siteName: 'CraftCode'
   },
   twitter: {
     card: 'summary_large_image',

@@ -132,12 +132,12 @@ async function generateMainOgImage() {
 
   // Convert canvas to buffer and save as PNG
   const buffer = canvas.toBuffer('image/png');
-  fs.writeFileSync(path.join(OUTPUT_DIR, 'og-craftcode-digital-hub.png'), buffer);
+  fs.writeFileSync(path.join(OUTPUT_DIR, 'og-craftcode.png'), buffer);
 
   // Use Sharp to convert to optimized JPEG for smaller file size
   await sharp(buffer)
     .jpeg({ quality: 90 })
-    .toFile(path.join(OUTPUT_DIR, 'og-craftcode-digital-hub.jpg'));
+    .toFile(path.join(OUTPUT_DIR, 'og-craftcode.jpg'));
 
   console.log('✅ Generated main OpenGraph image');
 }
@@ -149,11 +149,19 @@ async function generateCardapioFacilOgImage() {
   const canvas = createCanvas(1200, 630);
   const ctx = canvas.getContext('2d');
 
-  // Draw gradient background
+  // Draw gradient background - using a warmer color palette for food-related product
   const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
-  gradient.addColorStop(0, '#0f766e');    // Tailwind teal-800
-  gradient.addColorStop(1, '#0d9488');    // Tailwind teal-600
+  gradient.addColorStop(0, '#7c2d12');    // Tailwind amber-900
+  gradient.addColorStop(0.5, '#9a3412');  // Tailwind amber-800
+  gradient.addColorStop(1, '#7c2d12');    // Tailwind amber-900
   ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, 1200, 630);
+  
+  // Add a subtle radial gradient overlay for depth
+  const radialGradient = ctx.createRadialGradient(600, 315, 100, 600, 315, 800);
+  radialGradient.addColorStop(0, 'rgba(251, 191, 36, 0.1)');  // Tailwind amber-400 with opacity
+  radialGradient.addColorStop(1, 'rgba(251, 191, 36, 0)');
+  ctx.fillStyle = radialGradient;
   ctx.fillRect(0, 0, 1200, 630);
 
   // Add grid pattern
@@ -176,43 +184,68 @@ async function generateCardapioFacilOgImage() {
     ctx.stroke();
   }
 
+  // Add decorative food icon elements
+  ctx.fillStyle = 'rgba(251, 191, 36, 0.15)';
+  ctx.beginPath();
+  ctx.arc(300, 200, 100, 0, Math.PI * 2);
+  ctx.fill();
+  
+  ctx.beginPath();
+  ctx.arc(900, 400, 80, 0, Math.PI * 2);
+  ctx.fill();
+
   // Add title text
   ctx.fillStyle = '#ffffff';
-  ctx.font = 'bold 70px "Inter", sans-serif';
+  ctx.font = 'bold 80px "Inter", sans-serif';
   ctx.textAlign = 'center';
   ctx.fillText('CardápioFácil', 600, 280);
 
   // Add subtitle
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-  ctx.font = '32px "Inter", sans-serif';
-  ctx.fillText('Solução Digital para Restaurantes', 600, 340);
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+  ctx.font = 'bold 36px "Inter", sans-serif';
+  ctx.fillText('Seu Menu Digital', 600, 350);
 
   // Add accent line
   ctx.strokeStyle = '#fbbf24'; // Tailwind amber-400
-  ctx.lineWidth = 4;
+  ctx.lineWidth = 6;
   ctx.beginPath();
-  ctx.moveTo(400, 380);
-  ctx.lineTo(800, 380);
+  ctx.moveTo(400, 400);
+  ctx.lineTo(800, 400);
   ctx.stroke();
+  
+  // Add decorative elements
+  ctx.fillStyle = 'rgba(251, 191, 36, 0.8)';
+  ctx.beginPath();
+  ctx.arc(400, 400, 8, 0, Math.PI * 2);
+  ctx.fill();
+  
+  ctx.beginPath();
+  ctx.arc(800, 400, 8, 0, Math.PI * 2);
+  ctx.fill();
 
   // Add tagline
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
-  ctx.font = '24px "Inter", sans-serif';
-  ctx.fillText('Cardápios Digitais • QR Code • Pedidos Online', 600, 430);
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+  ctx.font = 'bold 28px "Inter", sans-serif';
+  ctx.fillText('Simples. Rápido. Eficiente.', 600, 450);
 
   // Add website URL at the bottom
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-  ctx.font = '20px "Inter", sans-serif';
-  ctx.fillText('craftcode.com.br/cardapio-facil', 600, 550);
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+  ctx.font = '22px "Inter", sans-serif';
+  ctx.fillText('cardapiofacil.online', 600, 550);
+
+  // Add powered by text
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+  ctx.font = '18px "Inter", sans-serif';
+  ctx.fillText('Powered by CraftCode', 600, 580);
 
   // Convert canvas to buffer and save as PNG
   const buffer = canvas.toBuffer('image/png');
-  fs.writeFileSync(path.join(OUTPUT_DIR, 'og-cardapio-facil.png'), buffer);
+  fs.writeFileSync(path.join(OUTPUT_DIR, 'og-cardapio.png'), buffer);
 
   // Use Sharp to convert to optimized JPEG for smaller file size
   await sharp(buffer)
     .jpeg({ quality: 90 })
-    .toFile(path.join(OUTPUT_DIR, 'og-cardapio-facil.jpg'));
+    .toFile(path.join(OUTPUT_DIR, 'og-cardapio.jpg'));
 
   console.log('✅ Generated CardapioFacil OpenGraph image');
 }

@@ -23,7 +23,7 @@ const Index = () => {
         description="Desenvolvemos software robusto, inteligência de dados e soluções inovadoras com excelência técnica para negócios com propósito."
         openGraph={{
           type: 'website',
-          image: '/images/og-craftcode-digital-hub.png'
+          image: '/images/og-craftcode.png'
         }}
         twitter={{
           card: 'summary_large_image'
