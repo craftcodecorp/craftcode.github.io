@@ -15,6 +15,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useState } from "react";
+import { submitContactForm } from "@/services/contactService";
 
 // Define the form validation schema
 const formSchema = z.object({
@@ -56,16 +57,20 @@ const Contact = () => {
     setSubmitError(null);
     
     try {
-      // In a real application, you would send this data to your backend
-      // For now, we'll simulate a successful submission after a delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Submit form data using the contact service
+      const response = await submitContactForm({
+        name: data.name,
+        email: data.email,
+        company: data.company,
+        message: data.message
+      });
       
-      console.log("Form submitted:", data);
+      console.log("Form submitted successfully:", response);
       setSubmitSuccess(true);
       reset(); // Reset form fields after successful submission
-    } catch (error) {
+    } catch (error: any) {
       console.error("Form submission error:", error);
-      setSubmitError("Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.");
+      setSubmitError(error.message || "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.");
     } finally {
       setIsSubmitting(false);
     }
