@@ -17,7 +17,7 @@ const __dirname = path.dirname(__filename);
 
 // Configuration
 const OUTPUT_DIR = path.join(__dirname, '../public/images');
-const LOGO_PATH = path.join(__dirname, '../public/logo.png');
+const LOGO_PATH = path.join(__dirname, '../public/logo_white.png');
 const FONT_PATH = path.join(__dirname, '../public/fonts/Inter-Bold.ttf');
 
 // Ensure output directory exists
@@ -44,8 +44,16 @@ async function generateMainOgImage() {
   // Draw gradient background
   const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
   gradient.addColorStop(0, '#0f172a');    // Tailwind slate-900
-  gradient.addColorStop(1, '#1e293b');    // Tailwind slate-800
+  gradient.addColorStop(0.5, '#1e293b');  // Tailwind slate-800
+  gradient.addColorStop(1, '#0f172a');    // Tailwind slate-900
   ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, 1200, 630);
+  
+  // Add a subtle radial gradient overlay for depth
+  const radialGradient = ctx.createRadialGradient(600, 315, 100, 600, 315, 800);
+  radialGradient.addColorStop(0, 'rgba(56, 189, 248, 0.1)');  // Tailwind sky-400 with opacity
+  radialGradient.addColorStop(1, 'rgba(56, 189, 248, 0)');
+  ctx.fillStyle = radialGradient;
   ctx.fillRect(0, 0, 1200, 630);
 
   // Add grid pattern
@@ -81,9 +89,9 @@ async function generateMainOgImage() {
 
   // Add title text
   ctx.fillStyle = '#ffffff';
-  ctx.font = 'bold 60px "Inter", sans-serif';
+  ctx.font = 'bold 70px "Inter", sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText('CraftCode Digital Hub', 600, 300);
+  ctx.fillText('CraftCode', 600, 300);
 
   // Add subtitle
   ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
@@ -92,16 +100,30 @@ async function generateMainOgImage() {
 
   // Add accent line
   ctx.strokeStyle = '#38bdf8'; // Tailwind sky-400
-  ctx.lineWidth = 4;
+  ctx.lineWidth = 6;
   ctx.beginPath();
   ctx.moveTo(400, 400);
   ctx.lineTo(800, 400);
   ctx.stroke();
+  
+  // Add decorative elements
+  ctx.fillStyle = 'rgba(56, 189, 248, 0.7)';
+  ctx.beginPath();
+  ctx.arc(400, 400, 8, 0, Math.PI * 2);
+  ctx.fill();
+  
+  ctx.beginPath();
+  ctx.arc(800, 400, 8, 0, Math.PI * 2);
+  ctx.fill();
 
   // Add tagline
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+  ctx.font = 'bold 28px "Inter", sans-serif';
+  ctx.fillText('Tecnologia com propósito', 600, 450);
+  
   ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
   ctx.font = '24px "Inter", sans-serif';
-  ctx.fillText('Excelência técnica • Inovação • Resultados', 600, 450);
+  ctx.fillText('Soluções com impacto', 600, 490);
 
   // Add website URL at the bottom
   ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
