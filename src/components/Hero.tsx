@@ -89,8 +89,8 @@ const Hero = () => {
                 <div className="text-white/70 text-sm md:text-base">Foco em resultados</div>
               </div>
               <div className="text-white/90 p-4 rounded-lg backdrop-blur-sm bg-white/5 col-span-2 sm:col-span-1 shadow-lg transition-all duration-300 hover:bg-white/10">
-                <div className="text-2xl md:text-3xl font-bold text-secondary mb-2" aria-label="Desenvolvimento ágil">Ágil</div>
-                <div className="text-white/70 text-sm md:text-base">Desenvolvimento</div>
+                <div className="text-2xl md:text-3xl font-bold text-secondary mb-2" aria-label="24 horas por dia">24/7</div>
+                <div className="text-white/70 text-sm md:text-base">Suporte técnico</div>
               </div>
             </div>
           </LazyLoad>
