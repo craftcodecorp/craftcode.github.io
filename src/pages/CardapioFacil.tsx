@@ -8,7 +8,7 @@ const CardapioFacil = () => {
   const cardapioFacilJsonLd = generateProductJsonLd({
     name: "Cardápio Fácil",
     description: "Planejamento de refeições automatizado, saudável e do jeitinho da sua família. Cardápios personalizados enviados semanalmente via WhatsApp.",
-    image: "/images/og-cardapio-facil.jpg",
+    image: "/images/og-cardapio.jpg",
     url: "https://craftcode.com.br/cardapio-facil"
   });
 
@@ -18,7 +18,7 @@ const CardapioFacil = () => {
         title="Cardápio Fácil | Planejamento de Refeições com IA"
         description="Planejamento de refeições automatizado, saudável e do jeitinho da sua família. Cardápios personalizados enviados semanalmente via WhatsApp."
         ogType="website"
-        ogImage="/images/og-cardapio-facil.jpg"
+        ogImage="/images/og-cardapio.jpg"
         twitterCard="summary_large_image"
         jsonLd={cardapioFacilJsonLd}
       />

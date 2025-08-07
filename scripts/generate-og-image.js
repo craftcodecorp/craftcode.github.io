@@ -41,18 +41,18 @@ async function generateMainOgImage() {
   const canvas = createCanvas(1200, 630);
   const ctx = canvas.getContext('2d');
 
-  // Draw gradient background
+  // Draw gradient background using CraftCode brand colors
   const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
-  gradient.addColorStop(0, '#0f172a');    // Tailwind slate-900
-  gradient.addColorStop(0.5, '#1e293b');  // Tailwind slate-800
-  gradient.addColorStop(1, '#0f172a');    // Tailwind slate-900
+  gradient.addColorStop(0, '#121212');    // Preto Fosco - Primary brand color
+  gradient.addColorStop(0.5, '#2B2B2B');  // Cinza Grafite
+  gradient.addColorStop(1, '#121212');    // Preto Fosco - Primary brand color
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, 1200, 630);
   
   // Add a subtle radial gradient overlay for depth
   const radialGradient = ctx.createRadialGradient(600, 315, 100, 600, 315, 800);
-  radialGradient.addColorStop(0, 'rgba(56, 189, 248, 0.1)');  // Tailwind sky-400 with opacity
-  radialGradient.addColorStop(1, 'rgba(56, 189, 248, 0)');
+  radialGradient.addColorStop(0, 'rgba(25, 118, 210, 0.1)');  // Azul Petróleo with opacity
+  radialGradient.addColorStop(1, 'rgba(25, 118, 210, 0)');
   ctx.fillStyle = radialGradient;
   ctx.fillRect(0, 0, 1200, 630);
 
@@ -99,7 +99,7 @@ async function generateMainOgImage() {
   ctx.fillText('Soluções Digitais para Negócios com Propósito', 600, 360);
 
   // Add accent line
-  ctx.strokeStyle = '#38bdf8'; // Tailwind sky-400
+  ctx.strokeStyle = '#1976D2'; // Azul Petróleo - Secondary brand color
   ctx.lineWidth = 6;
   ctx.beginPath();
   ctx.moveTo(400, 400);
@@ -107,7 +107,7 @@ async function generateMainOgImage() {
   ctx.stroke();
   
   // Add decorative elements
-  ctx.fillStyle = 'rgba(56, 189, 248, 0.7)';
+  ctx.fillStyle = 'rgba(25, 118, 210, 0.8)'; // Azul Petróleo with opacity
   ctx.beginPath();
   ctx.arc(400, 400, 8, 0, Math.PI * 2);
   ctx.fill();
@@ -151,16 +151,16 @@ async function generateCardapioFacilOgImage() {
 
   // Draw gradient background - using a warmer color palette for food-related product
   const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
-  gradient.addColorStop(0, '#7c2d12');    // Tailwind amber-900
-  gradient.addColorStop(0.5, '#9a3412');  // Tailwind amber-800
-  gradient.addColorStop(1, '#7c2d12');    // Tailwind amber-900
+  gradient.addColorStop(0, '#E65100');    // Deep Orange 900 - Warm food color
+  gradient.addColorStop(0.5, '#F57C00');  // Orange 800 - Vibrant food color
+  gradient.addColorStop(1, '#E65100');    // Deep Orange 900 - Warm food color
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, 1200, 630);
   
   // Add a subtle radial gradient overlay for depth
   const radialGradient = ctx.createRadialGradient(600, 315, 100, 600, 315, 800);
-  radialGradient.addColorStop(0, 'rgba(251, 191, 36, 0.1)');  // Tailwind amber-400 with opacity
-  radialGradient.addColorStop(1, 'rgba(251, 191, 36, 0)');
+  radialGradient.addColorStop(0, 'rgba(255, 183, 77, 0.15)');  // Orange 300 with opacity
+  radialGradient.addColorStop(1, 'rgba(255, 183, 77, 0)');
   ctx.fillStyle = radialGradient;
   ctx.fillRect(0, 0, 1200, 630);
 
@@ -206,7 +206,7 @@ async function generateCardapioFacilOgImage() {
   ctx.fillText('Planejamento de Refeições com IA', 600, 350);
 
   // Add accent line
-  ctx.strokeStyle = '#fbbf24'; // Tailwind amber-400
+  ctx.strokeStyle = '#FFB74D'; // Orange 300 - Vibrant accent
   ctx.lineWidth = 6;
   ctx.beginPath();
   ctx.moveTo(300, 400);
@@ -214,7 +214,7 @@ async function generateCardapioFacilOgImage() {
   ctx.stroke();
   
   // Add decorative elements
-  ctx.fillStyle = 'rgba(251, 191, 36, 0.8)';
+  ctx.fillStyle = 'rgba(255, 183, 77, 0.9)'; // Orange 300 with opacity
   ctx.beginPath();
   ctx.arc(300, 400, 8, 0, Math.PI * 2);
   ctx.fill();

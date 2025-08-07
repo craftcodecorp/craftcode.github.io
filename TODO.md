@@ -1,4 +1,4 @@
-# CraftCode Digital Hub - TODO List
+# CraftCode Technology - TODO List
 
 ## Phase 1: Planning
 - [✅] Requirements gathering

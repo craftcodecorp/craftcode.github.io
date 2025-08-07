@@ -22,7 +22,7 @@ const Header = () => {
               className="w-8 h-8" 
               loading="eager" 
             />
-            <h1 className="text-2xl font-bold text-primary">CraftCode Technology</h1>
+            <h1 className="text-2xl font-bold text-primary">CraftCode</h1>
           </div>
 
           {/* Desktop Navigation */}
