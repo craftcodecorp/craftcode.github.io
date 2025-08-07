@@ -28,15 +28,15 @@ export interface SeoProps {
 }
 
 /**
- * Default SEO values for the CraftCode Digital Hub
+ * Default SEO values for the CraftCode Technology
  */
 export const defaultSeo: SeoProps = {
-  title: 'CraftCode Digital Hub | Soluções Digitais para Negócios com Propósito',
+  title: 'CraftCode Technology | Soluções Digitais para Negócios com Propósito',
   description: 'Desenvolvemos software robusto, inteligência de dados e soluções inovadoras com excelência técnica para negócios com propósito.',
   openGraph: {
     type: 'website',
-    image: '/og-image.jpg', // This needs to be created and placed in the public folder
-    siteName: 'CraftCode'
+    image: '/images/og-craftcode-digital-hub.png', // Using the PNG version in the images directory
+    siteName: 'CraftCode Technology'
   },
   twitter: {
     card: 'summary_large_image',

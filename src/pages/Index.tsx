@@ -19,11 +19,15 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title="CraftCode Digital Hub | Soluções Digitais para Negócios com Propósito"
+        title="CraftCode Technology | Soluções Digitais para Negócios com Propósito"
         description="Desenvolvemos software robusto, inteligência de dados e soluções inovadoras com excelência técnica para negócios com propósito."
-        ogType="website"
-        ogImage="/images/og-craftcode-digital-hub.jpg"
-        twitterCard="summary_large_image"
+        openGraph={{
+          type: 'website',
+          image: '/images/og-craftcode-digital-hub.png'
+        }}
+        twitter={{
+          card: 'summary_large_image'
+        }}
         jsonLd={organizationJsonLd}
       />
       <Header />
