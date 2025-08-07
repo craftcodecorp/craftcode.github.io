@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, MessageCircle, Smartphone, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ProductHighlight = () => {
   return (
@@ -50,13 +51,14 @@ const ProductHighlight = () => {
                 Visitar CardápioFácil
                 <ExternalLink className="group-hover:scale-110 transition-transform" size={20} />
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={() => window.open('https://cardapiofacil.online/sobre', '_blank')}
-              >
-                Saber mais
-              </Button>
+              <Link to="/cardapio-facil">
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                >
+                  Saber mais
+                </Button>
+              </Link>
             </div>
           </div>
 
