@@ -84,7 +84,24 @@ export function ScriptLoader({
     } else if (strategy === "lazyOnload") {
       // Load during browser idle time
       if ("requestIdleCallback" in window) {
-        (window as any).requestIdleCallback(loadScript);
+        // TypeScript doesn't have built-in types for requestIdleCallback
+        interface RequestIdleCallbackOptions {
+          timeout: number;
+        }
+        interface IdleDeadline {
+          didTimeout: boolean;
+          timeRemaining: () => number;
+        }
+        type RequestIdleCallbackHandle = number;
+        type RequestIdleCallbackFn = (deadline: IdleDeadline) => void;
+
+        // Define the requestIdleCallback function
+        const requestIdleCallback = window.requestIdleCallback as unknown as (
+          callback: RequestIdleCallbackFn,
+          opts?: RequestIdleCallbackOptions
+        ) => RequestIdleCallbackHandle;
+
+        requestIdleCallback(loadScript);
       } else {
         // Fallback for browsers that don't support requestIdleCallback
         setTimeout(loadScript, 1500);

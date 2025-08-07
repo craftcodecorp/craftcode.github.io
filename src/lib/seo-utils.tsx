@@ -2,17 +2,29 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 export interface SeoProps {
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
   canonical?: string;
-  ogType?: 'website' | 'article' | 'profile';
-  ogImage?: string;
-  ogUrl?: string;
-  twitterCard?: 'summary' | 'summary_large_image';
-  twitterSite?: string;
-  twitterCreator?: string;
-  jsonLd?: Record<string, any>;
-  noIndex?: boolean;
+  openGraph?: {
+    type?: string;
+    title?: string;
+    description?: string;
+    url?: string;
+    siteName?: string;
+    image?: string;
+    images?: Array<{ url: string; alt?: string; width?: number; height?: number }>;
+    locale?: string;
+  };
+  twitter?: {
+    card?: string;
+    site?: string;
+    creator?: string;
+    title?: string;
+    description?: string;
+    image?: string;
+  };
+  jsonLd?: object | object[];
+  noindex?: boolean;
 }
 
 /**
@@ -21,11 +33,16 @@ export interface SeoProps {
 export const defaultSeo: SeoProps = {
   title: 'CraftCode Digital Hub | Soluções Digitais para Negócios com Propósito',
   description: 'Desenvolvemos software robusto, inteligência de dados e soluções inovadoras com excelência técnica para negócios com propósito.',
-  ogType: 'website',
-  ogImage: '/og-image.jpg', // This needs to be created and placed in the public folder
-  twitterCard: 'summary_large_image',
-  twitterSite: '@craftcodecorp',
-  twitterCreator: '@italocastilho',
+  openGraph: {
+    type: 'website',
+    image: '/og-image.jpg', // This needs to be created and placed in the public folder
+    siteName: 'CraftCode'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@craftcodecorp',
+    creator: '@italocastilho'
+  }
 };
 
 /**
@@ -36,21 +53,40 @@ export const SEO: React.FC<SeoProps> = ({
   title,
   description,
   canonical,
-  ogType = 'website',
-  ogImage,
-  ogUrl,
-  twitterCard = 'summary_large_image',
-  twitterSite,
-  twitterCreator,
+  openGraph,
+  twitter,
   jsonLd,
-  noIndex = false,
+  noindex = false,
 }) => {
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://craftcode.com.br';
   const fullTitle = title ? `${title} | CraftCode` : defaultSeo.title;
   const metaDescription = description || defaultSeo.description;
-  const url = canonical || ogUrl || siteUrl;
-  const image = ogImage || defaultSeo.ogImage;
-  const absoluteImageUrl = image?.startsWith('http') ? image : `${siteUrl}${image}`;
+  const url = canonical || openGraph?.url || siteUrl;
+  
+  // Merge with default values
+  const og = {
+    ...defaultSeo.openGraph,
+    ...openGraph,
+    title: openGraph?.title || fullTitle,
+    description: openGraph?.description || metaDescription,
+    url: url
+  };
+  
+  const tw = {
+    ...defaultSeo.twitter,
+    ...twitter,
+    title: twitter?.title || fullTitle,
+    description: twitter?.description || metaDescription
+  };
+  
+  // Handle image URLs
+  const ogImage = og.image || og.images?.[0]?.url;
+  const twImage = tw.image || ogImage;
+  
+  const getAbsoluteUrl = (path?: string) => {
+    if (!path) return undefined;
+    return path.startsWith('http') ? path : `${siteUrl}${path}`;
+  };
 
   return (
     <Helmet>
@@ -60,23 +96,23 @@ export const SEO: React.FC<SeoProps> = ({
       {canonical && <link rel="canonical" href={canonical} />}
       
       {/* Open Graph / Facebook */}
-      <meta property="og:type" content={ogType} />
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={metaDescription} />
-      <meta property="og:url" content={url} />
-      {image && <meta property="og:image" content={absoluteImageUrl} />}
-      <meta property="og:site_name" content="CraftCode" />
+      {og.type && <meta property="og:type" content={og.type} />}
+      <meta property="og:title" content={og.title || fullTitle} />
+      <meta property="og:description" content={og.description || metaDescription} />
+      <meta property="og:url" content={og.url} />
+      {og.siteName && <meta property="og:site_name" content={og.siteName} />}
+      {ogImage && <meta property="og:image" content={getAbsoluteUrl(ogImage)} />}
       
       {/* Twitter */}
-      <meta name="twitter:card" content={twitterCard} />
-      {twitterSite && <meta name="twitter:site" content={twitterSite} />}
-      {twitterCreator && <meta name="twitter:creator" content={twitterCreator} />}
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={metaDescription} />
-      {image && <meta name="twitter:image" content={absoluteImageUrl} />}
+      {tw.card && <meta name="twitter:card" content={tw.card} />}
+      {tw.site && <meta name="twitter:site" content={tw.site} />}
+      {tw.creator && <meta name="twitter:creator" content={tw.creator} />}
+      <meta name="twitter:title" content={tw.title || fullTitle} />
+      <meta name="twitter:description" content={tw.description || metaDescription} />
+      {twImage && <meta name="twitter:image" content={getAbsoluteUrl(twImage)} />}
       
       {/* No Index if specified */}
-      {noIndex && <meta name="robots" content="noindex, nofollow" />}
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       
       {/* Structured Data / JSON-LD */}
       {jsonLd && (

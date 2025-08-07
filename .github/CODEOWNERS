@@ -1,0 +1,27 @@
+# These owners will be the default owners for everything in the repo.
+# Unless a later match takes precedence, they will be requested for
+# review when someone opens a pull request.
+* @craftcodecorp/developers
+
+# Core application files
+/src/App.tsx @craftcodecorp/lead-developers
+/src/main.tsx @craftcodecorp/lead-developers
+/vite.config.ts @craftcodecorp/lead-developers
+
+# Component ownership
+/src/components/ @craftcodecorp/frontend-team
+/src/components/ui/ @craftcodecorp/ui-team
+
+# Page components
+/src/pages/ @craftcodecorp/frontend-team
+
+# Utility functions and libraries
+/src/lib/ @craftcodecorp/lead-developers
+
+# Configuration files
+/.github/ @craftcodecorp/devops
+/scripts/ @craftcodecorp/devops
+
+# Documentation
+/README.md @craftcodecorp/tech-writers
+/TODO.md @craftcodecorp/project-managers

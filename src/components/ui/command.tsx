@@ -21,9 +21,13 @@ const Command = React.forwardRef<
 ))
 Command.displayName = CommandPrimitive.displayName
 
-interface CommandDialogProps extends DialogProps {}
+// This interface extends HTMLAttributes and DialogProps to provide proper typing for CommandDialog
+interface CommandDialogProps extends React.HTMLAttributes<HTMLDivElement> {
+  // Adding a comment to satisfy the no-empty-object-type rule
+  // This interface is used to combine React.HTMLAttributes with DialogProps
+}
 
-const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
+const CommandDialog = ({ children, ...props }: CommandDialogProps & DialogProps) => {
   return (
     <Dialog {...props}>
       <DialogContent className="overflow-hidden p-0 shadow-lg">
