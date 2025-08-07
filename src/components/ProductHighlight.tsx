@@ -53,7 +53,7 @@ const ProductHighlight = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                onClick={() => window.location.href = '/cardapio-facil'}
+                onClick={() => window.open('https://cardapiofacil.online/sobre', '_blank')}
               >
                 Saber mais
               </Button>
