@@ -198,35 +198,40 @@ async function generateCardapioFacilOgImage() {
   ctx.fillStyle = '#ffffff';
   ctx.font = 'bold 80px "Inter", sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText('CardápioFácil', 600, 280);
+  ctx.fillText('Cardápio Fácil', 600, 280);
 
   // Add subtitle
   ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
   ctx.font = 'bold 36px "Inter", sans-serif';
-  ctx.fillText('Seu Menu Digital', 600, 350);
+  ctx.fillText('Planejamento de Refeições com IA', 600, 350);
 
   // Add accent line
   ctx.strokeStyle = '#fbbf24'; // Tailwind amber-400
   ctx.lineWidth = 6;
   ctx.beginPath();
-  ctx.moveTo(400, 400);
-  ctx.lineTo(800, 400);
+  ctx.moveTo(300, 400);
+  ctx.lineTo(900, 400);
   ctx.stroke();
   
   // Add decorative elements
   ctx.fillStyle = 'rgba(251, 191, 36, 0.8)';
   ctx.beginPath();
-  ctx.arc(400, 400, 8, 0, Math.PI * 2);
+  ctx.arc(300, 400, 8, 0, Math.PI * 2);
   ctx.fill();
   
   ctx.beginPath();
-  ctx.arc(800, 400, 8, 0, Math.PI * 2);
+  ctx.arc(900, 400, 8, 0, Math.PI * 2);
   ctx.fill();
 
   // Add tagline
   ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
   ctx.font = 'bold 28px "Inter", sans-serif';
-  ctx.fillText('Simples. Rápido. Eficiente.', 600, 450);
+  ctx.fillText('Alimentação descomplicada com a força da IA', 600, 450);
+
+  // Add description text
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+  ctx.font = '22px "Inter", sans-serif';
+  ctx.fillText('Planejamento de refeições automatizado via WhatsApp', 600, 520);
 
   // Add website URL at the bottom
   ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
