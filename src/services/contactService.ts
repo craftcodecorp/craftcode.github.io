@@ -55,7 +55,7 @@ export const submitContactForm = async (data: ContactFormData): Promise<ContactF
       success: true,
       message: 'Mensagem enviada com sucesso! Entraremos em contato em breve.',
     };
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('EmailJS ERROR:', error);
     
     // For development mode, simulate a successful response
