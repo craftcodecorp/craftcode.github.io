@@ -57,7 +57,6 @@ const Contact = () => {
     setSubmitError(null);
     
     try {
-      // Submit form data using the contact service
       const response = await submitContactForm({
         name: data.name,
         email: data.email,
@@ -65,12 +64,31 @@ const Contact = () => {
         message: data.message
       });
       
-      console.log("Form submitted successfully:", response);
-      setSubmitSuccess(true);
-      reset(); // Reset form fields after successful submission
-    } catch (error: any) {
-      console.error("Form submission error:", error);
-      setSubmitError(error.message || "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.");
+      if (response.success) {
+        setSubmitSuccess(true);
+        reset();
+        // scroll to success message
+        setTimeout(() => {
+          const successMessage = document.querySelector('#contact-form-success');
+          successMessage?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      } else {
+        // Resposta com sucesso=false indica erro tratado pelo serviço
+        setSubmitError(response.message);
+        // scroll to error message
+        setTimeout(() => {
+          const errorMessage = document.querySelector('#contact-form-error');
+          errorMessage?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitError(error instanceof Error ? error.message : 'Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.');
+      // scroll to error message
+      setTimeout(() => {
+        const errorMessage = document.querySelector('#contact-form-error');
+        errorMessage?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
     } finally {
       setIsSubmitting(false);
     }
@@ -102,7 +120,7 @@ const Contact = () => {
                 <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                   {/* Success message */}
                   {submitSuccess && (
-                    <div className="p-4 mb-4 bg-green-50 border border-green-200 rounded-lg">
+                    <div id="contact-form-success" className="p-4 mb-4 bg-green-50 border border-green-200 rounded-lg animate-fadeIn">
                       <div className="flex items-center">
                         <div className="flex-shrink-0">
                           <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -118,13 +136,13 @@ const Contact = () => {
 
                   {/* Error message */}
                   {submitError && (
-                    <div className="p-4 mb-4 bg-red-50 border border-red-200 rounded-lg">
+                    <div id="contact-form-error" className="p-4 mb-4 bg-red-50 border border-red-200 rounded-lg animate-fadeIn">
                       <div className="flex items-center">
                         <div className="flex-shrink-0">
                           <AlertCircle className="w-5 h-5 text-red-600" />
                         </div>
                         <div className="ml-3">
-                          <p className="text-sm font-medium text-red-800">{submitError}</p>
+                          <p className="text-sm text-red-700">{submitError}</p>
                         </div>
                       </div>
                     </div>
@@ -138,7 +156,7 @@ const Contact = () => {
                       <Input 
                         {...register("name")}
                         placeholder="Seu nome completo"
-                        className={`h-12 border ${errors.name ? "border-red-500 focus:ring-red-500" : "border-gray-300"}`}
+                        className={`h-12 border ${errors.name ? "border-red-500 focus:ring-red-500" : "border-gray-300"} placeholder:text-gray-400 text-gray-900`}
                         aria-invalid={errors.name ? "true" : "false"}
                       />
                       {errors.name && (
@@ -153,7 +171,7 @@ const Contact = () => {
                         {...register("email")}
                         type="email"
                         placeholder="seu@email.com"
-                        className={`h-12 border ${errors.email ? "border-red-500 focus:ring-red-500" : "border-gray-300"}`}
+                        className={`h-12 border ${errors.email ? "border-red-500 focus:ring-red-500" : "border-gray-300"} placeholder:text-gray-400 text-gray-900`}
                         aria-invalid={errors.email ? "true" : "false"}
                       />
                       {errors.email && (
@@ -169,7 +187,7 @@ const Contact = () => {
                     <Input 
                       {...register("company")}
                       placeholder="Nome da sua empresa"
-                      className="h-12 border border-gray-300"
+                      className="h-12 border border-gray-300 placeholder:text-gray-400 text-gray-900"
                     />
                   </div>
                   
@@ -180,7 +198,7 @@ const Contact = () => {
                     <Textarea 
                       {...register("message")}
                       placeholder="Conte-nos sobre seu projeto, desafios ou necessidades..."
-                      className={`min-h-[120px] border ${errors.message ? "border-red-500 focus:ring-red-500" : "border-gray-300"}`}
+                      className={`min-h-[120px] border ${errors.message ? "border-red-500 focus:ring-red-500" : "border-gray-300"} placeholder:text-gray-400 text-gray-900`}
                       aria-invalid={errors.message ? "true" : "false"}
                     />
                     {errors.message && (
@@ -190,26 +208,31 @@ const Contact = () => {
                   
                   <Button 
                     type="submit" 
-                    variant="hero" 
-                    size="lg" 
-                    className="w-full group" 
+                    className="w-full bg-primary hover:bg-primary/90 text-white py-6 transition-all duration-200"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
-                      <>
+                      <span className="flex items-center justify-center">
                         <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
                         Enviando...
-                      </>
+                      </span>
                     ) : (
-                      <>
+                      <span className="flex items-center justify-center">
+                        <Send className="mr-2 h-5 w-5" />
                         Enviar mensagem
-                        <Send className="group-hover:translate-x-1 transition-transform ml-2" size={20} />
-                      </>
+                      </span>
                     )}
                   </Button>
+                  
+                  {/* Form status text */}
+                  {!submitSuccess && !submitError && (
+                    <p className="text-xs text-muted-foreground text-center mt-2">
+                      Todos os campos marcados com * são obrigatórios
+                    </p>
+                  )}
                   
                   <p className="text-sm text-gray-600 text-center">
                     Responderemos em até 24 horas úteis
