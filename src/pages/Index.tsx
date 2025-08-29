@@ -31,7 +31,7 @@ const Index = () => {
         jsonLd={organizationJsonLd}
       />
       <Header />
-      <main>
+      <main className="pt-[40px] sm:pt-10 md:pt-16">
         <Hero />
         <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center"><div className="animate-pulse text-primary">Carregando...</div></div>}>
           <Solutions />
