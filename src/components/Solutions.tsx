@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { 
   Code2, 
   Database, 
@@ -12,31 +13,31 @@ const solutions = [
   {
     icon: Code2,
     title: "Sistemas Corporativos",
-    description: "Desenvolvimento de plataformas robustas e escaláveis para empresas que precisam de performance e segurança.",
-    features: ["Arquitetura escalável", "APIs modernas", "Segurança enterprise"]
+    description: "Plataformas web, integrações e APIs para empresas que precisam operar com performance, segurança e previsibilidade.",
+    features: ["Arquitetura escalável", "APIs modernas", "Processos críticos"]
   },
   {
     icon: Blocks,
     title: "Blockchain & Web3",
-    description: "Soluções em blockchain, criptomoedas, pagamentos digitais e contratos inteligentes.",
-    features: ["Smart contracts", "DeFi", "Tokenização"]
+    description: "Projetos Web3, pagamentos digitais e contratos inteligentes com foco em viabilidade técnica e segurança.",
+    features: ["Smart contracts", "Pagamentos digitais", "Tokenização"]
   },
   {
     icon: Brain,
     title: "IA Aplicada",
-    description: "Soluções de inteligência artificial para automação, predição e personalização de experiências.",
+    description: "Automações, assistentes e análises preditivas que reduzem trabalho manual e aceleram decisões.",
     features: ["Machine Learning", "Automação inteligente", "Análise preditiva"]
   },
   {
     icon: TrendingUp,
     title: "Modernização de Sistemas",
-    description: "Migração e reestruturação de sistemas legados com tecnologias modernas e UX atualizada.",
+    description: "Evolução de sistemas legados com menor risco, arquitetura atualizada e experiência mais simples para usuários.",
     features: ["Migração segura", "APIs RESTful", "UX moderna"]
   },
   {
     icon: Database,
     title: "Business Intelligence",
-    description: "Dashboards inteligentes e análise de dados que geram insights acionáveis para seu negócio.",
+    description: "Dashboards e pipelines de dados para transformar operação, vendas e produto em indicadores acionáveis.",
     features: ["Dashboards em tempo real", "Data visualization", "Analytics avançados"]
   },
 ];
@@ -51,8 +52,7 @@ const Solutions = () => {
             Nossas Soluções
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Tecnologia de ponta aplicada aos desafios reais do seu negócio. 
-            Cada solução é pensada para gerar valor e impacto mensurável.
+            Planejamos, construímos e modernizamos produtos digitais com foco em impacto mensurável, manutenção simples e evolução contínua.
           </p>
         </div>
 
@@ -104,16 +104,11 @@ const Solutions = () => {
             <p className="text-lg md:text-xl text-foreground font-medium mb-4 md:mb-6">
               Precisa de uma solução personalizada?
             </p>
-            <div 
-              className="flex items-center justify-center px-6 py-3 bg-secondary/10 border border-secondary rounded-lg cursor-pointer hover:bg-secondary/20 transition-colors w-full sm:w-auto sm:inline-flex"
-              onClick={() => window.location.href = '#contact'}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && (window.location.href = '#contact')}
-              aria-label="Vamos conversar sobre seu projeto - Ir para formulário de contato"
-            >
-              <span className="text-secondary font-medium">Vamos conversar sobre seu projeto</span>
-            </div>
+            <Button variant="outline" size="lg" asChild>
+              <a href="#contact" aria-label="Vamos conversar sobre seu projeto - Ir para formulário de contato">
+                Vamos conversar sobre seu projeto
+              </a>
+            </Button>
           </div>
         </div>
       </div>

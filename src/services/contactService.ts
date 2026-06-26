@@ -70,9 +70,13 @@ export const submitContactForm = async (data: ContactFormData): Promise<ContactF
     // Mensagens de erro específicas baseadas no tipo de erro
     let errorMessage = 'Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.';
     
-    if (error?.text?.includes('Authentication failed') || error?.text?.includes('Invalid login')) {
+    const errorText = typeof error === 'object' && error !== null && 'text' in error
+      ? String((error as { text?: unknown }).text)
+      : '';
+
+    if (errorText.includes('Authentication failed') || errorText.includes('Invalid login')) {
       errorMessage = 'Erro de autenticação no serviço de email. Por favor, entre em contato conosco por outro meio.';
-    } else if (error?.text?.includes('Sending has been rejected')) {
+    } else if (errorText.includes('Sending has been rejected')) {
       errorMessage = 'O envio do email foi rejeitado. Por favor, tente novamente ou entre em contato por outro meio.';
     }
     

@@ -3,14 +3,16 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SEO, generateProductJsonLd } from "@/lib/seo-utils";
 import { Helmet } from "react-helmet-async";
+import { CARDAPIO_URL, publicRoutes } from "@/lib/site-metadata";
 
 const CardapioFacil = () => {
+  const route = publicRoutes.find((item) => item.path === "/cardapio-facil")!;
   // Product structured data for SEO
   const cardapioFacilJsonLd = generateProductJsonLd({
     name: "Cardápio Fácil",
     description: "Planejamento de refeições automatizado, saudável e do jeitinho da sua família. Cardápios personalizados enviados semanalmente via WhatsApp.",
     image: "/images/og-cardapio.jpg",
-    url: "https://craftcode.com.br/cardapio-facil"
+    url: CARDAPIO_URL
   });
 
   return (
@@ -19,11 +21,22 @@ const CardapioFacil = () => {
         <link rel="icon" href="/images/cardapiofacil/favicon.ico" />
       </Helmet>
       <SEO 
-        title="Cardápio Fácil | Planejamento de Refeições com IA"
-        description="Planejamento de refeições automatizado, saudável e do jeitinho da sua família. Cardápios personalizados enviados semanalmente via WhatsApp."
-        ogType="website"
-        ogImage="/images/og-cardapio.jpg"
-        twitterCard="summary_large_image"
+        title={route.title}
+        description={route.description}
+        canonical={route.canonicalPath}
+        openGraph={{
+          type: 'website',
+          images: [{
+            url: '/images/og-cardapio.jpg',
+            alt: 'Cardápio Fácil - planejamento de refeições com IA pelo WhatsApp',
+            width: 1200,
+            height: 630
+          }]
+        }}
+        twitter={{
+          card: 'summary_large_image',
+          imageAlt: 'Cardápio Fácil - planejamento de refeições com IA pelo WhatsApp'
+        }}
         jsonLd={cardapioFacilJsonLd}
       />
       {/* Cover Image */}
@@ -48,12 +61,12 @@ const CardapioFacil = () => {
       <div className="container mx-auto px-4 lg:px-8 mt-8">
         {/* Navigation */}
         <div className="mb-8">
-          <Link to="/">
-            <Button variant="ghost" className="group">
+          <Button variant="ghost" className="group" asChild>
+            <Link to="/">
               <ArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform" size={18} />
               Voltar para a página inicial
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
 
         {/* Introduction */}
@@ -206,7 +219,7 @@ const CardapioFacil = () => {
             variant="secondary" 
             size="lg"
             className="group"
-            onClick={() => window.open('https://cardapiofacil.online', '_blank')}
+          onClick={() => window.open(CARDAPIO_URL, '_blank', 'noopener,noreferrer')}
           >
             Conheça o Cardápio Fácil
             <ExternalLink className="ml-2 group-hover:scale-110 transition-transform" size={18} />

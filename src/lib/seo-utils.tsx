@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { CONTACT_EMAIL, SITE_NAME, SITE_URL, toAbsoluteUrl } from '@/lib/site-metadata';
 
 export interface SeoProps {
   title: string;
@@ -22,6 +23,7 @@ export interface SeoProps {
     title?: string;
     description?: string;
     image?: string;
+    imageAlt?: string;
   };
   jsonLd?: object | object[];
   noindex?: boolean;
@@ -36,7 +38,8 @@ export const defaultSeo: SeoProps = {
   openGraph: {
     type: 'website',
     image: '/images/og-craftcode.png', // Using the new PNG version with updated branding
-    siteName: 'CraftCode'
+    siteName: SITE_NAME,
+    locale: 'pt_BR'
   },
   twitter: {
     card: 'summary_large_image',
@@ -58,10 +61,10 @@ export const SEO: React.FC<SeoProps> = ({
   jsonLd,
   noindex = false,
 }) => {
-  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://craftcode.com.br';
-  const fullTitle = title ? `${title} | CraftCode` : defaultSeo.title;
+  const fullTitle = title?.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   const metaDescription = description || defaultSeo.description;
-  const url = canonical || openGraph?.url || siteUrl;
+  const canonicalUrl = canonical ? toAbsoluteUrl(canonical) : undefined;
+  const url = canonicalUrl || (openGraph?.url ? toAbsoluteUrl(openGraph.url) : SITE_URL);
   
   // Merge with default values
   const og = {
@@ -80,20 +83,16 @@ export const SEO: React.FC<SeoProps> = ({
   };
   
   // Handle image URLs
-  const ogImage = og.image || og.images?.[0]?.url;
+  const ogImage = og.images?.[0]?.url || og.image;
   const twImage = tw.image || ogImage;
-  
-  const getAbsoluteUrl = (path?: string) => {
-    if (!path) return undefined;
-    return path.startsWith('http') ? path : `${siteUrl}${path}`;
-  };
+  const ogImageMeta = og.images?.[0];
 
   return (
     <Helmet>
       {/* Basic Metadata */}
       <title>{fullTitle}</title>
       <meta name="description" content={metaDescription} />
-      {canonical && <link rel="canonical" href={canonical} />}
+      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
       
       {/* Open Graph / Facebook */}
       {og.type && <meta property="og:type" content={og.type} />}
@@ -101,7 +100,11 @@ export const SEO: React.FC<SeoProps> = ({
       <meta property="og:description" content={og.description || metaDescription} />
       <meta property="og:url" content={og.url} />
       {og.siteName && <meta property="og:site_name" content={og.siteName} />}
-      {ogImage && <meta property="og:image" content={getAbsoluteUrl(ogImage)} />}
+      {og.locale && <meta property="og:locale" content={og.locale} />}
+      {ogImage && <meta property="og:image" content={toAbsoluteUrl(ogImage)} />}
+      {ogImageMeta?.alt && <meta property="og:image:alt" content={ogImageMeta.alt} />}
+      {ogImageMeta?.width && <meta property="og:image:width" content={String(ogImageMeta.width)} />}
+      {ogImageMeta?.height && <meta property="og:image:height" content={String(ogImageMeta.height)} />}
       
       {/* Twitter */}
       {tw.card && <meta name="twitter:card" content={tw.card} />}
@@ -109,7 +112,8 @@ export const SEO: React.FC<SeoProps> = ({
       {tw.creator && <meta name="twitter:creator" content={tw.creator} />}
       <meta name="twitter:title" content={tw.title || fullTitle} />
       <meta name="twitter:description" content={tw.description || metaDescription} />
-      {twImage && <meta name="twitter:image" content={getAbsoluteUrl(twImage)} />}
+      {twImage && <meta name="twitter:image" content={toAbsoluteUrl(twImage)} />}
+      {tw.imageAlt && <meta name="twitter:image:alt" content={tw.imageAlt} />}
       
       {/* No Index if specified */}
       {noindex && <meta name="robots" content="noindex, nofollow" />}
@@ -131,66 +135,33 @@ export const generateOrganizationJsonLd = () => {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'CraftCode',
-    url: 'https://craftcode.com.br',
-    logo: 'https://craftcode.com.br/logo.png',
-    sameAs: [
-      'https://www.linkedin.com/company/craftcodecorp',
-      'https://github.com/craftcodecorp',
-      'https://twitter.com/craftcodecorp'
-    ],
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: toAbsoluteUrl('/favicon.ico'),
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+55-11-99999-9999',
-      contactType: 'customer service',
-      email: 'contato@craftcode.com.br',
-      availableLanguage: ['Portuguese', 'English']
+      contactType: 'sales',
+      email: CONTACT_EMAIL,
+      availableLanguage: ['Portuguese']
     }
   };
 };
 
 /**
- * Generate JSON-LD structured data for a local business
+ * Generate JSON-LD structured data for the website
  */
-export const generateLocalBusinessJsonLd = () => {
+export const generateWebsiteJsonLd = () => {
   return {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'CraftCode',
-    image: 'https://craftcode.com.br/logo.png',
-    '@id': 'https://craftcode.com.br',
-    url: 'https://craftcode.com.br',
-    telephone: '+55-11-99999-9999',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Av. Paulista, 1000',
-      addressLocality: 'São Paulo',
-      addressRegion: 'SP',
-      postalCode: '01310-100',
-      addressCountry: 'BR'
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: -23.5505,
-      longitude: -46.6333
-    },
-    openingHoursSpecification: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: [
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday'
-      ],
-      opens: '09:00',
-      closes: '18:00'
-    },
-    sameAs: [
-      'https://www.linkedin.com/company/craftcodecorp',
-      'https://github.com/craftcodecorp',
-      'https://twitter.com/craftcodecorp'
-    ]
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    url: SITE_URL,
+    inLanguage: 'pt-BR',
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL
+    }
   };
 };
 
@@ -211,7 +182,8 @@ export const generateProductJsonLd = (product: {
     '@type': 'Product',
     name: product.name,
     description: product.description,
-    image: product.image,
+    image: toAbsoluteUrl(product.image),
+    url: product.url || SITE_URL,
     ...(product.price && {
       offers: {
         '@type': 'Offer',

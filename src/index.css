@@ -169,13 +169,8 @@ All colors MUST be HSL.
     font-weight: 500;
   }
 
-  /* Mobile header styles */
-  @media (max-width: 640px) {
-    header {
-      height: 32px !important;
-      min-height: 32px !important;
-      max-height: 32px !important;
-    }
+  section[id] {
+    scroll-margin-top: 5rem;
   }
 
   /* Custom animations */

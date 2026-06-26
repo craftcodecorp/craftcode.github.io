@@ -1,10 +1,16 @@
 import ReactGA from 'react-ga4';
 
+let analyticsInitialized = false;
+
 /**
  * Inicializa o Google Analytics com o ID de medição fornecido nas variáveis de ambiente.
  * Em ambiente de desenvolvimento, o rastreamento é desativado por padrão.
  */
 export const initializeAnalytics = (): void => {
+  if (analyticsInitialized) {
+    return;
+  }
+
   const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
   const isDevelopment = import.meta.env.VITE_ENV === 'development';
   
@@ -12,6 +18,7 @@ export const initializeAnalytics = (): void => {
     ReactGA.initialize(measurementId, {
       testMode: isDevelopment
     });
+    analyticsInitialized = true;
     
     // Ativar modo de depuração se estiver em ambiente de desenvolvimento
     if (isDevelopment) {
@@ -30,6 +37,11 @@ export const initializeAnalytics = (): void => {
  * @param path - O caminho da página visualizada
  */
 export const trackPageView = (path: string): void => {
+  initializeAnalytics();
+  if (!analyticsInitialized) {
+    return;
+  }
+
   ReactGA.send({ hitType: "pageview", page: path });
   console.log(`Page view tracked: ${path}`);
 };

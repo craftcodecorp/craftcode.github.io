@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, MessageCircle, Smartphone, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
+import { CARDAPIO_URL } from "@/lib/site-metadata";
 
 const ProductHighlight = () => {
   return (
@@ -20,9 +21,8 @@ const ProductHighlight = () => {
             </h2>
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Nossa solução própria de planejamento de refeições automatizado via WhatsApp, 
-              ajudando famílias brasileiras a organizarem suas refeições com praticidade, 
-              economia e saúde.
+              Produto próprio da CraftCode que demonstra nossa capacidade de transformar IA, 
+              automação e WhatsApp em uma experiência simples para famílias brasileiras.
             </p>
 
             {/* Features */}
@@ -46,7 +46,7 @@ const ProductHighlight = () => {
                 variant="cta" 
                 size="lg" 
                 className="group"
-                onClick={() => window.open('https://cardapiofacil.online', '_blank')}
+                onClick={() => window.open(CARDAPIO_URL, '_blank', 'noopener,noreferrer')}
               >
                 Visitar CardápioFácil
                 <ExternalLink className="group-hover:scale-110 transition-transform" size={20} />
@@ -84,7 +84,7 @@ const ProductHighlight = () => {
                   <div className="flex justify-start">
                     <div className="bg-muted rounded-2xl rounded-bl-sm px-4 py-3 max-w-xs">
                       <p className="text-sm text-foreground">
-                        Olá! Sou o CardápioFácil 👋 Vou te ajudar a planejar refeições deliciosas para sua família!
+                        Olá! Sou o CardápioFácil. Vou te ajudar a planejar refeições deliciosas para sua família!
                       </p>
                     </div>
                   </div>
@@ -100,7 +100,7 @@ const ProductHighlight = () => {
                   <div className="flex justify-start">
                     <div className="bg-muted rounded-2xl rounded-bl-sm px-4 py-3 max-w-xs">
                       <p className="text-sm text-foreground">
-                        Perfeito! Preparei um cardápio sem glúten delicioso para 4 pessoas. Vai incluir lista de compras também! 📝
+                        Perfeito! Preparei um cardápio sem glúten para 4 pessoas, com lista de compras organizada.
                       </p>
                     </div>
                   </div>

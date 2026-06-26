@@ -8,7 +8,6 @@ import {
   Phone, 
   MapPin, 
   Send,
-  Linkedin,
   AlertCircle
 } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -16,6 +15,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useState } from "react";
 import { submitContactForm } from "@/services/contactService";
+import { CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/site-metadata";
 
 // Define the form validation schema
 const formSchema = z.object({
@@ -103,8 +103,7 @@ const Contact = () => {
             Vamos conversar?
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Pronto para transformar sua ideia em realidade? Entre em contato e 
-            descubra como podemos ajudar sua empresa a alcançar novos patamares.
+            Conte o desafio da sua empresa e receba uma avaliação inicial sobre caminhos, riscos e próximos passos para evoluir seu produto digital.
           </p>
         </div>
 
@@ -120,7 +119,7 @@ const Contact = () => {
                 <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                   {/* Success message */}
                   {submitSuccess && (
-                    <div id="contact-form-success" className="p-4 mb-4 bg-green-50 border border-green-200 rounded-lg animate-fadeIn">
+                    <div id="contact-form-success" className="p-4 mb-4 bg-green-50 border border-green-200 rounded-lg animate-fadeIn" role="status">
                       <div className="flex items-center">
                         <div className="flex-shrink-0">
                           <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -136,7 +135,7 @@ const Contact = () => {
 
                   {/* Error message */}
                   {submitError && (
-                    <div id="contact-form-error" className="p-4 mb-4 bg-red-50 border border-red-200 rounded-lg animate-fadeIn">
+                    <div id="contact-form-error" className="p-4 mb-4 bg-red-50 border border-red-200 rounded-lg animate-fadeIn" role="alert">
                       <div className="flex items-center">
                         <div className="flex-shrink-0">
                           <AlertCircle className="w-5 h-5 text-red-600" />
@@ -150,41 +149,46 @@ const Contact = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="contact-name" className="block text-sm font-medium text-gray-700 mb-2">
                         Nome *
                       </label>
                       <Input 
+                        id="contact-name"
                         {...register("name")}
                         placeholder="Seu nome completo"
                         className={`h-12 border ${errors.name ? "border-red-500 focus:ring-red-500" : "border-gray-300"} placeholder:text-gray-400 text-gray-900`}
                         aria-invalid={errors.name ? "true" : "false"}
+                        aria-describedby={errors.name ? "contact-name-error" : undefined}
                       />
                       {errors.name && (
-                        <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+                        <p id="contact-name-error" className="mt-1 text-sm text-red-600">{errors.name.message}</p>
                       )}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="contact-email" className="block text-sm font-medium text-gray-700 mb-2">
                         Email *
                       </label>
                       <Input 
+                        id="contact-email"
                         {...register("email")}
                         type="email"
                         placeholder="seu@email.com"
                         className={`h-12 border ${errors.email ? "border-red-500 focus:ring-red-500" : "border-gray-300"} placeholder:text-gray-400 text-gray-900`}
                         aria-invalid={errors.email ? "true" : "false"}
+                        aria-describedby={errors.email ? "contact-email-error" : undefined}
                       />
                       {errors.email && (
-                        <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
+                        <p id="contact-email-error" className="mt-1 text-sm text-red-600">{errors.email.message}</p>
                       )}
                     </div>
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-company" className="block text-sm font-medium text-gray-700 mb-2">
                       Empresa
                     </label>
                     <Input 
+                      id="contact-company"
                       {...register("company")}
                       placeholder="Nome da sua empresa"
                       className="h-12 border border-gray-300 placeholder:text-gray-400 text-gray-900"
@@ -192,17 +196,19 @@ const Contact = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="contact-message" className="block text-sm font-medium text-gray-700 mb-2">
                       Mensagem *
                     </label>
                     <Textarea 
+                      id="contact-message"
                       {...register("message")}
                       placeholder="Conte-nos sobre seu projeto, desafios ou necessidades..."
                       className={`min-h-[120px] border ${errors.message ? "border-red-500 focus:ring-red-500" : "border-gray-300"} placeholder:text-gray-400 text-gray-900`}
                       aria-invalid={errors.message ? "true" : "false"}
+                      aria-describedby={errors.message ? "contact-message-error" : undefined}
                     />
                     {errors.message && (
-                      <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
+                      <p id="contact-message-error" className="mt-1 text-sm text-red-600">{errors.message.message}</p>
                     )}
                   </div>
                   
@@ -251,35 +257,26 @@ const Contact = () => {
               </h3>
               
               <div className="space-y-4">
-                <div className="flex items-center p-4 rounded-lg border border-border/50 hover:shadow-soft transition-shadow">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center p-4 rounded-lg border border-border/50 hover:shadow-soft transition-shadow">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mr-4">
                     <MessageSquare className="w-6 h-6 text-secondary" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">WhatsApp</h4>
-                    <p className="text-muted-foreground">Resposta rápida e direta</p>
+                      <p className="text-muted-foreground">Resposta rápida e direta</p>
                   </div>
-                </div>
+                </a>
                 
-                <div className="flex items-center p-4 rounded-lg border border-border/50 hover:shadow-soft transition-shadow">
+                <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center p-4 rounded-lg border border-border/50 hover:shadow-soft transition-shadow">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mr-4">
                     <Mail className="w-6 h-6 text-secondary" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Email</h4>
-                    <p className="text-muted-foreground">contato@craftcode.com.br</p>
+                    <p className="text-muted-foreground">{CONTACT_EMAIL}</p>
                   </div>
-                </div>
+                </a>
                 
-                <div className="flex items-center p-4 rounded-lg border border-border/50 hover:shadow-soft transition-shadow">
-                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mr-4">
-                    <Linkedin className="w-6 h-6 text-secondary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">LinkedIn</h4>
-                    <p className="text-muted-foreground">linkedin.com/company/craftcodebr</p>
-                  </div>
-                </div>
               </div>
             </div>
 

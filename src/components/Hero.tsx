@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import { OptimizedImage } from "@/components/ui/optimized-image";
 import { LazyLoad } from "@/components/ui/lazy-load";
 
 const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-[calc(100vh-32px)] sm:min-h-[calc(100vh-40px)] md:min-h-[calc(100vh-64px)] flex items-center justify-center bg-gradient-hero overflow-hidden"
+      className="relative min-h-[calc(100vh-56px)] md:min-h-[calc(100vh-64px)] flex items-center justify-center bg-gradient-hero overflow-hidden"
       aria-labelledby="hero-heading"
       role="region"
     >
@@ -23,21 +22,20 @@ const Hero = () => {
             aria-label="Tecnologia com propósito"
           >
             <span className="w-2 h-2 bg-secondary rounded-full mr-2" aria-hidden="true"></span>
-            Tecnologia com propósito
+            Software, IA e dados para empresas
           </div>
 
           {/* Main Headline */}
           <h1 id="hero-heading" className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Soluções digitais para
+            Transforme tecnologia em
             <span className="block text-transparent bg-gradient-to-r from-white to-secondary bg-clip-text" aria-hidden="false">
-              negócios com propósito
+              resultado de negócio
             </span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Da arquitetura ao resultado: desenvolvemos software robusto, 
-            inteligência de dados e soluções inovadoras com excelência técnica.
+            Desenvolvemos software sob medida, automações com IA, inteligência de dados e modernização de sistemas para equipes que precisam crescer com segurança.
           </p>
 
           {/* CTA Buttons */}
@@ -50,22 +48,26 @@ const Hero = () => {
               variant="cta" 
               size="lg" 
               className="group w-full sm:w-auto"
-              onClick={() => window.location.href = '#contact'}
+              asChild
               aria-label="Fale com nossa equipe - Ir para formulário de contato"
             >
-              Fale com nossa equipe
-              <ArrowRight className="group-hover:translate-x-1 transition-transform ml-2" size={20} aria-hidden="true" />
+              <a href="#contact">
+                Fale com nossa equipe
+                <ArrowRight className="group-hover:translate-x-1 transition-transform ml-2" size={20} aria-hidden="true" />
+              </a>
             </Button>
             
             <Button 
               variant="default" 
               size="lg" 
               className="bg-white text-primary hover:bg-white/90 w-full sm:w-auto"
-              onClick={() => window.location.href = '#products'}
+              asChild
               aria-label="Conheça o CardápioFácil - Ir para seção de produtos"
             >
-              <Play size={20} className="text-primary mr-2" aria-hidden="true" />
-              Conheça o CardápioFácil
+              <a href="#products">
+                <Play size={20} className="text-primary mr-2" aria-hidden="true" />
+                Conheça o CardápioFácil
+              </a>
             </Button>
           </div>
 
@@ -86,7 +88,7 @@ const Hero = () => {
               </div>
               <div className="text-white/90 p-4 rounded-lg backdrop-blur-sm bg-white/5 shadow-lg transition-all duration-300 hover:bg-white/10">
                 <div className="text-2xl md:text-3xl font-bold text-secondary mb-2" aria-label="100 porcento">100%</div>
-                <div className="text-white/70 text-sm md:text-base">Foco em resultados</div>
+                <div className="text-white/70 text-sm md:text-base">Projetos orientados a ROI</div>
               </div>
               <div className="text-white/90 p-4 rounded-lg backdrop-blur-sm bg-white/5 col-span-2 sm:col-span-1 shadow-lg transition-all duration-300 hover:bg-white/10">
                 <div className="text-2xl md:text-3xl font-bold text-secondary mb-2" aria-label="10 tecnologias">50+</div>

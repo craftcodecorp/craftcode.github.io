@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { 
-  Linkedin, 
   Mail, 
   MessageSquare,
   ExternalLink 
 } from "lucide-react";
+import { CARDAPIO_URL, CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/site-metadata";
 
 const Footer = () => {
   return (
@@ -22,14 +22,15 @@ const Footer = () => {
               Tecnologia com propósito. Soluções com impacto.
             </p>
             <div className="flex space-x-4">
-              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10">
-                <Linkedin size={20} />
+              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10" asChild>
+                <a href={`mailto:${CONTACT_EMAIL}`} aria-label="Enviar email para a CraftCode">
+                  <Mail size={20} />
+                </a>
               </Button>
-              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10">
-                <Mail size={20} />
-              </Button>
-              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10">
-                <MessageSquare size={20} />
+              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10" asChild>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="Conversar com a CraftCode pelo WhatsApp">
+                  <MessageSquare size={20} />
+                </a>
               </Button>
             </div>
           </div>
@@ -81,9 +82,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary-foreground transition-colors">
-                  Blog
-                </a>
+                <a href="#contact" className="hover:text-primary-foreground transition-colors">Fale Conosco</a>
               </li>
               <li>
                 <a href="#contact" className="hover:text-primary-foreground transition-colors">
@@ -97,12 +96,13 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Contato</h4>
             <div className="space-y-3 text-primary-foreground/80">
-              <p>contato@craftcode.com.br</p>
-              <p>linkedin.com/company/craftcodebr</p>
+              <p>{CONTACT_EMAIL}</p>
               <div className="pt-2">
-                <Button variant="secondary" size="sm" className="group">
-                  WhatsApp
-                  <MessageSquare className="group-hover:scale-110 transition-transform" size={16} />
+                <Button variant="secondary" size="sm" className="group" asChild>
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                    WhatsApp
+                    <MessageSquare className="group-hover:scale-110 transition-transform" size={16} />
+                  </a>
                 </Button>
               </div>
             </div>
@@ -122,7 +122,7 @@ const Footer = () => {
               variant="secondary" 
               size="lg" 
               className="mt-4 md:mt-0 group"
-              onClick={() => window.open('https://cardapiofacil.online', '_blank')}
+              onClick={() => window.open(CARDAPIO_URL, '_blank', 'noopener,noreferrer')}
             >
               Visitar produto
               <ExternalLink className="group-hover:scale-110 transition-transform" size={16} />
@@ -134,14 +134,14 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <p className="text-primary-foreground/60 text-sm">
-              © 2024 CraftCode. Todos os direitos reservados.
+              © 2026 CraftCode. Todos os direitos reservados.
             </p>
             <div className="flex space-x-6 text-primary-foreground/60 text-sm mt-4 md:mt-0">
-              <a href="#" className="hover:text-primary-foreground transition-colors">
-                Política de Privacidade
+              <a href={`mailto:${CONTACT_EMAIL}?subject=Pol%C3%ADtica%20de%20Privacidade`} className="hover:text-primary-foreground transition-colors">
+                Privacidade
               </a>
-              <a href="#" className="hover:text-primary-foreground transition-colors">
-                Termos de Uso
+              <a href={`mailto:${CONTACT_EMAIL}?subject=Termos%20de%20Uso`} className="hover:text-primary-foreground transition-colors">
+                Termos
               </a>
             </div>
           </div>

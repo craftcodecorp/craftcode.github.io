@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { OptimizedImage } from "@/components/ui/optimized-image";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,8 +8,8 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="fixed top-0 w-full bg-background/80 backdrop-blur-lg border-b border-border z-50 h-8 sm:h-10 md:h-16">
-      <div className="container mx-auto px-1 sm:px-4 lg:px-8 h-full">
+    <header className="fixed top-0 w-full bg-background/90 backdrop-blur-lg border-b border-border z-50 h-14 md:h-16">
+      <div className="container mx-auto px-4 lg:px-8 h-full">
         <div className="flex items-center justify-between h-full">
           {/* Logo */}
           <div className="flex items-center gap-1 md:gap-2">
@@ -22,7 +21,7 @@ const Header = () => {
               className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" 
               loading="eager" 
             />
-            <h1 className="text-base sm:text-lg md:text-2xl font-bold text-primary">CraftCode</h1>
+            <span className="text-lg md:text-2xl font-bold text-primary">CraftCode</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -64,35 +63,35 @@ const Header = () => {
             <Button 
               variant="hero" 
               size="lg"
-              onClick={() => window.location.href = '#contact'}
+              asChild
             >
-              Fale Conosco
+              <a href="#contact">Fale Conosco</a>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-0.5 rounded-md hover:bg-accent transition-colors"
+            className="md:hidden min-h-11 min-w-11 p-2 rounded-md hover:bg-accent transition-colors"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
           >
-            {isMenuOpen ? <X size={16} /> : <Menu size={16} />}
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         <div 
           id="mobile-menu"
-          className={`md:hidden py-0.5 border-t border-border transform transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
+          className={`md:hidden py-2 border-t border-border bg-background transform transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
           role="navigation"
           aria-label="Menu de navegação móvel"
         >
           <nav className="flex flex-col">
             <a 
               href="#home" 
-              className="text-foreground hover:text-primary transition-colors py-1 px-2 border-b border-border/50 flex items-center justify-between focus:outline-none focus:bg-accent/10 active:bg-accent/20 rounded-none"
+              className="text-foreground hover:text-primary transition-colors py-3 px-2 border-b border-border/50 flex items-center justify-between focus:outline-none focus:bg-accent/10 active:bg-accent/20 rounded-none"
               onClick={() => setIsMenuOpen(false)}
               onKeyDown={(e) => e.key === 'Enter' && setIsMenuOpen(false)}
             >
@@ -101,7 +100,7 @@ const Header = () => {
             </a>
             <a 
               href="#about" 
-              className="text-foreground hover:text-primary transition-colors py-1 px-2 border-b border-border/50 flex items-center justify-between focus:outline-none focus:bg-accent/10 active:bg-accent/20 rounded-none"
+              className="text-foreground hover:text-primary transition-colors py-3 px-2 border-b border-border/50 flex items-center justify-between focus:outline-none focus:bg-accent/10 active:bg-accent/20 rounded-none"
               onClick={() => setIsMenuOpen(false)}
               onKeyDown={(e) => e.key === 'Enter' && setIsMenuOpen(false)}
             >
@@ -110,7 +109,7 @@ const Header = () => {
             </a>
             <a 
               href="#solutions" 
-              className="text-foreground hover:text-primary transition-colors py-1 px-2 border-b border-border/50 flex items-center justify-between focus:outline-none focus:bg-accent/10 active:bg-accent/20 rounded-none"
+              className="text-foreground hover:text-primary transition-colors py-3 px-2 border-b border-border/50 flex items-center justify-between focus:outline-none focus:bg-accent/10 active:bg-accent/20 rounded-none"
               onClick={() => setIsMenuOpen(false)}
               onKeyDown={(e) => e.key === 'Enter' && setIsMenuOpen(false)}
             >
@@ -119,7 +118,7 @@ const Header = () => {
             </a>
             <a 
               href="#products" 
-              className="text-foreground hover:text-primary transition-colors py-1 px-2 border-b border-border/50 flex items-center justify-between focus:outline-none focus:bg-accent/10 active:bg-accent/20 rounded-none"
+              className="text-foreground hover:text-primary transition-colors py-3 px-2 border-b border-border/50 flex items-center justify-between focus:outline-none focus:bg-accent/10 active:bg-accent/20 rounded-none"
               onClick={() => setIsMenuOpen(false)}
               onKeyDown={(e) => e.key === 'Enter' && setIsMenuOpen(false)}
             >
@@ -128,24 +127,23 @@ const Header = () => {
             </a>
             <a 
               href="#contact" 
-              className="text-foreground hover:text-primary transition-colors py-1 px-2 border-b border-border/50 flex items-center justify-between focus:outline-none focus:bg-accent/10 active:bg-accent/20 rounded-none"
+              className="text-foreground hover:text-primary transition-colors py-3 px-2 border-b border-border/50 flex items-center justify-between focus:outline-none focus:bg-accent/10 active:bg-accent/20 rounded-none"
               onClick={() => setIsMenuOpen(false)}
               onKeyDown={(e) => e.key === 'Enter' && setIsMenuOpen(false)}
             >
               <span className="text-sm sm:text-base md:text-lg font-medium">Contato</span>
               <span className="text-secondary text-sm">→</span>
             </a>
-            <div className="p-1">
+            <div className="p-2">
               <Button 
                 variant="hero" 
                 size="sm" 
                 className="w-full justify-center text-xs"
-                onClick={() => {
-                  window.location.href = '#contact';
-                  setIsMenuOpen(false);
-                }}
+                asChild
               >
-                Fale Conosco
+                <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+                  Fale Conosco
+                </a>
               </Button>
             </div>
           </nav>

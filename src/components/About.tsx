@@ -2,8 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Award, Target, Users, Zap } from "lucide-react";
 
-import { LazyLoad } from "@/components/ui/lazy-load";
-
 const About = () => {
   return (
     <section 
@@ -14,7 +12,6 @@ const About = () => {
         backgroundSize: 'cover', 
         backgroundPosition: 'center left' 
       }}
-      data-webp-bg="/images/webp/leftbg.webp"
     >
       <div className="absolute inset-0 bg-gradient-to-r from-background/95 to-muted/80 backdrop-blur-sm"></div>
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -27,9 +24,9 @@ const About = () => {
             </h2>
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              A CraftCode nasceu da paixão por desenvolver soluções tecnológicas que realmente 
-              fazem a diferença. Combinamos excelência técnica com visão estratégica para 
-              entregar resultados que impactam o crescimento dos nossos parceiros.
+              A CraftCode combina arquitetura de software, dados e inteligência artificial para 
+              tirar projetos críticos do papel. Entramos do diagnóstico à entrega, com comunicação 
+              clara e foco no resultado que precisa aparecer na operação.
             </p>
 
             {/* Values */}
@@ -40,7 +37,7 @@ const About = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Foco em Resultado</h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Cada linha de código tem propósito</p>
+              <p className="text-xs sm:text-sm text-muted-foreground">Tecnologia ligada a metas reais</p>
                 </div>
               </div>
               
@@ -50,7 +47,7 @@ const About = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Excelência Técnica</h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Qualidade nunca é negociável</p>
+              <p className="text-xs sm:text-sm text-muted-foreground">Arquitetura, testes e manutenção</p>
                 </div>
               </div>
               
@@ -60,7 +57,7 @@ const About = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Colaboração</h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Seu sucesso é nosso sucesso</p>
+              <p className="text-xs sm:text-sm text-muted-foreground">Decisões transparentes com o time</p>
                 </div>
               </div>
               
@@ -70,13 +67,13 @@ const About = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Inovação</h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Sempre um passo à frente</p>
+              <p className="text-xs sm:text-sm text-muted-foreground">IA e dados com aplicação prática</p>
                 </div>
               </div>
             </div>
 
-            <Button variant="default" size="lg">
-              Conheça nossa história
+            <Button variant="default" size="lg" asChild>
+              <a href="#contact">Converse com um especialista</a>
             </Button>
           </div>
 
@@ -98,9 +95,9 @@ const About = () => {
                   </p>
                   
                   <p className="text-foreground mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                    Mais de 20+ anos de experiência em fintechs, blockchain e sistemas críticos. 
-                    Especialista em arquitetura de software e Business Intelligence, 
-                    com paixão por transformar ideias em soluções robustas e escaláveis.
+                    Mais de 20 anos de experiência em fintechs, blockchain e sistemas críticos. 
+                    Especialista em arquitetura de software e Business Intelligence, lidera projetos 
+                    que precisam equilibrar velocidade, segurança e escala.
                   </p>
                   
                   {/* Expertise badges */}
@@ -129,8 +126,8 @@ const About = () => {
           <div className="bg-gradient-primary rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-12 text-white shadow-lg" role="region" aria-labelledby="mission-heading">
             <h3 id="mission-heading" className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Nossa Missão</h3>
             <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-white">
-              "Desenvolver soluções tecnológicas sob medida que gerem valor, 
-              inovação e escalabilidade para empresas que querem fazer a diferença no mundo."
+              "Desenvolver soluções tecnológicas sob medida que resolvam problemas reais, 
+              reduzam complexidade operacional e preparem empresas para crescer com segurança."
             </p>
           </div>
         </div>
