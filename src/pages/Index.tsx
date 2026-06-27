@@ -8,6 +8,7 @@ import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { AuthorityBlock, FinalCtaBlock, MethodBlock, PainBlock, SectorsBlock } from "@/components/HomeNarrative";
 
 const Index = () => {
   // Organization structured data for SEO
@@ -25,23 +26,28 @@ const Index = () => {
           type: 'website',
           images: [{
             url: '/images/og-craftcode.png',
-            alt: 'CraftCode Technology - desenvolvimento de software, IA e dados',
+            alt: 'CraftCode - IA aplicada, automacao e sistemas sob medida no Vale do Paraiba',
             width: 1200,
             height: 630
           }]
         }}
         twitter={{
           card: 'summary_large_image',
-          imageAlt: 'CraftCode Technology - desenvolvimento de software, IA e dados'
+          imageAlt: 'CraftCode - IA aplicada, automacao e sistemas sob medida no Vale do Paraiba'
         }}
         jsonLd={[organizationJsonLd, websiteJsonLd]}
       />
       <Header />
       <main className="pt-14 md:pt-16">
         <Hero />
+        <AuthorityBlock />
+        <PainBlock />
         <Solutions />
-        <ProductHighlight />
+        <MethodBlock />
+        <SectorsBlock />
         <About />
+        <ProductHighlight />
+        <FinalCtaBlock />
         <Contact />
       </main>
       <Footer />

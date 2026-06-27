@@ -22,6 +22,10 @@ const injectRoute = async (route) => {
   const outputDir = route.path === "/" ? distDir : path.join(distDir, route.path);
   await mkdir(outputDir, { recursive: true });
   await writeFile(path.join(outputDir, "index.html"), html);
+
+  if (route.path !== "/") {
+    await writeFile(path.join(distDir, `${route.path.slice(1)}.html`), html);
+  }
 };
 
 for (const route of publicRoutes) {

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Desenvolvedor Back End Full Stack"
+  short_description: "Cuida de integracoes, formularios, EmailJS, dados, APIs, rast..."
+  default_prompt: "Use $desenvolvedor-back-end-full-stack to support this CraftCode repositioning task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Social Linkedin Strategist"
+  short_description: "Planeja posicionamento e conteudo para LinkedIn pessoal do fu..."
+  default_prompt: "Use $social-linkedin-strategist to support this CraftCode repositioning task."

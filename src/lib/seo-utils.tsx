@@ -30,11 +30,11 @@ export interface SeoProps {
 }
 
 /**
- * Default SEO values for the CraftCode Technology
+ * Default SEO values for CraftCode
  */
 export const defaultSeo: SeoProps = {
-  title: 'CraftCode Technology | Soluções Digitais para Negócios com Propósito',
-  description: 'Desenvolvemos software robusto, inteligência de dados e soluções inovadoras com excelência técnica para negócios com propósito.',
+  title: 'CraftCode | IA Aplicada, Automacao e Sistemas Sob Medida',
+  description: 'Consultoria de tecnologia e IA aplicada para empresas de Pindamonhangaba e Vale do Paraiba modernizarem processos, integrarem sistemas e decidirem com dados.',
   openGraph: {
     type: 'website',
     image: '/images/og-craftcode.png', // Using the new PNG version with updated branding
@@ -134,10 +134,12 @@ export const SEO: React.FC<SeoProps> = ({
 export const generateOrganizationJsonLd = () => {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': 'ProfessionalService',
     name: SITE_NAME,
     url: SITE_URL,
     logo: toAbsoluteUrl('/favicon.ico'),
+    areaServed: ['Pindamonhangaba', 'Vale do Paraiba', 'Brasil'],
+    description: defaultSeo.description,
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'sales',

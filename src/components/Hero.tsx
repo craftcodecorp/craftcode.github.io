@@ -1,110 +1,87 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
-import { LazyLoad } from "@/components/ui/lazy-load";
+import { ArrowRight, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
+import { authorityPillars } from "@/lib/repositioning-content";
+import { TrackedRouterLink } from "@/components/TrackedLink";
 
 const Hero = () => {
   return (
-    <section 
-      id="home" 
-      className="relative min-h-[calc(100vh-56px)] md:min-h-[calc(100vh-64px)] flex items-center justify-center bg-gradient-hero overflow-hidden"
+    <section
+      id="home"
+      className="relative min-h-[calc(100vh-56px)] md:min-h-[calc(100vh-64px)] flex items-center bg-gradient-hero overflow-hidden"
       aria-labelledby="hero-heading"
-      role="region"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27 width=%2732%27 height=%2732%27 fill=%27none%27%3e%3cpath stroke=%27%23ffffff10%27 stroke-width=%271%27 d=%27m0 .5 32 0%27/%3e%3c/svg%3e')] opacity-20"></div>
-      
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Badge */}
-          <div 
-            className="inline-flex items-center px-4 py-2 rounded-full border border-white/20 bg-white/10 text-white/90 text-sm font-medium backdrop-blur-sm mb-8 animate-fade-in"
-            role="text"
-            aria-label="Tecnologia com propósito"
-          >
-            <span className="w-2 h-2 bg-secondary rounded-full mr-2" aria-hidden="true"></span>
-            Software, IA e dados para empresas
-          </div>
-
-          {/* Main Headline */}
-          <h1 id="hero-heading" className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Transforme tecnologia em
-            <span className="block text-transparent bg-gradient-to-r from-white to-secondary bg-clip-text" aria-hidden="false">
-              resultado de negócio
-            </span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Desenvolvemos software sob medida, automações com IA, inteligência de dados e modernização de sistemas para equipes que precisam crescer com segurança.
-          </p>
-
-          {/* CTA Buttons */}
-          <div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 md:mb-16 w-full sm:w-auto" 
-            role="group" 
-            aria-label="Ações principais"
-          >
-            <Button 
-              variant="cta" 
-              size="lg" 
-              className="group w-full sm:w-auto"
-              asChild
-              aria-label="Fale com nossa equipe - Ir para formulário de contato"
-            >
-              <a href="#contact">
-                Fale com nossa equipe
-                <ArrowRight className="group-hover:translate-x-1 transition-transform ml-2" size={20} aria-hidden="true" />
-              </a>
-            </Button>
-            
-            <Button 
-              variant="default" 
-              size="lg" 
-              className="bg-white text-primary hover:bg-white/90 w-full sm:w-auto"
-              asChild
-              aria-label="Conheça o CardápioFácil - Ir para seção de produtos"
-            >
-              <a href="#products">
-                <Play size={20} className="text-primary mr-2" aria-hidden="true" />
-                Conheça o CardápioFácil
-              </a>
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <LazyLoad 
-            className="w-full"
-            threshold={0.2}
-            rootMargin="100px"
-          >
-            <div 
-              className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-8 text-center max-w-3xl mx-auto border-t border-white/10 pt-8"
-              role="region"
-              aria-label="Estatísticas da empresa"
-            >
-              <div className="text-white/90 p-4 rounded-lg backdrop-blur-sm bg-white/5 shadow-lg transition-all duration-300 hover:bg-white/10">
-                <div className="text-2xl md:text-3xl font-bold text-secondary mb-2" aria-label="Mais de 20 anos">20+</div>
-                <div className="text-white/70 text-sm md:text-base">Anos de experiência</div>
-              </div>
-              <div className="text-white/90 p-4 rounded-lg backdrop-blur-sm bg-white/5 shadow-lg transition-all duration-300 hover:bg-white/10">
-                <div className="text-2xl md:text-3xl font-bold text-secondary mb-2" aria-label="100 porcento">100%</div>
-                <div className="text-white/70 text-sm md:text-base">Projetos orientados a ROI</div>
-              </div>
-              <div className="text-white/90 p-4 rounded-lg backdrop-blur-sm bg-white/5 col-span-2 sm:col-span-1 shadow-lg transition-all duration-300 hover:bg-white/10">
-                <div className="text-2xl md:text-3xl font-bold text-secondary mb-2" aria-label="10 tecnologias">50+</div>
-                <div className="text-white/70 text-sm md:text-base">Tecnologias dominadas</div>
-              </div>
+      <div className="absolute inset-0 opacity-20 bg-[linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,.08)_1px,transparent_1px)] bg-[size:48px_48px]" />
+      <div className="absolute right-0 top-24 hidden xl:block w-[42rem] h-[42rem] border border-white/10 rounded-full" />
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 py-20 md:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_.95fr] gap-12 items-center">
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/20 bg-white/10 text-white/90 text-sm font-medium backdrop-blur-sm mb-8">
+              <MapPin className="w-4 h-4 mr-2 text-secondary" aria-hidden="true" />
+              Pindamonhangaba e Vale do Paraiba
             </div>
-          </LazyLoad>
-        </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
-        aria-hidden="true"
-      >
-        <div className="w-1 h-16 bg-gradient-to-b from-white/50 to-transparent rounded-full"></div>
+            <h1 id="hero-heading" className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              IA, automacao e sistemas sob medida para empresas do Vale do Paraiba.
+            </h1>
+
+            <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl leading-relaxed">
+              A CraftCode ajuda empresas a modernizar processos, integrar sistemas, automatizar rotinas e transformar dados em decisoes melhores com tecnologia aplicada a operacao real.
+            </p>
+
+            <p className="text-lg text-white font-semibold mb-10">
+              IA sem hype. Tecnologia com aplicacao real.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-12" role="group" aria-label="Acoes principais">
+              <Button variant="cta" size="lg" className="group w-full sm:w-auto" asChild>
+                <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Agendar diagnostico" eventLocation="hero">
+                  Agendar diagnostico
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} aria-hidden="true" />
+                </TrackedRouterLink>
+              </Button>
+
+              <Button variant="default" size="lg" className="bg-white text-primary hover:bg-white/90 w-full sm:w-auto" asChild>
+                <TrackedRouterLink to="/solucoes" eventLabel="Conhecer solucoes" eventLocation="hero">
+                  Conhecer solucoes
+                </TrackedRouterLink>
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl">
+              {authorityPillars.slice(0, 3).map((item) => (
+                <div key={item} className="border border-white/20 bg-white/10 rounded-lg p-4 text-white/80 backdrop-blur-sm">
+                  <span className="text-sm font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-white/10 border border-white/20 rounded-xl p-5 md:p-7 backdrop-blur-sm shadow-large">
+            <div className="text-white/70 text-sm mb-5">Diagnostico aplicado a operacao</div>
+            <div className="space-y-4">
+              {[
+                ["Processos", "Mapear gargalos, retrabalho e pontos manuais."],
+                ["Sistemas", "Identificar integracoes, dados duplicados e riscos."],
+                ["IA e automacao", "Priorizar usos praticos por impacto e esforco."],
+                ["Plano de acao", "Definir proximos passos tecnicos e comerciais."],
+              ].map(([title, description], index) => (
+                <div key={title} className="grid grid-cols-[2.5rem_1fr] gap-4 items-start">
+                  <div className="w-10 h-10 rounded-lg bg-secondary text-white flex items-center justify-center font-bold">
+                    {index + 1}
+                  </div>
+                  <div className="border-b border-white/10 pb-4">
+                    <h2 className="text-white font-semibold">{title}</h2>
+                    <p className="text-white/70 text-sm leading-relaxed">{description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <Link to="/diagnostico-tecnologia-ia" className="inline-flex text-secondary font-semibold mt-6 hover:text-white transition-colors">
+              Ver como funciona
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

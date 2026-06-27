@@ -1,0 +1,4 @@
+interface:
+  display_name: "Copywriter B2B"
+  short_description: "Produz copy comercial B2B para decisores, paginas institucion..."
+  default_prompt: "Use $copywriter-b2b to support this CraftCode repositioning task."

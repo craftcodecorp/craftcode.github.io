@@ -1,0 +1,4 @@
+interface:
+  display_name: "Especialista Tecnico"
+  short_description: "Revisa precisao tecnica das promessas, escopos, exemplos, ris..."
+  default_prompt: "Use $especialista-tecnico to support this CraftCode repositioning task."

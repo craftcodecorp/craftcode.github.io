@@ -1,0 +1,4 @@
+interface:
+  display_name: "CraftCode Repositioning"
+  short_description: "Routes CraftCode repositioning specialist skills"
+  default_prompt: "Use $craftcode-repositioning to route this CraftCode repositioning task."

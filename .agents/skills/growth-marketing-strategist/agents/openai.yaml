@@ -1,0 +1,4 @@
+interface:
+  display_name: "Growth Marketing Strategist"
+  short_description: "Avalia canais, funil, mensagens, conteudo e experimentos para..."
+  default_prompt: "Use $growth-marketing-strategist to support this CraftCode repositioning task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEO Local Specialist"
+  short_description: "Foca busca local, Google Business Profile, termos regionais e..."
+  default_prompt: "Use $seo-local-specialist to support this CraftCode repositioning task."
