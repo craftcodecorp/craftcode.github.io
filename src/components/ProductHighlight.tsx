@@ -1,121 +1,53 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink, MessageCircle, Smartphone, TrendingUp } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowRight, Bot, CreditCard, MessageCircle, Workflow } from "lucide-react";
+import { TrackedRouterLink } from "@/components/TrackedLink";
+
+const proofItems = [
+  [MessageCircle, "WhatsApp como interface", "Experiencia simples para o usuario, sem aplicativo adicional."],
+  [Bot, "IA aplicada a rotina", "Personalizacao assistida e geracao de informacoes conectadas a uma dor real."],
+  [Workflow, "Automacao recorrente", "Entrega semanal, mensagens, feedbacks e ajustes com regras claras."],
+  [CreditCard, "Produto fisico-digital", "Software, comunicacao e operacao conectados em uma jornada unica."],
+];
 
 const ProductHighlight = () => {
   return (
-    <section id="products" className="py-24 bg-background">
+    <section id="proof" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-[.9fr_1.1fr] gap-12 lg:gap-16 items-center">
           <div>
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>
-              Produto CraftCode
-            </div>
-
+            <p className="text-secondary font-semibold mb-3">Prova de aplicacao</p>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              CardápioFácil.online
+              CardapioFacil como exemplo de IA, automacao e operacao real.
             </h2>
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Nossa solução própria de planejamento de refeições automatizado via WhatsApp, 
-              ajudando famílias brasileiras a organizarem suas refeições com praticidade, 
-              economia e saúde.
+              O CardapioFacil.online funciona aqui como caso tecnico: IA aplicada, WhatsApp, automacao, dados de uso e produto digital conectados a uma necessidade cotidiana.
             </p>
 
-            {/* Features */}
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center">
-                <MessageCircle className="w-5 h-5 text-secondary mr-3" />
-                <span className="text-foreground">Cardápios personalizados via WhatsApp</span>
-              </div>
-              <div className="flex items-center">
-                <Smartphone className="w-5 h-5 text-secondary mr-3" />
-                <span className="text-foreground">Sem necessidade de instalar aplicativo</span>
-              </div>
-              <div className="flex items-center">
-                <TrendingUp className="w-5 h-5 text-secondary mr-3" />
-                <span className="text-foreground">IA personalizada com foco regional</span>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                variant="cta" 
-                size="lg" 
-                className="group"
-                onClick={() => window.open('https://cardapiofacil.online', '_blank')}
-              >
-                Visitar CardápioFácil
-                <ExternalLink className="group-hover:scale-110 transition-transform" size={20} />
-              </Button>
-              <Link to="/cardapio-facil">
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                >
-                  Saber mais
-                </Button>
-              </Link>
-            </div>
+            <Button variant="outline" size="lg" className="group" asChild>
+              <TrackedRouterLink to="/cardapio-facil" eventLabel="Ver caso CardapioFacil" eventLocation="proof">
+                Ver caso
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+              </TrackedRouterLink>
+            </Button>
           </div>
 
-          {/* Product Demo/Visual */}
-          <div className="relative">
-            <Card className="shadow-large border-border/50 bg-gradient-card overflow-hidden">
-              <CardContent className="p-0">
-                {/* Header mockup */}
-                <div className="bg-gradient-primary p-6 text-white">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mr-4">
-                      <MessageCircle className="w-6 h-6" />
+          <Card className="shadow-large border-border bg-white rounded-lg">
+            <CardContent className="p-6 lg:p-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {proofItems.map(([Icon, title, description]) => (
+                  <div key={String(title)} className="border border-border rounded-lg p-5">
+                    <div className="w-11 h-11 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                      <Icon className="w-5 h-5 text-secondary" />
                     </div>
-                    <div>
-                      <h3 className="font-semibold">CardápioFácil</h3>
-                      <p className="text-white/80 text-sm">Online agora</p>
-                    </div>
+                    <h3 className="font-bold text-primary mb-2">{title as string}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{description as string}</p>
                   </div>
-                </div>
-
-                {/* Chat mockup */}
-                <div className="p-6 space-y-4 bg-white min-h-[300px]">
-                  <div className="flex justify-start">
-                    <div className="bg-muted rounded-2xl rounded-bl-sm px-4 py-3 max-w-xs">
-                      <p className="text-sm text-foreground">
-                        Olá! Sou o CardápioFácil 👋 Vou te ajudar a planejar refeições deliciosas para sua família!
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex justify-end">
-                    <div className="bg-secondary rounded-2xl rounded-br-sm px-4 py-3 max-w-xs">
-                      <p className="text-sm text-white">
-                        Quero um cardápio para 4 pessoas, sem glúten
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex justify-start">
-                    <div className="bg-muted rounded-2xl rounded-bl-sm px-4 py-3 max-w-xs">
-                      <p className="text-sm text-foreground">
-                        Perfeito! Preparei um cardápio sem glúten delicioso para 4 pessoas. Vai incluir lista de compras também! 📝
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 bg-secondary text-white px-4 py-2 rounded-full text-sm font-medium shadow-medium">
-              100% no WhatsApp
-            </div>
-            <div className="absolute -bottom-4 -left-4 bg-primary text-white px-4 py-2 rounded-full text-sm font-medium shadow-medium">
-              IA Brasileira
-            </div>
-          </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "UX UI Designer"
+  short_description: "Transforma a estrategia em layouts responsivos, componentes,..."
+  default_prompt: "Use $ux-ui-designer to support this CraftCode repositioning task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Copywriter Comercial"
+  short_description: "Cria textos de venda, follow-ups, mensagens de prospeccao, ap..."
+  default_prompt: "Use $copywriter-comercial to support this CraftCode repositioning task."

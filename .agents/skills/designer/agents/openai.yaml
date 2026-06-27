@@ -1,0 +1,4 @@
+interface:
+  display_name: "Designer"
+  short_description: "Cria materiais visuais comerciais, one-pages, apresentacoes e..."
+  default_prompt: "Use $designer to support this CraftCode repositioning task."

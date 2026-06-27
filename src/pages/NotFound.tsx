@@ -17,7 +17,7 @@ const NotFound = () => {
       <SEO 
         title="Página não encontrada | 404"
         description="A página que você está procurando não foi encontrada."
-        noIndex={true}
+        noindex={true}
       />
       <div className="text-center p-8 max-w-md bg-white rounded-lg shadow-lg">
         <h1 className="text-5xl font-bold mb-4 text-primary">404</h1>

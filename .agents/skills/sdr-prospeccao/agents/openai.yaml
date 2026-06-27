@@ -1,0 +1,4 @@
+interface:
+  display_name: "SDR Prospeccao"
+  short_description: "Mapeia empresas-alvo, cria abordagens consultivas e agenda re..."
+  default_prompt: "Use $sdr-prospeccao to support this CraftCode repositioning task."

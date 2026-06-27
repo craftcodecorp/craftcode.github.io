@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diretor Arte"
+  short_description: "Define percepcao visual premium, sobria e tecnica para a Craf..."
+  default_prompt: "Use $diretor-arte to support this CraftCode repositioning task."

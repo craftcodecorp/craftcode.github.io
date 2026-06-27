@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fundador Especialista"
+  short_description: "Traz autoridade tecnica autoral sobre sistemas criticos, dado..."
+  default_prompt: "Use $fundador-especialista to support this CraftCode repositioning task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analytics Specialist"
+  short_description: "Define e valida eventos de conversao, page views, cliques em..."
+  default_prompt: "Use $analytics-specialist to support this CraftCode repositioning task."

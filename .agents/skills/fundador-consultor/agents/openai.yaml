@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fundador Consultor"
+  short_description: "Conduz a perspectiva consultiva do diagnostico, reunioes inic..."
+  default_prompt: "Use $fundador-consultor to support this CraftCode repositioning task."

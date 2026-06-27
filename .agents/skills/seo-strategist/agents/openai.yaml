@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEO Strategist"
+  short_description: "Planeja estrutura organica, metadados, termos prioritarios e..."
+  default_prompt: "Use $seo-strategist to support this CraftCode repositioning task."

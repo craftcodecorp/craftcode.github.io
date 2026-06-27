@@ -1,0 +1,4 @@
+interface:
+  display_name: "Copywriter"
+  short_description: "Escreve textos claros e diretos para site, canais e materiais..."
+  default_prompt: "Use $copywriter to support this CraftCode repositioning task."

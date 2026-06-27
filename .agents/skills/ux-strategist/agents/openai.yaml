@@ -1,0 +1,4 @@
+interface:
+  display_name: "UX Strategist"
+  short_description: "Define arquitetura de informacao, jornada, hierarquia de pagi..."
+  default_prompt: "Use $ux-strategist to support this CraftCode repositioning task."

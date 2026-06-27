@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estrategista Conteudo"
+  short_description: "Organiza narrativa de paginas, calendario editorial, temas de..."
+  default_prompt: "Use $estrategista-conteudo to support this CraftCode repositioning task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Desenvolvedor Front End"
+  short_description: "Implementa interface React/Vite/Tailwind, componentes, pagina..."
+  default_prompt: "Use $desenvolvedor-front-end to support this CraftCode repositioning task."

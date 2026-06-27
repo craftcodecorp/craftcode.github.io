@@ -1,17 +1,69 @@
 import ReactGA from 'react-ga4';
 
+let analyticsInitialized = false;
+const analyticsConsentKey = "craftcode_analytics_consent";
+
+export const hasAnalyticsConsent = (): boolean => {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  return window.localStorage.getItem(analyticsConsentKey) === "granted";
+};
+
+export const grantAnalyticsConsent = (): void => {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  window.localStorage.setItem(analyticsConsentKey, "granted");
+  initializeAnalytics();
+};
+
+export const denyAnalyticsConsent = (): void => {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  window.localStorage.setItem(analyticsConsentKey, "denied");
+};
+
+export const getAnalyticsConsent = (): "granted" | "denied" | null => {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  const value = window.localStorage.getItem(analyticsConsentKey);
+  return value === "granted" || value === "denied" ? value : null;
+};
+
 /**
  * Inicializa o Google Analytics com o ID de medição fornecido nas variáveis de ambiente.
  * Em ambiente de desenvolvimento, o rastreamento é desativado por padrão.
  */
 export const initializeAnalytics = (): void => {
+  if (analyticsInitialized) {
+    return;
+  }
+
+  if (!hasAnalyticsConsent()) {
+    return;
+  }
+
   const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
   const isDevelopment = import.meta.env.VITE_ENV === 'development';
   
   if (measurementId && measurementId !== 'G-XXXXXXXXXX') {
     ReactGA.initialize(measurementId, {
-      testMode: isDevelopment
+      testMode: isDevelopment,
+      gaOptions: {
+        send_page_view: false,
+      },
+      gtagOptions: {
+        send_page_view: false,
+      },
     });
+    analyticsInitialized = true;
     
     // Ativar modo de depuração se estiver em ambiente de desenvolvimento
     if (isDevelopment) {
@@ -30,7 +82,12 @@ export const initializeAnalytics = (): void => {
  * @param path - O caminho da página visualizada
  */
 export const trackPageView = (path: string): void => {
-  ReactGA.send({ hitType: "pageview", page: path });
+  initializeAnalytics();
+  if (!analyticsInitialized) {
+    return;
+  }
+
+  ReactGA.send({ hitType: "pageview", page: path, page_path: path });
   console.log(`Page view tracked: ${path}`);
 };
 
@@ -55,4 +112,29 @@ export const trackEvent = (
   });
   
   console.log(`Event tracked: ${category} - ${action}${label ? ` - ${label}` : ''}${value ? ` - ${value}` : ''}`);
+};
+
+export const trackConversionEvent = (
+  name:
+    | "cta_click"
+    | "navigation_click"
+    | "content_click"
+    | "whatsapp_click"
+    | "contact_form_submit"
+    | "contact_form_success"
+    | "contact_form_error",
+  params: Record<string, string | number | boolean | undefined> = {}
+): void => {
+  initializeAnalytics();
+
+  if (!analyticsInitialized) {
+    console.log(`Event skipped: ${name}`, params);
+    return;
+  }
+
+  ReactGA.event(name, {
+    page_path: typeof window !== "undefined" ? window.location.pathname : undefined,
+    ...params,
+  });
+  console.log(`Event tracked: ${name}`, params);
 };

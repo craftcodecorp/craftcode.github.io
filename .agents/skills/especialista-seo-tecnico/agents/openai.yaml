@@ -1,0 +1,4 @@
+interface:
+  display_name: "Especialista SEO Tecnico"
+  short_description: "Valida SEO tecnico, prerender, indexacao, metadados, sitemap,..."
+  default_prompt: "Use $especialista-seo-tecnico to support this CraftCode repositioning task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Estrategista Marca"
+  short_description: "Consolida posicionamento, territorio de marca, diferenciais,..."
+  default_prompt: "Use $estrategista-marca to support this CraftCode repositioning task."

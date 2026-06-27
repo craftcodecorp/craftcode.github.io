@@ -1,57 +1,57 @@
-import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import { SEO, generateOrganizationJsonLd } from "@/lib/seo-utils";
-import { LazyLoad } from "@/components/ui/lazy-load";
-
-// Lazy load non-critical components for better performance
-const Solutions = lazy(() => import("@/components/Solutions"));
-const ProductHighlight = lazy(() => import("@/components/ProductHighlight"));
-const About = lazy(() => import("@/components/About"));
-const Contact = lazy(() => import("@/components/Contact"));
-const Footer = lazy(() => import("@/components/Footer"));
-const WhatsAppButton = lazy(() => import("@/components/WhatsAppButton"));
+import { SEO, generateOrganizationJsonLd, generateWebsiteJsonLd } from "@/lib/seo-utils";
+import { publicRoutes } from "@/lib/site-metadata";
+import Solutions from "@/components/Solutions";
+import ProductHighlight from "@/components/ProductHighlight";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { AuthorityBlock, FinalCtaBlock, MethodBlock, PainBlock, SectorsBlock } from "@/components/HomeNarrative";
 
 const Index = () => {
   // Organization structured data for SEO
+  const route = publicRoutes.find((item) => item.path === "/")!;
   const organizationJsonLd = generateOrganizationJsonLd();
+  const websiteJsonLd = generateWebsiteJsonLd();
   
   return (
     <div className="min-h-screen">
       <SEO 
-        title="CraftCode Technology | Soluções Digitais para Negócios com Propósito"
-        description="Desenvolvemos software robusto, inteligência de dados e soluções inovadoras com excelência técnica para negócios com propósito."
+        title={route.title}
+        description={route.description}
+        canonical={route.canonicalPath}
         openGraph={{
           type: 'website',
-          image: '/images/og-craftcode.png'
+          images: [{
+            url: '/images/og-craftcode.png',
+            alt: 'CraftCode - IA aplicada, automacao e sistemas sob medida no Vale do Paraiba',
+            width: 1200,
+            height: 630
+          }]
         }}
         twitter={{
-          card: 'summary_large_image'
+          card: 'summary_large_image',
+          imageAlt: 'CraftCode - IA aplicada, automacao e sistemas sob medida no Vale do Paraiba'
         }}
-        jsonLd={organizationJsonLd}
+        jsonLd={[organizationJsonLd, websiteJsonLd]}
       />
       <Header />
-      <main className="pt-[40px] sm:pt-10 md:pt-16">
+      <main className="pt-14 md:pt-16">
         <Hero />
-        <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center"><div className="animate-pulse text-primary">Carregando...</div></div>}>
-          <Solutions />
-        </Suspense>
-        <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center"><div className="animate-pulse text-primary">Carregando...</div></div>}>
-          <ProductHighlight />
-        </Suspense>
-        <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center"><div className="animate-pulse text-primary">Carregando...</div></div>}>
-          <About />
-        </Suspense>
-        <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center"><div className="animate-pulse text-primary">Carregando...</div></div>}>
-          <Contact />
-        </Suspense>
+        <AuthorityBlock />
+        <PainBlock />
+        <Solutions />
+        <MethodBlock />
+        <SectorsBlock />
+        <About />
+        <ProductHighlight />
+        <FinalCtaBlock />
+        <Contact />
       </main>
-      <Suspense fallback={<div className="py-8 text-center text-muted-foreground">Carregando rodapé...</div>}>
-        <Footer />
-      </Suspense>
-      <Suspense fallback={null}>
-        <WhatsAppButton />
-      </Suspense>
+      <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

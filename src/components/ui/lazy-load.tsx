@@ -22,7 +22,7 @@ export function LazyLoad({
   rootMargin = '100px',
   enabled = true,
 }: LazyLoadProps) {
-  const [isVisible, setIsVisible] = useState(!enabled);
+  const [isVisible, setIsVisible] = useState(!enabled || typeof window === 'undefined');
   const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null);
 
   useEffect(() => {

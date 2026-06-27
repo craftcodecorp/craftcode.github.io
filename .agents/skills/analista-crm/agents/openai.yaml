@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analista CRM"
+  short_description: "Organiza pipeline, criterios de qualificacao, status, histori..."
+  default_prompt: "Use $analista-crm to support this CraftCode repositioning task."

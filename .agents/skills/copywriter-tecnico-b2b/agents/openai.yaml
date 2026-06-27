@@ -1,0 +1,4 @@
+interface:
+  display_name: "Copywriter Tecnico B2B"
+  short_description: "Produz artigos e conteudos tecnicos B2B com precisao, exemplo..."
+  default_prompt: "Use $copywriter-tecnico-b2b to support this CraftCode repositioning task."

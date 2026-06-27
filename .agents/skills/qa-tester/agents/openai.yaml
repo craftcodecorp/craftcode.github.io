@@ -1,0 +1,4 @@
+interface:
+  display_name: "QA Tester"
+  short_description: "Testa navegacao, formularios, responsividade, SEO basico, ras..."
+  default_prompt: "Use $qa-tester to support this CraftCode repositioning task."

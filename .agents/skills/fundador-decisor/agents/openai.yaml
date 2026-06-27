@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fundador Decisor"
+  short_description: "Aprova posicionamento, prioridades comerciais, arquitetura do..."
+  default_prompt: "Use $fundador-decisor to support this CraftCode repositioning task."

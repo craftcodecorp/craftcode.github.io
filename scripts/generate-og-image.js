@@ -18,7 +18,7 @@ const __dirname = path.dirname(__filename);
 // Configuration
 const OUTPUT_DIR = path.join(__dirname, '../public/images');
 const LOGO_PATH = path.join(__dirname, '../public/logo_white.png');
-const FONT_PATH = path.join(__dirname, '../public/fonts/Inter-Bold.ttf');
+const FONT_PATH = path.join(__dirname, '../public/fonts/Montserrat-Bold.ttf');
 
 // Ensure output directory exists
 if (!fs.existsSync(OUTPUT_DIR)) {
@@ -27,10 +27,11 @@ if (!fs.existsSync(OUTPUT_DIR)) {
 
 // Register font for canvas
 try {
-  registerFont(FONT_PATH, { family: 'Inter', weight: 'bold' });
+  if (fs.existsSync(FONT_PATH)) {
+    registerFont(FONT_PATH, { family: 'Montserrat', weight: 'bold' });
+  }
 } catch (error) {
-  console.warn('Warning: Could not load Inter font. Using system fonts instead.');
-  console.warn('To fix this, download Inter font and place it in public/fonts/Inter-Bold.ttf');
+  console.warn('Warning: Could not load custom font. Using system fonts instead.');
 }
 
 /**
