@@ -2,7 +2,7 @@
 
 ## Summary
 
-Refactor the current CraftCode site from a generic software/technology company into a consultoria de tecnologia e IA aplicada for companies in Pindamonhangaba and Vale do Paraíba.
+Refactor the current CraftCode site from a generic software/technology company into a consultoria de tecnologia e IA aplicada for companies in the Vale do Paraíba.
 
 Default v1 scope:
 
@@ -14,7 +14,7 @@ Default v1 scope:
 ## Key Changes
 
 - Replace primary messaging with:
-    - “IA, automação e sistemas sob medida para empresas de Pindamonhangaba e Vale do Paraíba.”
+    - “IA, automação e sistemas sob medida para empresas do Vale do Paraíba.”
     - “IA sem hype. Tecnologia com aplicação real.”
     - Primary CTA: Agendar diagnóstico
     - Secondary CTA: Conhecer soluções
@@ -69,7 +69,7 @@ Default v1 scope:
 
 - Keep /cardapio-facil, but rewrite its framing as a CraftCode case/proof of IA aplicada, WhatsApp automation, integration and físico-digital operation.
 - Update SEO:
-    - Route-specific titles/descriptions focused on IA aplicada, automação, sistemas sob medida, dados, Pindamonhangaba and Vale do Paraíba.
+    - Route-specific titles/descriptions focused on IA aplicada, automação, sistemas sob medida, dados, Vale do Paraíba.
     - Update organization JSON-LD to reflect consulting/service positioning.
     - Keep prerender sitemap generation via existing publicRoutes.
 

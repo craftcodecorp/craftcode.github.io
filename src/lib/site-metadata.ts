@@ -23,7 +23,7 @@ export const publicRoutes: PublicRoute[] = [
     path: "/",
     title: "CraftCode | IA, Automação e Sistemas no Vale do Paraíba",
     description:
-      "IA aplicada, automação e sistemas sob medida para empresas de Pindamonhangaba e Vale do Paraíba modernizarem processos, integrarem sistemas e decidirem com dados.",
+      "IA aplicada, automação e sistemas sob medida para empresas do Vale do Paraíba modernizarem processos, integrarem sistemas e decidirem com dados.",
     canonicalPath: "/",
     priority: "1.0",
     changefreq: "weekly",
@@ -104,7 +104,7 @@ export const publicRoutes: PublicRoute[] = [
     path: "/sobre",
     title: "Sobre a CraftCode | Tecnologia Aplicada à Operação Real",
     description:
-      "Conheça a CraftCode e a experiência de Italo Castilho em sistemas críticos, dados, produtos digitais, integrações e liderança técnica.",
+      "Conheça a CraftCode e a experiência de Ítalo Castilho em sistemas críticos, dados, produtos digitais, integrações e liderança técnica.",
     canonicalPath: "/sobre",
     priority: "0.7",
     changefreq: "monthly",

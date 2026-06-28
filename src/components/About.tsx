@@ -23,7 +23,7 @@ const About = ({ ctaHref = "/diagnostico-tecnologia-ia", ctaLocation = "about" }
             </h2>
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              A CraftCode foi criada por Italo Castilho para aproximar tecnologia madura da rotina das empresas da região.
+              A CraftCode foi criada por Ítalo Castilho para aproximar tecnologia madura da rotina das empresas da região.
             </p>
             <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
               A experiência vem de sistemas críticos, dados, produtos digitais, integrações e liderança técnica.
@@ -65,15 +65,15 @@ const About = ({ ctaHref = "/diagnostico-tecnologia-ia", ctaLocation = "about" }
             <CardContent className="p-6 lg:p-8">
               <div className="w-24 h-24 rounded-lg mb-6 overflow-hidden bg-primary/5 border border-border shadow-sm">
                 <img
-                  src="/images/italo-castilho-avatar.png"
-                  alt="Retrato de Italo Castilho"
-                  className="h-full w-full object-cover object-[50%_28%] brightness-110 contrast-105"
+                  src="/images/italo-castilho-avatar-v3.png"
+                  alt="Retrato de Ítalo Castilho"
+                  className="h-full w-full object-cover object-[50%_28%]"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
 
-              <h3 className="text-2xl font-bold text-primary mb-1">Italo Castilho</h3>
+              <h3 className="text-2xl font-bold text-primary mb-1">Ítalo Castilho</h3>
               <p className="text-secondary font-medium mb-5">Fundador da CraftCode</p>
 
               <p className="text-foreground mb-6 leading-relaxed">

@@ -289,7 +289,7 @@ const Contact = () => {
                 <h4 className="font-semibold">Base regional</h4>
               </div>
               <p className="relative z-10 text-white/80">
-                Pindamonhangaba, Vale do Paraíba e empresas que precisam operar melhor.
+                Empresas do Vale do Paraíba e negócios que precisam operar melhor.
               </p>
             </div>
           </div>

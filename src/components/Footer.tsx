@@ -14,7 +14,7 @@ const Footer = () => {
               <h3 className="text-2xl font-bold">CraftCode</h3>
             </div>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-              IA sem hype. Tecnologia com aplicação real para empresas de Pindamonhangaba e Vale do Paraíba.
+              IA sem hype. Tecnologia com aplicação real para empresas do Vale do Paraíba.
             </p>
             <div className="flex space-x-3">
               <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10" asChild>

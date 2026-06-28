@@ -4,7 +4,7 @@ Data: 2026-06-27
 
 ## Veredito
 
-O site esta bem alinhado ao reposicionamento geral da CraftCode como consultoria de tecnologia e IA aplicada para empresas de Pindamonhangaba e Vale do Paraiba. A direcao esta correta: diagnostico como oferta principal, IA sem hype, operacao real, dados, automacao e integracao.
+O site esta bem alinhado ao reposicionamento geral da CraftCode como consultoria de tecnologia e IA aplicada para empresas do Vale do Paraíba. A direcao esta correta: diagnostico como oferta principal, IA sem hype, operacao real, dados, automacao e integracao.
 
 Ainda nao esta pronto como versao final sem ajustes. A validacao encontrou pontos prioritarios de conversao, SEO tecnico, analytics, privacidade, copy e precisao tecnica.
 
@@ -144,7 +144,7 @@ Arquivos relacionados:
 
 1. H1 da home deve explicitar o recorte regional
 
-O H1 usa "empresas da regiao", enquanto a proposta recomenda explicitar "Pindamonhangaba e Vale do Paraiba". A badge regional ajuda, mas o H1 e a superficie mais forte.
+O H1 usa "empresas da regiao", enquanto a proposta recomenda explicitar "Vale do Paraíba". A badge regional ajuda, mas o H1 e a superficie mais forte.
 
 Arquivo relacionado:
 

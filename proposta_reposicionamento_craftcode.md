@@ -13,7 +13,7 @@
 
 A CraftCode deve deixar de ser percebida como uma empresa genérica de tecnologia ou uma software house tradicional.
 
-O novo posicionamento deve apresentar a marca como uma **consultoria de tecnologia e IA aplicada**, voltada a empresas de **Pindamonhangaba e Vale do Paraíba** que precisam modernizar processos, automatizar rotinas, integrar sistemas e usar dados para tomar melhores decisões.
+O novo posicionamento deve apresentar a marca como uma **consultoria de tecnologia e IA aplicada**, voltada a empresas do **Vale do Paraíba** que precisam modernizar processos, automatizar rotinas, integrar sistemas e usar dados para tomar melhores decisões.
 
 A região possui muitas empresas com operação real, processos manuais, uso intenso de planilhas, sistemas desconectados e baixa maturidade em automação e inteligência artificial. Ao mesmo tempo, existe uma oportunidade clara de trazer para essas empresas uma visão tecnológica mais madura, baseada em experiência com sistemas críticos, dados, integrações, produtos digitais e operações em escala.
 
@@ -57,7 +57,7 @@ O reposicionamento deve evitar essa disputa e colocar a CraftCode em um territó
 
 ### 3.1. Posicionamento central
 
-> A CraftCode é uma consultoria de tecnologia e IA aplicada que ajuda empresas de Pindamonhangaba e do Vale do Paraíba a transformar processos manuais, dados dispersos e sistemas desconectados em soluções digitais eficientes, integradas e prontas para crescer.
+> A CraftCode é uma consultoria de tecnologia e IA aplicada que ajuda empresas do Vale do Paraíba a transformar processos manuais, dados dispersos e sistemas desconectados em soluções digitais eficientes, integradas e prontas para crescer.
 
 ### 3.2. Versão comercial
 
@@ -69,7 +69,7 @@ O reposicionamento deve evitar essa disputa e colocar a CraftCode em um territó
 
 ### 3.4. Versão para site
 
-> IA aplicada, automação e sistemas sob medida para empresas de Pindamonhangaba e Vale do Paraíba.
+> IA aplicada, automação e sistemas sob medida para empresas do Vale do Paraíba.
 
 ### 3.5. Frase-guia da marca
 
@@ -98,7 +98,6 @@ A CraftCode deve se posicionar no cruzamento entre:
    - escala.
 
 3. **Negócios regionais**
-   - empresas de Pindamonhangaba;
    - empresas do Vale do Paraíba;
    - PMEs em crescimento;
    - varejo, serviços, franquias, indústria e negócios B2B.
@@ -377,7 +376,7 @@ Possíveis entregas:
 
 **Headline:**
 
-> IA, automação e sistemas sob medida para empresas de Pindamonhangaba e Vale do Paraíba.
+> IA, automação e sistemas sob medida para empresas do Vale do Paraíba.
 
 **Subheadline:**
 

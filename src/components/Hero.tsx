@@ -25,7 +25,7 @@ const Hero = () => {
           <div className="max-w-4xl">
             <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/20 bg-white/10 text-white/90 text-sm font-medium backdrop-blur-sm mb-8">
               <MapPin className="w-4 h-4 mr-2 text-secondary" aria-hidden="true" />
-              Pindamonhangaba e Vale do Paraíba
+              Vale do Paraíba
             </div>
 
             <h1 id="hero-heading" className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
