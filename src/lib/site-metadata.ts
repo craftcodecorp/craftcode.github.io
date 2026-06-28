@@ -21,27 +21,27 @@ export type PublicRoute = {
 export const publicRoutes: PublicRoute[] = [
   {
     path: "/",
-    title: "CraftCode | IA, Automacao e Sistemas no Vale do Paraiba",
+    title: "CraftCode | IA, Automação e Sistemas no Vale do Paraíba",
     description:
-      "IA aplicada, automacao e sistemas sob medida para empresas de Pindamonhangaba e Vale do Paraiba modernizarem processos, integrarem sistemas e decidirem com dados.",
+      "IA aplicada, automação e sistemas sob medida para empresas de Pindamonhangaba e Vale do Paraíba modernizarem processos, integrarem sistemas e decidirem com dados.",
     canonicalPath: "/",
     priority: "1.0",
     changefreq: "weekly",
   },
   {
     path: "/solucoes",
-    title: "Solucoes de Tecnologia e IA Aplicada | CraftCode",
+    title: "Soluções de Tecnologia e IA Aplicada | CraftCode",
     description:
-      "Conheca as solucoes da CraftCode em IA aplicada, automacao, integracao de sistemas, dados, BI, sistemas sob medida e consultoria tecnica.",
+      "Conheça as soluções da CraftCode em IA aplicada, automação, integração de sistemas, dados, BI, sistemas sob medida e consultoria técnica.",
     canonicalPath: "/solucoes",
     priority: "0.9",
     changefreq: "weekly",
   },
   {
     path: "/diagnostico-tecnologia-ia",
-    title: "Diagnostico de Tecnologia e IA Aplicada | CraftCode",
+    title: "Diagnóstico de Tecnologia e IA Aplicada | CraftCode",
     description:
-      "Analise processos, sistemas, dados e oportunidades de automacao para identificar onde tecnologia e IA podem gerar impacto real na sua empresa.",
+      "Analise processos, sistemas, dados e oportunidades de automação para identificar onde tecnologia e IA podem gerar impacto real na sua empresa.",
     canonicalPath: "/diagnostico-tecnologia-ia",
     priority: "0.95",
     changefreq: "weekly",
@@ -50,16 +50,16 @@ export const publicRoutes: PublicRoute[] = [
     path: "/ia-aplicada",
     title: "IA Aplicada para Empresas | CraftCode",
     description:
-      "IA sem hype para atendimento, vendas, gestao e operacao: assistentes, triagens, organizacao de informacoes e automacoes conectadas ao negocio.",
+      "IA sem hype para atendimento, vendas, gestão e operação: assistentes, triagens, organização de informações e automações conectadas ao negócio.",
     canonicalPath: "/ia-aplicada",
     priority: "0.85",
     changefreq: "monthly",
   },
   {
     path: "/automacao-processos",
-    title: "Automacao de Processos para Empresas | CraftCode",
+    title: "Automação de Processos para Empresas | CraftCode",
     description:
-      "Automatize rotinas, reduza retrabalho, integre ferramentas e padronize processos com tecnologia aplicada a operacao real.",
+      "Automatize rotinas, reduza retrabalho, integre ferramentas e padronize processos com tecnologia aplicada à operação real.",
     canonicalPath: "/automacao-processos",
     priority: "0.85",
     changefreq: "monthly",
@@ -68,7 +68,7 @@ export const publicRoutes: PublicRoute[] = [
     path: "/dados-bi",
     title: "Dados, BI e Dashboards para Gestao | CraftCode",
     description:
-      "Organize dados dispersos, crie indicadores confiaveis e transforme informacoes operacionais em decisoes melhores para sua empresa.",
+      "Organize dados dispersos, crie indicadores confiáveis e transforme informações operacionais em decisões melhores para sua empresa.",
     canonicalPath: "/dados-bi",
     priority: "0.8",
     changefreq: "monthly",
@@ -84,9 +84,9 @@ export const publicRoutes: PublicRoute[] = [
   },
   {
     path: "/integracao-sistemas",
-    title: "Integracao de Sistemas para Empresas | CraftCode",
+    title: "Integração de Sistemas para Empresas | CraftCode",
     description:
-      "Conecte ERPs, CRMs, planilhas, APIs, pagamentos e bancos de dados para reduzir controles paralelos e melhorar a rastreabilidade da operacao.",
+      "Conecte ERPs, CRMs, planilhas, APIs, pagamentos e bancos de dados para reduzir controles paralelos e melhorar a rastreabilidade da operação.",
     canonicalPath: "/integracao-sistemas",
     priority: "0.85",
     changefreq: "monthly",
@@ -95,25 +95,25 @@ export const publicRoutes: PublicRoute[] = [
     path: "/setores",
     title: "Tecnologia para Setores e Operacoes Reais | CraftCode",
     description:
-      "Solucoes de IA, automacao, dados e sistemas para servicos, industria, varejo, franquias e operacoes fisico-digitais no Vale do Paraiba.",
+      "Soluções de IA, automação, dados e sistemas para serviços, indústria, varejo, franquias e operações físico-digitais no Vale do Paraíba.",
     canonicalPath: "/setores",
     priority: "0.75",
     changefreq: "monthly",
   },
   {
     path: "/sobre",
-    title: "Sobre a CraftCode | Tecnologia Aplicada a Operacao Real",
+    title: "Sobre a CraftCode | Tecnologia Aplicada à Operação Real",
     description:
-      "Conheca a CraftCode e a experiencia de Italo Castilho em sistemas criticos, dados, produtos digitais, integracoes e lideranca tecnica.",
+      "Conheça a CraftCode e a experiência de Italo Castilho em sistemas críticos, dados, produtos digitais, integrações e liderança técnica.",
     canonicalPath: "/sobre",
     priority: "0.7",
     changefreq: "monthly",
   },
   {
     path: "/conteudos",
-    title: "Conteudos sobre IA Aplicada e Automacao | CraftCode",
+    title: "Conteúdos sobre IA Aplicada e Automação | CraftCode",
     description:
-      "Temas iniciais para empresarios que querem entender IA aplicada, automacao, dados, integracao e sistemas sob medida sem hype.",
+      "Temas iniciais para empresários que querem entender IA aplicada, automação, dados, integração e sistemas sob medida sem hype.",
     canonicalPath: "/conteudos",
     priority: "0.35",
     changefreq: "monthly",
@@ -122,7 +122,7 @@ export const publicRoutes: PublicRoute[] = [
     path: "/privacidade",
     title: "Politica de Privacidade | CraftCode",
     description:
-      "Entenda como a CraftCode usa dados de contato, mensagens, analytics e cookies no site institucional e no fluxo de diagnostico.",
+      "Entenda como a CraftCode usa dados de contato, mensagens, analytics e cookies no site institucional e no fluxo de diagnóstico.",
     canonicalPath: "/privacidade",
     priority: "0.2",
     changefreq: "yearly",
@@ -131,7 +131,7 @@ export const publicRoutes: PublicRoute[] = [
     path: "/cardapio-facil",
     title: "Cardapio Facil como Caso de IA Aplicada | CraftCode",
     description:
-      "Conheca o Cardapio Facil como prova de IA aplicada, automacao via WhatsApp, integracao e produto digital criado pela CraftCode.",
+      "Conheça o Cardápio Fácil como prova de IA aplicada, automação via WhatsApp, integração e produto digital criado pela CraftCode.",
     canonicalPath: "/cardapio-facil",
     priority: "0.5",
     changefreq: "monthly",

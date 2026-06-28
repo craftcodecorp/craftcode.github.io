@@ -5,9 +5,9 @@ const IaAplicada = () => (
     slug="ia-aplicada"
     path="/ia-aplicada"
     eyebrow="IA aplicada"
-    title="IA como ferramenta de eficiencia, nao como promessa magica."
-    description="Assistentes, triagens, organizacao de informacoes e automacoes conectadas a atendimento, vendas, gestao e operacao."
-    premise="A IA so gera valor quando esta conectada a um problema real de negocio."
+    title="IA como ferramenta de eficiência, não como promessa mágica."
+    description="Assistentes, triagens, organização de informações e automações conectadas a atendimento, vendas, gestão e operação."
+    premise="A IA só gera valor quando está conectada a um problema real de negócio."
   />
 );
 

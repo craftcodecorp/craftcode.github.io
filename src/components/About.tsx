@@ -10,7 +10,7 @@ type AboutProps = {
 };
 
 const About = ({ ctaHref = "/diagnostico-tecnologia-ia", ctaLocation = "about" }: AboutProps) => {
-  const ctaLabel = "Agendar diagnostico";
+  const ctaLabel = "Agendar diagnóstico";
 
   return (
     <section id="about" className="py-24 bg-background">
@@ -19,22 +19,22 @@ const About = ({ ctaHref = "/diagnostico-tecnologia-ia", ctaLocation = "about" }
           <div>
             <p className="text-secondary font-semibold mb-3">Sobre a CraftCode</p>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Tecnologia de alto nivel aplicada a realidade das empresas da regiao.
+              Tecnologia de alto nivel, sem discurso complicado.
             </h2>
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              A CraftCode foi criada por Italo Castilho, profissional de tecnologia com mais de 20 anos de experiencia em sistemas criticos, dados, produtos digitais, integracoes e lideranca tecnica.
+              A CraftCode foi criada por Italo Castilho para aproximar tecnologia madura da rotina das empresas da região.
             </p>
             <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-              A trajetoria passa por mercado financeiro, consultorias, startups, varejo, pagamentos digitais e novos negocios, sempre conectando tecnologia a operacao real das empresas.
+              A experiência vem de sistemas críticos, dados, produtos digitais, integrações e liderança técnica.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {[
-                [ShieldCheck, "Sistemas criticos", "Estabilidade, seguranca e confiabilidade."],
-                [Database, "Dados e BI", "Informacao util para decisao de gestao."],
-                [GitBranch, "Produto e escala", "Solucoes preparadas para evoluir."],
-                [Award, "Lideranca tecnica", "Visao tecnica com responsabilidade de negocio."],
+                [ShieldCheck, "Sistemas críticos", "Estabilidade, segurança e confiabilidade."],
+                [Database, "Dados e BI", "Informação útil para decisão de gestão."],
+                [GitBranch, "Produto e escala", "Soluções preparadas para evoluir."],
+                [Award, "Liderança técnica", "Visão técnica com responsabilidade de negócio."],
               ].map(([Icon, title, description]) => (
                 <div key={String(title)} className="flex items-start bg-muted/30 p-4 rounded-lg border border-border/60">
                   <div className="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center mr-4 mt-1 flex-shrink-0">
@@ -51,11 +51,11 @@ const About = ({ ctaHref = "/diagnostico-tecnologia-ia", ctaLocation = "about" }
             <Button variant="default" size="lg" asChild>
               {ctaHref.startsWith("/") ? (
                 <TrackedRouterLink to={ctaHref} eventLabel={ctaLabel} eventLocation={ctaLocation}>
-                  Conversar sobre minha operacao
+                  Conversar sobre minha operação
                 </TrackedRouterLink>
               ) : (
                 <TrackedAnchor href={ctaHref} eventLabel={ctaLabel} eventLocation={ctaLocation}>
-                  Conversar sobre minha operacao
+                  Conversar sobre minha operação
                 </TrackedAnchor>
               )}
             </Button>
@@ -63,15 +63,21 @@ const About = ({ ctaHref = "/diagnostico-tecnologia-ia", ctaLocation = "about" }
 
           <Card className="shadow-large border-border bg-white rounded-lg">
             <CardContent className="p-6 lg:p-8">
-              <div className="w-20 h-20 bg-gradient-primary rounded-lg mb-6 flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">IC</span>
+              <div className="w-24 h-24 rounded-lg mb-6 overflow-hidden bg-primary/5 border border-border shadow-sm">
+                <img
+                  src="/images/italo-castilho-avatar.png"
+                  alt="Retrato de Italo Castilho"
+                  className="h-full w-full object-cover object-[50%_28%] brightness-110 contrast-105"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
 
               <h3 className="text-2xl font-bold text-primary mb-1">Italo Castilho</h3>
               <p className="text-secondary font-medium mb-5">Fundador da CraftCode</p>
 
               <p className="text-foreground mb-6 leading-relaxed">
-                Antes de automatizar, e preciso entender o processo. Antes de usar IA, e preciso organizar dados, fluxos e objetivos. Antes de construir software, e preciso saber qual problema de negocio sera resolvido.
+                Antes de automatizar, entendemos o processo. Antes de usar IA, organizamos dados, fluxos e objetivos.
               </p>
 
               <div className="flex flex-wrap gap-2">

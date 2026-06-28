@@ -7,17 +7,18 @@ import { TrackedRouterLink } from "@/components/TrackedLink";
 const Solucoes = () => (
   <PageLayout path="/solucoes">
     <PageHero
-      eyebrow="Solucoes"
-      title="Tecnologia aplicada a eficiencia, integracao e decisao."
-      description="IA aplicada, automacao, dados, integracoes e sistemas sob medida para empresas que precisam operar melhor antes de crescer com mais complexidade."
+      eyebrow="Soluções"
+      title="Tecnologia aplicada à eficiência, integração e decisão."
+      description="IA aplicada, automação, dados, integrações e sistemas sob medida para empresas que precisam operar melhor antes de crescer com mais complexidade."
       primaryLocation="solutions_page_hero"
+      imageSrc="/images/visuals/page-solucoes-portfolio.png"
     />
 
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
           eyebrow="Frentes de atuacao"
-          title="Escolhemos a tecnologia a partir do problema de negocio."
+          title="Escolhemos a tecnologia a partir do problema de negócio."
           description="Nem toda empresa precisa de um sistema novo. Muitas precisam integrar melhor o que ja tem, automatizar rotinas ou organizar dados antes de aplicar IA."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

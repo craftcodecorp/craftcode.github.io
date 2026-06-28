@@ -8,7 +8,7 @@ const diagnosticBlocks = [
     title: "Para quem e indicado",
     items: [
       "Empresas com processos manuais, retrabalho, controles paralelos ou dados dispersos.",
-      "Operacoes que querem usar IA ou automacao, mas precisam decidir onde isso faz sentido.",
+      "Operações que querem usar IA ou automação, mas precisam decidir onde isso faz sentido.",
       "Gestores que precisam priorizar tecnologia por impacto, risco e viabilidade.",
     ],
   },
@@ -16,44 +16,45 @@ const diagnosticBlocks = [
     title: "Quando faz sentido",
     items: [
       "Antes de contratar uma ferramenta, construir um sistema ou automatizar um fluxo importante.",
-      "Quando sistemas nao conversam e a equipe depende de planilhas para fechar a operacao.",
-      "Quando a empresa cresceu e o processo atual passou a limitar atendimento, vendas ou gestao.",
+      "Quando sistemas não conversam e a equipe depende de planilhas para fechar a operação.",
+      "Quando a empresa cresceu e o processo atual passou a limitar atendimento, vendas ou gestão.",
     ],
   },
   {
     title: "Problemas que evita",
     items: [
       "Investir em tecnologia sem resolver a causa do gargalo.",
-      "Automatizar excecoes, dados ruins ou regras que ainda nao estao claras.",
-      "Criar dashboards, assistentes ou sistemas que a equipe nao consegue usar no dia a dia.",
+      "Automatizar exceções, dados ruins ou regras que ainda não estão claras.",
+      "Criar dashboards, assistentes ou sistemas que a equipe não consegue usar no dia a dia.",
     ],
   },
 ];
 
 const objections = [
-  ["Ja temos ERP", "O diagnostico verifica se o ERP esta bem usado, se faltam integracoes e onde ainda existem controles paralelos."],
-  ["Ja temos BI", "Avaliamos se os indicadores apoiam decisao real ou se ainda dependem de dados manuais e metricas pouco confiaveis."],
-  ["Queremos IA rapido", "Primeiro identificamos onde ha dado, processo e revisao suficientes para aplicar IA com responsabilidade."],
-  ["Nao sabemos por onde comecar", "A priorizacao organiza o caminho por impacto, esforco, dependencia tecnica e capacidade de adocao."],
+  ["Já temos ERP", "O diagnóstico verifica se o ERP está bem usado, se faltam integrações e onde ainda existem controles paralelos."],
+  ["Já temos BI", "Avaliamos se os indicadores apoiam decisão real ou se ainda dependem de dados manuais e métricas pouco confiáveis."],
+  ["Queremos IA rápido", "Primeiro identificamos onde há dado, processo e revisão suficientes para aplicar IA com responsabilidade."],
+  ["Não sabemos por onde começar", "A priorização organiza o caminho por impacto, esforço, dependência técnica e capacidade de adoção."],
 ];
 
 const DiagnosticoTecnologiaIa = () => (
   <PageLayout path="/diagnostico-tecnologia-ia">
     <PageHero
-      eyebrow="Diagnostico de Tecnologia e IA Aplicada"
+      eyebrow="Diagnóstico de Tecnologia e IA Aplicada"
       title="Antes de automatizar, entenda processo, dados e prioridade."
-      description="Uma analise pratica dos processos, sistemas, dados e oportunidades de automacao da sua empresa para identificar onde tecnologia e IA podem gerar impacto real."
+      description="Uma análise prática dos processos, sistemas, dados e oportunidades de automação da sua empresa para identificar onde tecnologia e IA podem gerar impacto real."
       primaryLocation="diagnostic_page_hero"
       primaryHref="#contact"
-      primaryLabel="Solicitar diagnostico"
+      primaryLabel="Solicitar diagnóstico"
+      imageSrc="/images/visuals/diagnostico-plano-acao.png"
     />
 
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
           eyebrow="Oferta de entrada"
-          title="Uma analise para decidir antes de implementar."
-          description="O diagnostico organiza contexto, prioridades e limites tecnicos para transformar intencao em plano de acao responsavel."
+          title="Uma análise para decidir antes de implementar."
+          description="O diagnóstico organiza contexto, prioridades e limites técnicos para transformar intenção em plano de ação responsável."
         />
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {diagnosticBlocks.map((block) => (
@@ -73,8 +74,8 @@ const DiagnosticoTecnologiaIa = () => (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
-          title="Objecoes comuns antes de comecar"
-          description="O diagnostico foi desenhado para empresas que ja tentaram ferramentas, ainda dependem de improviso ou querem aplicar IA sem criar mais complexidade."
+          title="Objeções comuns antes de começar"
+          description="O diagnóstico foi desenhado para empresas que já tentaram ferramentas, ainda dependem de improviso ou querem aplicar IA sem criar mais complexidade."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {objections.map(([title, description]) => (
@@ -91,8 +92,8 @@ const DiagnosticoTecnologiaIa = () => (
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
           eyebrow="Como funciona"
-          title="Do gargalo operacional ao plano de acao."
-          description="O diagnostico evita comecar pela ferramenta. Primeiro entendemos a operacao, depois definimos quais tecnologias fazem sentido."
+          title="Do gargalo operacional ao plano de ação."
+          description="O diagnóstico evita começar pela ferramenta. Primeiro entendemos a operação, depois definimos quais tecnologias fazem sentido."
         />
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           {methodSteps.map((step, index) => {
@@ -113,15 +114,15 @@ const DiagnosticoTecnologiaIa = () => (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
-          title="O que sera analisado e entregue"
-          description="A profundidade depende do contexto, mas o objetivo e sair com clareza sobre processos, dados, sistemas, riscos e proximos passos."
+          title="O que será analisado e entregue"
+          description="A profundidade depende do contexto, mas o objetivo é sair com clareza sobre processos, dados, sistemas, riscos e próximos passos."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {[
-            ["Analise da operacao", "Processos criticos, gargalos, retrabalho, sistemas envolvidos, planilhas, dados e pontos de decisao."],
-            ["Mapa de oportunidades", "Onde IA, automacao, integracao, BI ou sistema sob medida podem gerar impacto pratico."],
-            ["Priorizacao tecnica", "Ordem sugerida por impacto, esforco, dependencia, risco, qualidade dos dados e adocao da equipe."],
-            ["Proximos passos", "Recomendacao de caminho: prototipo, integracao, automacao, dashboard, modernizacao ou ajuste de processo."],
+            ["Análise da operação", "Processos críticos, gargalos, retrabalho, sistemas envolvidos, planilhas, dados e pontos de decisão."],
+            ["Mapa de oportunidades", "Onde IA, automação, integração, BI ou sistema sob medida podem gerar impacto prático."],
+            ["Priorização técnica", "Ordem sugerida por impacto, esforço, dependência, risco, qualidade dos dados e adoção da equipe."],
+            ["Próximos passos", "Recomendação de caminho: protótipo, integração, automação, dashboard, modernização ou ajuste de processo."],
           ].map(([title, description]) => (
             <div key={title} className="rounded-lg border border-border bg-white p-6 shadow-soft">
               <h2 className="text-xl font-bold text-primary mb-3">{title}</h2>
@@ -135,14 +136,14 @@ const DiagnosticoTecnologiaIa = () => (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
-          title="Limites do diagnostico"
-          description="A etapa nao promete implementacao imediata nem resultado automatico. Ela reduz incerteza para decidir o que construir, integrar ou automatizar primeiro."
+          title="Limites do diagnóstico"
+          description="A etapa não promete implementação imediata nem resultado automático. Ela reduz incerteza para decidir o que construir, integrar ou automatizar primeiro."
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {[
-            ["Nao e venda de ferramenta", "A recomendacao parte do processo e dos dados disponiveis, nao de uma plataforma pre-definida."],
-            ["Nao substitui governanca", "Dados sensiveis, permissoes, seguranca e revisao humana precisam entrar no plano quando houver IA ou automacao."],
-            ["Nao ignora adocao", "A solucao so funciona se a equipe conseguir incorporar o novo fluxo a rotina real."],
+            ["Não é venda de ferramenta", "A recomendação parte do processo e dos dados disponíveis, não de uma plataforma pré-definida."],
+            ["Não substitui governança", "Dados sensíveis, permissões, segurança e revisão humana precisam entrar no plano quando houver IA ou automação."],
+            ["Não ignora adoção", "A solução só funciona se a equipe conseguir incorporar o novo fluxo à rotina real."],
           ].map(([title, description]) => (
             <div key={title} className="rounded-lg border border-border bg-muted/30 p-6">
               <h2 className="text-xl font-bold text-primary mb-3">{title}</h2>

@@ -24,7 +24,7 @@ const AnalyticsConsent = () => {
     <div className="fixed bottom-4 left-4 right-4 z-[60] mx-auto max-w-3xl rounded-lg border border-border bg-white p-4 shadow-large">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <p className="text-sm leading-relaxed text-muted-foreground">
-          Usamos analytics para entender visitas e conversoes do diagnostico. Voce pode aceitar ou continuar sem esse rastreamento.
+          Usamos analytics para entender visitas e conversões do diagnóstico. Você pode aceitar ou continuar sem esse rastreamento.
           {" "}
           <Link to="/privacidade" className="font-medium text-primary underline underline-offset-4">
             Ver privacidade

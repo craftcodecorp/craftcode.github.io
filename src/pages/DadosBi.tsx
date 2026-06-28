@@ -5,9 +5,9 @@ const DadosBi = () => (
     slug="dados-bi"
     path="/dados-bi"
     eyebrow="Dados e BI"
-    title="Dados para decidir melhor, nao para enfeitar dashboard."
-    description="Organizacao de dados, indicadores gerenciais, paineis operacionais e relatorios automatizados para melhorar a visao da gestao."
-    premise="O valor esta na decisao que o indicador melhora."
+    title="Dados para decidir melhor, não para enfeitar dashboard."
+    description="Organização de dados, indicadores gerenciais, painéis operacionais e relatórios automatizados para melhorar a visão da gestão."
+    premise="O valor está na decisão que o indicador melhora."
   />
 );
 

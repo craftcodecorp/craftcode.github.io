@@ -5,10 +5,11 @@ import { contentTopics } from "@/lib/repositioning-content";
 const Conteudos = () => (
   <PageLayout path="/conteudos">
     <PageHero
-      eyebrow="Conteudos"
-      title="Ideias praticas sobre IA, automacao, dados e operacao."
+      eyebrow="Conteúdos"
+      title="Ideias práticas sobre IA, automação, dados e operação."
       description="Um hub inicial para educar empresarios sobre aplicacoes reais de tecnologia, sem hype e sem jargao desnecessario."
       primaryLocation="content_page_hero"
+      imageSrc="/images/visuals/page-conteudos-insights.png"
     />
 
     <section className="py-24 bg-background">

@@ -6,16 +6,17 @@ const Setores = () => (
   <PageLayout path="/setores">
     <PageHero
       eyebrow="Setores"
-      title="Tecnologia para empresas com operacao real."
-      description="Servicos, industrias, varejo, franquias e operacoes fisico-digitais que precisam reduzir retrabalho, integrar sistemas e decidir com dados."
+      title="Tecnologia para empresas com operação real."
+      description="Serviços, indústrias, varejo, franquias e operações físico-digitais que precisam reduzir retrabalho, integrar sistemas e decidir com dados."
       primaryLocation="sectors_page_hero"
+      imageSrc="/images/visuals/page-setores-operacoes.png"
     />
 
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
-          title="Cada setor tem dores diferentes, mas o ponto de partida e o mesmo: entender a operacao."
-          description="A CraftCode aproxima IA, automacao, dados e sistemas da rotina concreta de cada empresa."
+          title="Cada setor tem dores diferentes, mas o ponto de partida é o mesmo: entender a operação."
+          description="A CraftCode aproxima IA, automação, dados e sistemas da rotina concreta de cada empresa."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {sectors.map((sector) => {

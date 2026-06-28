@@ -9,12 +9,12 @@ const Solutions = () => {
     <section id="solutions" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mb-14">
-          <p className="text-secondary font-semibold mb-3">Solucoes</p>
+          <p className="text-secondary font-semibold mb-3">Soluções</p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Solucoes para transformar operacao em inteligencia.
+            Tecnologia certa para o gargalo certo.
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Antes de escolher ferramenta, entendemos processo, dados e objetivo de negocio. A partir disso, desenhamos tecnologia que a operacao consegue usar.
+              Nem tudo precisa virar sistema. Às vezes falta integrar, automatizar ou organizar dados.
           </p>
         </div>
 
@@ -60,14 +60,14 @@ const Solutions = () => {
 
         <div className="mt-12 md:mt-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-border bg-background p-6 md:p-8 rounded-lg shadow-soft">
           <div>
-            <h3 className="text-2xl font-bold text-foreground mb-2">Nao sabe por onde comecar?</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-2">Não sabe por onde começar?</h3>
             <p className="text-muted-foreground max-w-2xl">
-              Comece pelo diagnostico para entender gargalos, prioridades e oportunidades reais de IA, automacao, dados ou sistemas.
+              O diagnóstico mostra onde agir primeiro: IA, automação, dados, integração ou sistema.
             </p>
           </div>
           <Button variant="cta" size="lg" asChild>
-            <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Agendar diagnostico" eventLocation="solutions_cta">
-              Agendar diagnostico
+            <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Agendar diagnóstico" eventLocation="solutions_cta">
+              Agendar diagnóstico
             </TrackedRouterLink>
           </Button>
         </div>

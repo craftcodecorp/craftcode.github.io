@@ -26,14 +26,14 @@ const Index = () => {
           type: 'website',
           images: [{
             url: '/images/og-craftcode.png',
-            alt: 'CraftCode - IA aplicada, automacao e sistemas sob medida no Vale do Paraiba',
+            alt: 'CraftCode - IA aplicada, automação e sistemas sob medida no Vale do Paraíba',
             width: 1200,
             height: 630
           }]
         }}
         twitter={{
           card: 'summary_large_image',
-          imageAlt: 'CraftCode - IA aplicada, automacao e sistemas sob medida no Vale do Paraiba'
+          imageAlt: 'CraftCode - IA aplicada, automação e sistemas sob medida no Vale do Paraíba'
         }}
         jsonLd={[organizationJsonLd, websiteJsonLd]}
       />

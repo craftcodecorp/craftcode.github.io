@@ -72,7 +72,7 @@ const Contact = () => {
         email: data.email,
         company: data.company,
         message: [
-          "Interesse: Diagnostico de Tecnologia e IA Aplicada",
+          "Interesse: Diagnóstico de Tecnologia e IA Aplicada",
           data.sector ? `Setor: ${data.sector}` : undefined,
           `Desafio: ${data.message}`,
         ]
@@ -123,27 +123,27 @@ const Contact = () => {
     <section id="contact" className="py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-secondary font-semibold mb-3">Diagnostico</p>
+          <p className="text-secondary font-semibold mb-3">Diagnóstico</p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Quer entender onde tecnologia e IA podem gerar mais impacto?
+            Vamos encontrar o primeiro gargalo.
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Comece com uma analise pratica dos processos, sistemas, dados e oportunidades de automacao da sua empresa.
+            Uma conversa objetiva para entender processo, sistema, dado e prioridade.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_.95fr] gap-12 lg:gap-16">
           <Card className="shadow-large border-border bg-white rounded-lg">
             <CardContent className="p-6 md:p-8">
-              <h3 className="text-2xl font-bold text-primary mb-2">Agendar Diagnostico de Tecnologia e IA Aplicada</h3>
+              <h3 className="text-2xl font-bold text-primary mb-2">Agendar diagnóstico</h3>
               <p className="text-muted-foreground mb-6">
-                Informe o contexto da empresa para prepararmos uma conversa objetiva.
+                Conte rapidamente o contexto da empresa.
               </p>
 
               <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
                 {submitSuccess && (
                   <div id="contact-form-success" className="p-4 bg-green-50 border border-green-200 rounded-lg animate-fadeIn" role="status">
-                    <p className="text-sm font-medium text-green-800">Mensagem enviada com sucesso. Vamos responder com os proximos passos do diagnostico.</p>
+                    <p className="text-sm font-medium text-green-800">Mensagem enviada com sucesso. Vamos responder com os próximos passos do diagnóstico.</p>
                   </div>
                 )}
 
@@ -200,7 +200,7 @@ const Contact = () => {
 	                    <Input
 	                      id="contact-sector"
 	                      {...register("sector")}
-	                      placeholder="Servico, industria, varejo..."
+	                      placeholder="Serviço, indústria, varejo..."
 	                      className={fieldClassName}
 	                    />
 	                  </div>
@@ -211,7 +211,7 @@ const Contact = () => {
                   <Textarea
 	                    id="contact-message"
 	                    {...register("message")}
-	                    placeholder="Ex.: excesso de planilhas, atendimento manual, sistemas desconectados, falta de indicadores..."
+                      placeholder="Ex.: planilhas demais, atendimento manual, sistemas desconectados..."
 	                    className={`min-h-[130px] border border-border bg-white text-gray-900 shadow-sm placeholder:text-gray-400 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 ${errors.message ? errorFieldClassName : ""}`}
                       aria-invalid={Boolean(errors.message)}
                       aria-describedby={errors.message ? "contact-message-error" : undefined}
@@ -225,12 +225,12 @@ const Contact = () => {
                   ) : (
                     <span className="flex items-center justify-center">
                       <Send className="mr-2 h-5 w-5" />
-                      Solicitar contato para diagnostico
+                      Solicitar diagnóstico
                     </span>
                   )}
                 </Button>
 
-                <p className="text-sm text-gray-600 text-center">Responderemos em ate 24 horas uteis para alinhar contexto, agenda e proximos passos.</p>
+                <p className="text-sm text-gray-600 text-center">Resposta em até 24 horas úteis.</p>
               </form>
             </CardContent>
           </Card>
@@ -239,7 +239,7 @@ const Contact = () => {
             <div className="border border-border rounded-lg p-6 bg-muted/30">
               <h3 className="text-2xl font-bold text-foreground mb-4">O que avaliamos</h3>
               <ul className="space-y-3 text-muted-foreground">
-                {["Processos criticos e gargalos", "Sistemas, planilhas e integracoes", "Dados disponiveis para decisao", "Oportunidades de automacao e IA", "Priorizacao por impacto e esforco"].map((item) => (
+                {["Gargalos da operação", "Sistemas e planilhas", "Dados para decisão", "IA e automação", "Prioridade de ação"].map((item) => (
                   <li key={item} className="flex items-center">
                     <span className="w-1.5 h-1.5 bg-secondary rounded-full mr-3" />
                     {item}
@@ -253,7 +253,7 @@ const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
               eventName="whatsapp_click"
-              eventLabel="WhatsApp diagnostico"
+              eventLabel="WhatsApp diagnóstico"
               eventLocation="contact"
               className="flex items-center p-4 rounded-lg border border-border/70 hover:shadow-soft transition-shadow"
             >
@@ -262,7 +262,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-foreground">WhatsApp</h4>
-                <p className="text-muted-foreground">Atalho para pedir o diagnostico</p>
+                <p className="text-muted-foreground">Atalho para pedir o diagnóstico</p>
               </div>
             </TrackedAnchor>
 
@@ -276,13 +276,20 @@ const Contact = () => {
               </div>
             </a>
 
-            <div className="bg-gradient-primary rounded-lg p-6 text-white">
-              <div className="flex items-center mb-3">
+            <div className="relative overflow-hidden bg-gradient-primary rounded-lg p-6 text-white">
+              <img
+                src="/images/visuals/solucoes-sistemas-integrados.png"
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover object-center opacity-35"
+                aria-hidden="true"
+              />
+              <div className="absolute inset-0 bg-primary/70" />
+              <div className="relative z-10 flex items-center mb-3">
                 <MapPin className="w-5 h-5 mr-2" />
                 <h4 className="font-semibold">Base regional</h4>
               </div>
-              <p className="text-white/80">
-                Atendimento consultivo para empresas de Pindamonhangaba, Vale do Paraiba e operacoes que precisam conectar tecnologia a resultado pratico.
+              <p className="relative z-10 text-white/80">
+                Pindamonhangaba, Vale do Paraíba e empresas que precisam operar melhor.
               </p>
             </div>
           </div>

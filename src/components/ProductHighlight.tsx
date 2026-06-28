@@ -4,10 +4,10 @@ import { ArrowRight, Bot, CreditCard, MessageCircle, Workflow } from "lucide-rea
 import { TrackedRouterLink } from "@/components/TrackedLink";
 
 const proofItems = [
-  [MessageCircle, "WhatsApp como interface", "Experiencia simples para o usuario, sem aplicativo adicional."],
-  [Bot, "IA aplicada a rotina", "Personalizacao assistida e geracao de informacoes conectadas a uma dor real."],
-  [Workflow, "Automacao recorrente", "Entrega semanal, mensagens, feedbacks e ajustes com regras claras."],
-  [CreditCard, "Produto fisico-digital", "Software, comunicacao e operacao conectados em uma jornada unica."],
+  [MessageCircle, "WhatsApp", "Interface simples para o usuário."],
+  [Bot, "IA aplicada", "Personalização ligada a uma dor real."],
+  [Workflow, "Automação", "Rotina recorrente com regras claras."],
+  [CreditCard, "Físico-digital", "Software, pagamento e operação conectados."],
 ];
 
 const ProductHighlight = () => {
@@ -16,13 +16,13 @@ const ProductHighlight = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[.9fr_1.1fr] gap-12 lg:gap-16 items-center">
           <div>
-            <p className="text-secondary font-semibold mb-3">Prova de aplicacao</p>
+            <p className="text-secondary font-semibold mb-3">Prova de aplicação</p>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              CardapioFacil como exemplo de IA, automacao e operacao real.
+              IA aplicada fora do discurso.
             </h2>
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              O CardapioFacil.online funciona aqui como caso tecnico: IA aplicada, WhatsApp, automacao, dados de uso e produto digital conectados a uma necessidade cotidiana.
+              O CardapioFacil mostra tecnologia conectada a uma operação real: WhatsApp, automação, dados e produto digital.
             </p>
 
             <Button variant="outline" size="lg" className="group" asChild>

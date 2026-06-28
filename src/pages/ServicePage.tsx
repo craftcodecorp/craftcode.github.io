@@ -11,13 +11,27 @@ type ServicePageProps = {
   premise: string;
 };
 
+const serviceHeroImages: Record<ServicePageProps["slug"], string> = {
+  "ia-aplicada": "/images/visuals/service-ia-aplicada.png",
+  "automacao-processos": "/images/visuals/service-automacao-processos.png",
+  "integracao-sistemas": "/images/visuals/service-integracao-sistemas.png",
+  "dados-bi": "/images/visuals/service-dados-bi.png",
+  "sistemas-sob-medida": "/images/visuals/service-sistemas-sob-medida.png",
+};
+
 const ServicePage = ({ slug, path, eyebrow, title, description, premise }: ServicePageProps) => {
   const solution = solutionBySlug(slug)!;
   const decisionContent = serviceDecisionContent[slug];
 
   return (
     <PageLayout path={path}>
-      <PageHero eyebrow={eyebrow} title={title} description={description} primaryLocation={`${slug}_hero`} />
+      <PageHero
+        eyebrow={eyebrow}
+        title={title}
+        description={description}
+        primaryLocation={`${slug}_hero`}
+        imageSrc={serviceHeroImages[slug]}
+      />
 
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
@@ -47,11 +61,11 @@ const ServicePage = ({ slug, path, eyebrow, title, description, premise }: Servi
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
             title="Quando faz sentido investir nisso"
-            description="A decisao fica mais segura quando os sinais, pre-requisitos e impactos esperados estao claros antes da implementacao."
+            description="A decisão fica mais segura quando os sinais, pré-requisitos e impactos esperados estão claros antes da implementação."
           />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
             <div className="rounded-lg border border-border bg-white p-6 shadow-soft">
-              <h2 className="text-xl font-bold text-primary mb-4">Sinais na operacao</h2>
+              <h2 className="text-xl font-bold text-primary mb-4">Sinais na operação</h2>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 {decisionContent.signals.map((item) => (
                   <li key={item} className="leading-relaxed">• {item}</li>
@@ -74,13 +88,13 @@ const ServicePage = ({ slug, path, eyebrow, title, description, premise }: Servi
                 ))}
               </ul>
               <p className="mt-5 text-sm text-foreground/80">
-                O diagnostico define escopo, dependencias, riscos tecnicos e caminho de adocao com a equipe.
+                O diagnóstico define escopo, dependências, riscos técnicos e caminho de adoção com a equipe.
               </p>
             </div>
           </div>
 
           <div className="mt-8 rounded-lg border border-border bg-background p-6">
-            <h2 className="text-2xl font-bold text-primary mb-4">Riscos e limites que precisam entrar na decisao</h2>
+            <h2 className="text-2xl font-bold text-primary mb-4">Riscos e limites que precisam entrar na decisão</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-muted-foreground">
               {decisionContent.risks.map((item) => (
                 <p key={item} className="rounded-lg bg-muted/40 p-4 leading-relaxed">{item}</p>

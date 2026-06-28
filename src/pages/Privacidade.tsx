@@ -4,7 +4,7 @@ import { CONTACT_EMAIL } from "@/lib/site-metadata";
 const sections = [
   {
     title: "Dados de contato",
-    text: "Quando voce envia o formulario ou chama pelo WhatsApp, usamos nome, email, empresa, setor e mensagem para responder ao pedido de diagnostico e conduzir os proximos passos comerciais.",
+    text: "Quando você envia o formulário ou chama pelo WhatsApp, usamos nome, email, empresa, setor e mensagem para responder ao pedido de diagnóstico e conduzir os próximos passos comerciais.",
   },
   {
     title: "Analytics e cookies",
@@ -12,11 +12,11 @@ const sections = [
   },
   {
     title: "Compartilhamento",
-    text: "Nao vendemos dados pessoais. Servicos como EmailJS, WhatsApp e Google Analytics podem processar informacoes tecnicas ou mensagens necessarias para entregar contato, mensageria e medicao.",
+    text: "Não vendemos dados pessoais. Serviços como EmailJS, WhatsApp e Google Analytics podem processar informações técnicas ou mensagens necessárias para entregar contato, mensageria e medição.",
   },
   {
     title: "Retencao e direitos",
-    text: "Mantemos dados pelo tempo necessario para atendimento, historico comercial e obrigacoes legais. Voce pode pedir acesso, correcao ou exclusao pelo email de contato.",
+    text: "Mantemos dados pelo tempo necessário para atendimento, histórico comercial e obrigações legais. Você pode pedir acesso, correção ou exclusão pelo email de contato.",
   },
 ];
 
@@ -28,7 +28,7 @@ const Privacidade = () => (
           <p className="mb-4 font-semibold text-secondary">Privacidade</p>
           <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl">Politica de Privacidade</h1>
           <p className="text-xl leading-relaxed text-white/80">
-            Esta pagina resume como a CraftCode trata dados recebidos pelo site institucional, formulario de diagnostico, WhatsApp e analytics.
+            Esta página resume como a CraftCode trata dados recebidos pelo site institucional, formulário de diagnóstico, WhatsApp e analytics.
           </p>
         </div>
       </div>

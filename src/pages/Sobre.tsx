@@ -6,9 +6,10 @@ const Sobre = () => (
   <PageLayout path="/sobre">
     <PageHero
       eyebrow="Sobre"
-      title="Consultoria tecnica com responsabilidade de negocio."
-      description="A CraftCode conecta experiencia em sistemas criticos, dados, integracoes, produtos digitais e lideranca tecnica aos desafios de empresas do Vale do Paraiba."
+      title="Consultoria técnica com responsabilidade de negócio."
+      description="A CraftCode conecta experiência em sistemas críticos, dados, integrações, produtos digitais e liderança técnica aos desafios de empresas do Vale do Paraíba."
       primaryLocation="about_page_hero"
+      imageSrc="/images/visuals/page-sobre-autoridade.png"
     />
     <About ctaHref="/diagnostico-tecnologia-ia" ctaLocation="about_page" />
     <DiagnosticCta location="about_page_cta" />

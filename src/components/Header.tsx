@@ -6,10 +6,10 @@ import { TrackedRouterLink } from "@/components/TrackedLink";
 
 const navItems = [
   { label: "Inicio", href: "/" },
-  { label: "Solucoes", href: "/solucoes" },
-  { label: "Integracao", href: "/integracao-sistemas" },
+  { label: "Soluções", href: "/solucoes" },
+  { label: "Integração", href: "/integracao-sistemas" },
   { label: "Setores", href: "/setores" },
-  { label: "Metodo", href: "/diagnostico-tecnologia-ia" },
+  { label: "Método", href: "/diagnostico-tecnologia-ia" },
   { label: "Sobre", href: "/sobre" },
   { label: "Contato", href: "/#contact" },
 ];
@@ -52,10 +52,10 @@ const Header = () => {
             <Button variant="cta" size="lg" asChild>
               <TrackedRouterLink
                 to="/diagnostico-tecnologia-ia"
-                eventLabel="Agendar diagnostico"
+                eventLabel="Agendar diagnóstico"
                 eventLocation="header"
               >
-                Agendar diagnostico
+                Agendar diagnóstico
               </TrackedRouterLink>
             </Button>
           </div>
@@ -97,11 +97,11 @@ const Header = () => {
               <Button variant="cta" size="sm" className="w-full justify-center" asChild>
                 <TrackedRouterLink
                   to="/diagnostico-tecnologia-ia"
-                  eventLabel="Agendar diagnostico"
+                  eventLabel="Agendar diagnóstico"
                   eventLocation="mobile_header"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Agendar diagnostico
+                  Agendar diagnóstico
                 </TrackedRouterLink>
               </Button>
             </div>

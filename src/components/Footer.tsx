@@ -14,7 +14,7 @@ const Footer = () => {
               <h3 className="text-2xl font-bold">CraftCode</h3>
             </div>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-              IA sem hype. Tecnologia com aplicacao real para empresas de Pindamonhangaba e Vale do Paraiba.
+              IA sem hype. Tecnologia com aplicação real para empresas de Pindamonhangaba e Vale do Paraíba.
             </p>
             <div className="flex space-x-3">
               <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10" asChild>
@@ -39,15 +39,15 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Solucoes</h4>
+            <h4 className="font-semibold mb-4">Soluções</h4>
             <ul className="space-y-3 text-primary-foreground/80">
               {[
                 ["IA aplicada", "/ia-aplicada"],
-                ["Automacao de processos", "/automacao-processos"],
-                ["Integracao de sistemas", "/integracao-sistemas"],
+                ["Automação de processos", "/automacao-processos"],
+                ["Integração de sistemas", "/integracao-sistemas"],
                 ["Dados e BI", "/dados-bi"],
                 ["Sistemas sob medida", "/sistemas-sob-medida"],
-                ["Consultoria tecnica", "/solucoes#consultoria"],
+                ["Consultoria técnica", "/solucoes#consultoria"],
               ].map(([label, href]) => (
                 <li key={label}>
                   <TrackedRouterLink to={href} eventName="navigation_click" eventLabel={label} eventLocation="footer" className="hover:text-primary-foreground transition-colors">
@@ -63,9 +63,9 @@ const Footer = () => {
             <ul className="space-y-3 text-primary-foreground/80">
               {[
                 ["Setores", "/setores"],
-                ["Metodo", "/diagnostico-tecnologia-ia"],
+                ["Método", "/diagnostico-tecnologia-ia"],
                 ["Sobre", "/sobre"],
-                ["Conteudos", "/conteudos"],
+                ["Conteúdos", "/conteudos"],
                 ["CardapioFacil como caso", "/cardapio-facil"],
               ].map(([label, href]) => (
                 <li key={label}>
@@ -78,13 +78,13 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Diagnostico</h4>
+            <h4 className="font-semibold mb-4">Diagnóstico</h4>
             <p className="text-primary-foreground/80 mb-4">
               Analise processos, sistemas, dados e oportunidades praticas de IA antes de investir em tecnologia.
             </p>
             <Button variant="secondary" size="sm" asChild>
-              <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Agendar diagnostico" eventLocation="footer">
-                Agendar diagnostico
+              <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Agendar diagnóstico" eventLocation="footer">
+                Agendar diagnóstico
               </TrackedRouterLink>
             </Button>
           </div>

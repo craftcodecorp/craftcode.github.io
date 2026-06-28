@@ -8,6 +8,7 @@ type PageHeroProps = {
   primaryLocation: string;
   primaryHref?: string;
   primaryLabel?: string;
+  imageSrc?: string;
 };
 
 export const PageHero = ({
@@ -16,10 +17,19 @@ export const PageHero = ({
   description,
   primaryLocation,
   primaryHref = "/diagnostico-tecnologia-ia",
-  primaryLabel = "Agendar diagnostico",
+  primaryLabel = "Agendar diagnóstico",
+  imageSrc = "/images/visuals/solucoes-sistemas-integrados.png",
 }: PageHeroProps) => (
-  <section className="bg-gradient-hero text-white py-20 md:py-28">
-    <div className="container mx-auto px-4 lg:px-8">
+  <section className="relative overflow-hidden bg-gradient-hero text-white py-20 md:py-28">
+    <img
+      src={imageSrc}
+      alt=""
+      className="absolute inset-0 h-full w-full object-cover object-center"
+      aria-hidden="true"
+    />
+    <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/35" />
+    <div className="absolute inset-0 bg-gradient-to-t from-primary/65 via-primary/20 to-primary/35" />
+    <div className="container mx-auto px-4 lg:px-8 relative z-10">
       <div className="max-w-4xl">
         <p className="text-secondary font-semibold mb-4">{eyebrow}</p>
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">{title}</h1>
@@ -37,8 +47,8 @@ export const PageHero = ({
             )}
           </Button>
           <Button variant="default" size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
-            <TrackedRouterLink to="/solucoes" eventLabel="Conhecer solucoes" eventLocation={primaryLocation}>
-              Conhecer solucoes
+            <TrackedRouterLink to="/solucoes" eventLabel="Conhecer soluções" eventLocation={primaryLocation}>
+              Conhecer soluções
             </TrackedRouterLink>
           </Button>
         </div>
@@ -66,16 +76,23 @@ export const SectionHeader = ({
 export const DiagnosticCta = ({ location = "page_cta" }: { location?: string }) => (
   <section className="py-16 bg-background">
     <div className="container mx-auto px-4 lg:px-8">
-      <div className="bg-gradient-primary rounded-lg p-8 md:p-10 text-white flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-        <div>
-          <h2 className="text-3xl font-bold mb-3">Comece pelo Diagnostico de Tecnologia e IA Aplicada.</h2>
+      <div className="relative overflow-hidden bg-gradient-primary rounded-lg p-8 md:p-10 text-white flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <img
+          src="/images/visuals/diagnostico-plano-acao.png"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-45"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-primary/35" />
+        <div className="relative z-10">
+          <h2 className="text-3xl font-bold mb-3">Comece pelo Diagnóstico de Tecnologia e IA Aplicada.</h2>
           <p className="text-white/80 max-w-2xl">
-            Identifique gargalos, oportunidades de automacao, riscos tecnicos e aplicacoes praticas antes de investir em uma solucao.
+            Identifique gargalos, oportunidades de automação, riscos técnicos e aplicações práticas antes de investir em uma solução.
           </p>
         </div>
-        <Button variant="secondary" size="lg" asChild>
-          <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Agendar diagnostico" eventLocation={location}>
-            Agendar diagnostico
+        <Button variant="secondary" size="lg" className="relative z-10" asChild>
+          <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Agendar diagnóstico" eventLocation={location}>
+            Agendar diagnóstico
           </TrackedRouterLink>
         </Button>
       </div>

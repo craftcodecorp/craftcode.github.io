@@ -33,8 +33,8 @@ export interface SeoProps {
  * Default SEO values for CraftCode
  */
 export const defaultSeo: SeoProps = {
-  title: 'CraftCode | IA Aplicada, Automacao e Sistemas Sob Medida',
-  description: 'Consultoria de tecnologia e IA aplicada para empresas de Pindamonhangaba e Vale do Paraiba modernizarem processos, integrarem sistemas e decidirem com dados.',
+  title: 'CraftCode | IA Aplicada, Automação e Sistemas Sob Medida',
+  description: 'Consultoria de tecnologia e IA aplicada para empresas de Pindamonhangaba e Vale do Paraíba modernizarem processos, integrarem sistemas e decidirem com dados.',
   openGraph: {
     type: 'website',
     image: '/images/og-craftcode.png', // Using the new PNG version with updated branding
@@ -138,7 +138,7 @@ export const generateOrganizationJsonLd = () => {
     name: SITE_NAME,
     url: SITE_URL,
     logo: toAbsoluteUrl('/favicon.ico'),
-    areaServed: ['Pindamonhangaba', 'Vale do Paraiba', 'Brasil'],
+    areaServed: ['Pindamonhangaba', 'Vale do Paraíba', 'Brasil'],
     description: defaultSeo.description,
     contactPoint: {
       '@type': 'ContactPoint',
