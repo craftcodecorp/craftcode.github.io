@@ -8,14 +8,14 @@ const sections = [
   },
   {
     title: "Analytics e cookies",
-    text: "O Google Analytics so e ativado depois do consentimento no banner do site. Usamos esses dados de forma agregada para entender paginas visitadas, CTAs, cliques de WhatsApp e envios de formulario.",
+    text: "O Google Analytics só é ativado depois do consentimento no banner do site. Usamos esses dados de forma agregada para entender páginas visitadas, CTAs, cliques de WhatsApp e envios de formulário.",
   },
   {
     title: "Compartilhamento",
     text: "Não vendemos dados pessoais. Serviços como EmailJS, WhatsApp e Google Analytics podem processar informações técnicas ou mensagens necessárias para entregar contato, mensageria e medição.",
   },
   {
-    title: "Retencao e direitos",
+    title: "Retenção e direitos",
     text: "Mantemos dados pelo tempo necessário para atendimento, histórico comercial e obrigações legais. Você pode pedir acesso, correção ou exclusão pelo email de contato.",
   },
 ];
@@ -26,7 +26,7 @@ const Privacidade = () => (
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl">
           <p className="mb-4 font-semibold text-secondary">Privacidade</p>
-          <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl">Politica de Privacidade</h1>
+          <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl">Política de Privacidade</h1>
           <p className="text-xl leading-relaxed text-white/80">
             Esta página resume como a CraftCode trata dados recebidos pelo site institucional, formulário de diagnóstico, WhatsApp e analytics.
           </p>
@@ -47,7 +47,7 @@ const Privacidade = () => (
         <div className="mt-10 rounded-lg border border-border bg-muted/30 p-6">
           <h2 className="mb-3 text-2xl font-bold text-primary">Contato sobre privacidade</h2>
           <p className="text-muted-foreground">
-            Para duvidas ou solicitacoes relacionadas a dados pessoais, envie uma mensagem para{" "}
+            Para dúvidas ou solicitações relacionadas a dados pessoais, envie uma mensagem para{" "}
             <a className="font-medium text-primary underline underline-offset-4" href={`mailto:${CONTACT_EMAIL}`}>
               {CONTACT_EMAIL}
             </a>

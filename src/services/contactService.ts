@@ -4,11 +4,35 @@
  */
 import emailjs from '@emailjs/browser';
 
-// EmailJS configuration
-// These values should be stored in environment variables in production
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_default';
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_default';
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'public_key_default';
+const emailjsConfigKeys = [
+  "VITE_EMAILJS_SERVICE_ID",
+  "VITE_EMAILJS_TEMPLATE_ID",
+  "VITE_EMAILJS_PUBLIC_KEY",
+] as const;
+
+const placeholderValues = new Set([
+  "",
+  "service_default",
+  "template_default",
+  "public_key_default",
+  "development_public_key",
+  "your_public_key",
+]);
+
+export const getEmailJsConfigStatus = () => {
+  const values = {
+    serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+  };
+  const missingKeys = emailjsConfigKeys.filter((key) => placeholderValues.has(String(import.meta.env[key] ?? "").trim()));
+
+  return {
+    values,
+    missingKeys,
+    isConfigured: missingKeys.length === 0,
+  };
+};
 
 export interface ContactFormData {
   name: string;
@@ -32,6 +56,23 @@ export interface ContactFormResponse {
  */
 export const submitContactForm = async (data: ContactFormData): Promise<ContactFormResponse> => {
   try {
+    const emailJsConfig = getEmailJsConfigStatus();
+
+    if (!emailJsConfig.isConfigured) {
+      if (import.meta.env.DEV) {
+        console.warn("EmailJS not configured. Simulating contact form submission in development mode.", emailJsConfig.missingKeys);
+        return {
+          success: true,
+          message: 'Mensagem enviada com sucesso! Entraremos em contato em breve.',
+        };
+      }
+
+      return {
+        success: false,
+        message: 'O formulário de diagnóstico não está configurado para envio. Por favor, entre em contato pelo WhatsApp ou email.',
+      };
+    }
+
     // Prepare template parameters
     const templateParams = {
       from_name: data.name,
@@ -44,10 +85,10 @@ export const submitContactForm = async (data: ContactFormData): Promise<ContactF
 
     // Send email using EmailJS
     const response = await emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_TEMPLATE_ID,
+      emailJsConfig.values.serviceId,
+      emailJsConfig.values.templateId,
       templateParams,
-      EMAILJS_PUBLIC_KEY
+      emailJsConfig.values.publicKey
     );
 
     console.log('EmailJS SUCCESS:', response);

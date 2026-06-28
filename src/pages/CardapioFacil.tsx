@@ -47,8 +47,8 @@ const CardapioFacil = () => {
       {/* Cover Image */}
       <div className="relative w-full h-[56vh] overflow-hidden pt-14 md:pt-16">
         <img 
-          src="/images/cardapiofacil/mothers-meal-planning.jpg" 
-          alt="Planejamento de refeições para famílias" 
+          src="/images/visuals/service-integracao-sistemas.png" 
+          alt="Fluxo técnico de integração, dados e automação" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent flex items-center">
@@ -70,7 +70,7 @@ const CardapioFacil = () => {
           <Button variant="ghost" className="group" asChild>
             <Link to="/">
               <ArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform" size={18} />
-              Voltar para a pagina inicial
+              Voltar para a página inicial
             </Link>
           </Button>
         </div>
@@ -114,7 +114,7 @@ const CardapioFacil = () => {
             {[
               ["Canal", "WhatsApp como interface de entrega, feedback e comunicação recorrente."],
               ["Backend e regras", "Cadastro de preferências, recorrência, estados do fluxo e tratamento de exceções."],
-              ["Conteudo assistido por IA", "Geracao e variacao de textos apoiadas por regras editoriais e limites do produto."],
+              ["Conteúdo assistido por IA", "Geração e variação de textos apoiadas por regras editoriais e limites do produto."],
               ["Dados e evolução", "Histórico, feedbacks e eventos de uso para ajustar experiência, conteúdo e operação."],
             ].map(([title, description]) => (
               <div key={title} className="rounded-lg border border-border bg-white p-6 shadow-soft">
@@ -127,7 +127,7 @@ const CardapioFacil = () => {
 
         {/* AI Integration */}
         <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-6">Inteligencia artificial dentro de um fluxo operacional</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Inteligência artificial dentro de um fluxo operacional</h2>
           
           <p className="text-lg text-foreground leading-relaxed mb-8">
             A IA foi usada como parte de um fluxo operacional, não como um recurso isolado:
@@ -142,14 +142,14 @@ const CardapioFacil = () => {
             </div>
             
             <div>
-              <h3 className="text-xl font-bold text-primary mb-3">Personalizacao assistida, com limites claros</h3>
+              <h3 className="text-xl font-bold text-primary mb-3">Personalização assistida, com limites claros</h3>
               <p className="text-foreground leading-relaxed mb-4">
                 O fluxo considera informações fornecidas pelo usuário, como:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-foreground">
                 <li>Preferências, ingredientes evitados e restrições declaradas</li>
-                <li>Quantidade de pessoas, frequencia e rotina de preparo</li>
-                <li>Preferencias culturais, praticidade e disponibilidade de ingredientes</li>
+                <li>Quantidade de pessoas, frequência e rotina de preparo</li>
+                <li>Preferências culturais, praticidade e disponibilidade de ingredientes</li>
               </ul>
               <p className="text-foreground leading-relaxed mt-4">
                 O serviço não substitui nutricionista, médico ou orientação profissional. Restrições clínicas, alergias e necessidades específicas exigem avaliação especializada.
@@ -200,14 +200,14 @@ const CardapioFacil = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-xl shadow-medium border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-2">Recorrencia operacional</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-2">Recorrência operacional</h3>
               <p className="text-muted-foreground">
                 Fluxos semanais, mensagens e entregas organizadas com regras de negócio.
               </p>
             </div>
             
             <div className="bg-white p-6 rounded-xl shadow-medium border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-2">Personalizacao controlada</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-2">Personalização controlada</h3>
               <p className="text-muted-foreground">
                 Conteúdo ajustado por contexto declarado, com limites para temas sensíveis.
               </p>
@@ -248,8 +248,8 @@ const CardapioFacil = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="secondary" size="lg" asChild>
-              <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Agendar diagnóstico" eventLocation="cardapio_case">
-                Agendar diagnóstico
+              <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Solicitar diagnóstico" eventLocation="cardapio_case">
+                Solicitar diagnóstico
               </TrackedRouterLink>
             </Button>
             <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white hover:text-primary group" asChild>

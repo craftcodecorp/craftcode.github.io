@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 import { TrackedRouterLink } from "@/components/TrackedLink";
 
 const navItems = [
-  { label: "Inicio", href: "/" },
+  { label: "Início", href: "/" },
   { label: "Soluções", href: "/solucoes" },
   { label: "Integração", href: "/integracao-sistemas" },
   { label: "Setores", href: "/setores" },
-  { label: "Método", href: "/diagnostico-tecnologia-ia" },
+  { label: "Diagnóstico", href: "/diagnostico-tecnologia-ia" },
   { label: "Sobre", href: "/sobre" },
   { label: "Contato", href: "/#contact" },
 ];
@@ -21,7 +21,7 @@ const Header = () => {
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-lg border-b border-border z-50 h-14 md:h-16">
       <div className="container mx-auto px-4 lg:px-8 h-full">
         <div className="flex items-center justify-between h-full">
-          <Link to="/" className="flex items-center gap-2" aria-label="CraftCode - pagina inicial">
+          <Link to="/" className="flex items-center gap-2" aria-label="CraftCode - página inicial">
             <img
               src="/favicon.ico"
               alt="CraftCode Logo"
@@ -52,10 +52,10 @@ const Header = () => {
             <Button variant="cta" size="lg" asChild>
               <TrackedRouterLink
                 to="/diagnostico-tecnologia-ia"
-                eventLabel="Agendar diagnóstico"
+                eventLabel="Solicitar diagnóstico"
                 eventLocation="header"
               >
-                Agendar diagnóstico
+                Solicitar diagnóstico
               </TrackedRouterLink>
             </Button>
           </div>
@@ -97,11 +97,11 @@ const Header = () => {
               <Button variant="cta" size="sm" className="w-full justify-center" asChild>
                 <TrackedRouterLink
                   to="/diagnostico-tecnologia-ia"
-                  eventLabel="Agendar diagnóstico"
+                  eventLabel="Solicitar diagnóstico"
                   eventLocation="mobile_header"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Agendar diagnóstico
+                  Solicitar diagnóstico
                 </TrackedRouterLink>
               </Button>
             </div>

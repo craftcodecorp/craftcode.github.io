@@ -8,7 +8,7 @@ O site esta bem alinhado ao reposicionamento geral da CraftCode como consultoria
 
 Ainda nao esta pronto como versao final sem ajustes. A validacao encontrou pontos prioritarios de conversao, SEO tecnico, analytics, privacidade, copy e precisao tecnica.
 
-Nao foi encontrado desalinhamento forte como Web3-first, software house generica ou Cardapio Facil como oferta principal na home.
+Nao foi encontrado desalinhamento forte como mensagem product-first, software house generica ou Cardapio Facil como oferta principal na home.
 
 ## Agentes e aspectos validados
 
@@ -54,7 +54,7 @@ Recomendacao: definir uma jornada principal:
 
 - CTAs de decisao levam para `/diagnostico-tecnologia-ia`.
 - CTAs dentro da pagina de diagnostico levam ao formulario ou WhatsApp.
-- Textos como "Agendar diagnostico" devem corresponder a uma acao real de agendamento ou pedido de contato.
+- Textos como "Solicitar diagnostico" devem corresponder a uma acao real de pedido de contato.
 
 Arquivos relacionados:
 
@@ -204,7 +204,7 @@ Arquivos relacionados:
 
 5. Ajustar formulario e expectativa comercial
 
-Ha friccao entre "Agendar diagnostico" e o botao "Solicitar diagnostico". O texto informa resposta em ate 24 horas uteis, nao agendamento direto.
+O CTA deve manter a promessa de "Solicitar diagnostico", porque o texto informa resposta em ate 24 horas uteis, nao agendamento direto.
 
 Recomendacao: decidir se a acao e agendamento, solicitacao de contato ou triagem. Ajustar CTA, sucesso e microcopy.
 

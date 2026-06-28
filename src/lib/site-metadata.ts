@@ -2,7 +2,7 @@ export const SITE_URL = import.meta.env.VITE_SITE_URL || "https://craftcode.com.
 export const SITE_NAME = "CraftCode";
 export const CONTACT_EMAIL = "contato@craftcode.com.br";
 export const CARDAPIO_URL = "https://cardapiofacil.online";
-export const WHATSAPP_URL = "https://wa.me/15559944371?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20Diagn%C3%B3stico%20de%20Tecnologia%20e%20IA%20Aplicada%20para%20minha%20empresa.";
+export const WHATSAPP_URL = "https://wa.me/15559944371?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20Diagn%C3%B3stico%20de%20Tecnologia%20e%20IA%20Aplicada%20para%20minha%20empresa.";
 
 export const toAbsoluteUrl = (path: string) => {
   if (path.startsWith("http")) return path;
@@ -66,7 +66,7 @@ export const publicRoutes: PublicRoute[] = [
   },
   {
     path: "/dados-bi",
-    title: "Dados, BI e Dashboards para Gestao | CraftCode",
+    title: "Dados, BI e Dashboards para Gestão | CraftCode",
     description:
       "Organize dados dispersos, crie indicadores confiáveis e transforme informações operacionais em decisões melhores para sua empresa.",
     canonicalPath: "/dados-bi",
@@ -75,9 +75,9 @@ export const publicRoutes: PublicRoute[] = [
   },
   {
     path: "/sistemas-sob-medida",
-    title: "Sistemas Sob Medida e Modernizacao | CraftCode",
+    title: "Sistemas Sob Medida e Modernização | CraftCode",
     description:
-      "Sistemas internos, portais, modernizacao de legados e MVPs para empresas que precisam de tecnologia aderente aos processos reais.",
+      "Sistemas internos, portais, modernização de legados e MVPs para empresas que precisam de tecnologia aderente aos processos reais.",
     canonicalPath: "/sistemas-sob-medida",
     priority: "0.8",
     changefreq: "monthly",
@@ -93,7 +93,7 @@ export const publicRoutes: PublicRoute[] = [
   },
   {
     path: "/setores",
-    title: "Tecnologia para Setores e Operacoes Reais | CraftCode",
+    title: "Tecnologia para Setores e Operações Reais | CraftCode",
     description:
       "Soluções de IA, automação, dados e sistemas para serviços, indústria, varejo, franquias e operações físico-digitais no Vale do Paraíba.",
     canonicalPath: "/setores",
@@ -110,17 +110,8 @@ export const publicRoutes: PublicRoute[] = [
     changefreq: "monthly",
   },
   {
-    path: "/conteudos",
-    title: "Conteúdos sobre IA Aplicada e Automação | CraftCode",
-    description:
-      "Temas iniciais para empresários que querem entender IA aplicada, automação, dados, integração e sistemas sob medida sem hype.",
-    canonicalPath: "/conteudos",
-    priority: "0.35",
-    changefreq: "monthly",
-  },
-  {
     path: "/privacidade",
-    title: "Politica de Privacidade | CraftCode",
+    title: "Política de Privacidade | CraftCode",
     description:
       "Entenda como a CraftCode usa dados de contato, mensagens, analytics e cookies no site institucional e no fluxo de diagnóstico.",
     canonicalPath: "/privacidade",

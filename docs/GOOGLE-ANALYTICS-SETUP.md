@@ -1,6 +1,6 @@
 # Configuração do Google Analytics
 
-Este documento descreve como o Google Analytics (GA4) foi implementado no projeto CraftCode Digital Hub.
+Este documento descreve como o Google Analytics (GA4) foi implementado no site da CraftCode.
 
 ## Visão Geral
 

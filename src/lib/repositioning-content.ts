@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 export const primaryCta = {
-  label: "Agendar diagnóstico",
+  label: "Solicitar diagnóstico",
   href: "/diagnostico-tecnologia-ia",
 };
 
@@ -73,8 +73,8 @@ export const solutions: Solution[] = [
     shortTitle: "Automação",
     description:
       "Fluxos, alertas e rotinas automatizadas para liberar tempo da equipe.",
-    benefits: ["Menos retrabalho", "Rotina previsivel", "Mais padrao operacional"],
-    examples: ["Alertas e notificacoes", "Fluxos internos", "Tarefas repetitivas automatizadas"],
+    benefits: ["Menos retrabalho", "Rotina previsível", "Mais padrão operacional"],
+    examples: ["Alertas e notificações", "Fluxos internos", "Tarefas repetitivas automatizadas"],
     icon: Settings2,
   },
   {
@@ -82,9 +82,9 @@ export const solutions: Solution[] = [
     title: "Integração de sistemas",
     shortTitle: "Integração",
     description:
-      "Conexao entre ERP, CRM, planilhas, pagamentos, APIs e bancos de dados.",
+      "Conexão entre ERP, CRM, planilhas, pagamentos, APIs e bancos de dados.",
     benefits: ["Menos controles paralelos", "Dados sincronizados", "Mais rastreabilidade"],
-    examples: ["APIs", "Sincronizacao de dados", "Integracoes com pagamentos"],
+    examples: ["APIs", "Sincronização de dados", "Integrações com pagamentos"],
     icon: Network,
   },
   {
@@ -94,7 +94,7 @@ export const solutions: Solution[] = [
     description:
       "Indicadores confiáveis para acompanhar a operação e decidir melhor.",
     benefits: ["Indicadores confiáveis", "Relatórios automáticos", "Visão de gestão"],
-    examples: ["Dashboards operacionais", "Paineis de performance", "Relatorios recorrentes"],
+    examples: ["Dashboards operacionais", "Painéis de performance", "Relatórios recorrentes"],
     icon: BarChart3,
   },
   {
@@ -102,9 +102,9 @@ export const solutions: Solution[] = [
     title: "Sistemas sob medida",
     shortTitle: "Sistemas",
     description:
-      "Ferramentas internas e portais quando o processo pede uma solucao propria.",
+      "Ferramentas internas e portais quando o processo pede uma solução própria.",
     benefits: ["Aderente ao processo", "Pronto para evoluir", "Menos improviso"],
-    examples: ["Portais", "Ferramentas internas", "Modernizacao de legados"],
+    examples: ["Portais", "Ferramentas internas", "Modernização de legados"],
     icon: Blocks,
   },
   {
@@ -126,22 +126,22 @@ export const methodSteps = [
     icon: Target,
   },
   {
-    title: "Priorizacao",
+    title: "Priorização",
     description: "Organizamos o plano por impacto, esforço e risco.",
     icon: LineChart,
   },
   {
-    title: "Prototipacao",
+    title: "Prototipação",
     description: "Validamos fluxo e dados antes de escalar.",
     icon: GitBranch,
   },
   {
-    title: "Implementacao",
+    title: "Implementação",
     description: "Criamos automações, integrações, dashboards ou sistemas.",
     icon: Wrench,
   },
   {
-    title: "Evolucao",
+    title: "Evolução",
     description: "Medimos, ajustamos e preparamos para crescer.",
     icon: RefreshCcw,
   },
@@ -149,7 +149,7 @@ export const methodSteps = [
 
 export const sectors = [
   {
-    title: "Servicos em crescimento",
+    title: "Serviços em crescimento",
     description:
       "Empresas que precisam organizar atendimento, vendas e gestão.",
     pains: ["Atendimento desorganizado", "Planilhas demais", "Pouca previsibilidade"],
@@ -165,8 +165,8 @@ export const sectors = [
   {
     title: "Varejo e franquias",
     description:
-      "Redes, lojas e equipes com informacao espalhada.",
-    pains: ["Gestao descentralizada", "Dados divergentes", "Padrao dificil"],
+      "Redes, lojas e equipes com informação espalhada.",
+    pains: ["Gestão descentralizada", "Dados divergentes", "Padrão difícil"],
     icon: Store,
   },
   {
@@ -214,7 +214,7 @@ export const serviceDecisionContent = {
       "Fontes de dados, documentos ou bases de conhecimento com qualidade suficiente.",
       "Critérios claros para revisão humana, limites de uso e proteção de informações sensíveis.",
     ],
-    sectors: ["Atendimento consultivo", "Vendas B2B", "Servicos tecnicos", "Operacoes internas"],
+    sectors: ["Atendimento consultivo", "Vendas B2B", "Serviços técnicos", "Operações internas"],
     risks: [
       "Dados ruins ou documentos desatualizados reduzem qualidade das respostas.",
       "Uso sem revisão humana pode gerar orientações inconsistentes.",
@@ -223,8 +223,8 @@ export const serviceDecisionContent = {
   },
   "automacao-processos": {
     signals: [
-      "A mesma informacao e digitada em mais de um lugar.",
-      "Prazos dependem de lembretes manuais, planilhas ou pessoas especificas.",
+      "A mesma informação é digitada em mais de um lugar.",
+      "Prazos dependem de lembretes manuais, planilhas ou pessoas específicas.",
       "Erros operacionais acontecem por falta de padrão entre etapas e áreas.",
     ],
     prerequisites: [
@@ -235,32 +235,32 @@ export const serviceDecisionContent = {
     sectors: ["Administrativo", "Financeiro", "Suporte", "Operações com recorrência"],
     risks: [
       "Automatizar exceções demais aumenta manutenção e fragilidade.",
-      "Integracoes sem tratamento de erro criam falhas silenciosas.",
-      "Baixa adesao da equipe pode manter controles paralelos ativos.",
+      "Integrações sem tratamento de erro criam falhas silenciosas.",
+      "Baixa adesão da equipe pode manter controles paralelos ativos.",
     ],
   },
   "dados-bi": {
     signals: [
-      "Gestao olha para numeros diferentes dependendo da planilha ou sistema consultado.",
-      "Indicadores demoram para ser montados e chegam tarde para apoiar decisoes.",
+      "Gestão olha para números diferentes dependendo da planilha ou sistema consultado.",
+      "Indicadores demoram para ser montados e chegam tarde para apoiar decisões.",
       "Dados existem, mas não estão organizados para acompanhar operação, vendas ou margem.",
     ],
     prerequisites: [
-      "Identificacao das fontes de dados e responsaveis por cada indicador.",
+      "Identificação das fontes de dados e responsáveis por cada indicador.",
       "Definição do que será medido, para qual decisão e com qual frequência.",
       "Tratamento de qualidade, histórico, permissões e governança mínima.",
     ],
-    sectors: ["Gestao executiva", "Comercial", "Industria", "Varejo e franquias"],
+    sectors: ["Gestão executiva", "Comercial", "Indústria", "Varejo e franquias"],
     risks: [
-      "Indicadores sem dono viram relatorio bonito e pouco usado.",
-      "Fontes divergentes precisam de conciliacao antes do dashboard.",
+      "Indicadores sem dono viram relatório bonito e pouco usado.",
+      "Fontes divergentes precisam de conciliação antes do dashboard.",
       "Sem rotina de análise, BI não melhora decisão sozinho.",
     ],
   },
   "sistemas-sob-medida": {
     signals: [
       "Ferramentas prontas exigem improvisos demais ou não acompanham o processo real.",
-      "A empresa precisa de portal, sistema interno ou modernizacao de legado.",
+      "A empresa precisa de portal, sistema interno ou modernização de legado.",
       "Integrar ferramentas existentes não resolve a regra central do negócio.",
     ],
     prerequisites: [
@@ -270,7 +270,7 @@ export const serviceDecisionContent = {
     ],
     sectors: ["Operações técnicas", "Produtos digitais", "Portais internos", "Legados"],
     risks: [
-      "Construir sistema para processo instavel aumenta custo e retrabalho.",
+      "Construir sistema para processo instável aumenta custo e retrabalho.",
       "Escopo amplo demais atrasa valor e dificulta adoção.",
       "Sem plano de suporte, segurança e evolução, o sistema vira novo legado.",
     ],
@@ -282,14 +282,14 @@ export const serviceDecisionContent = {
       "Falhas de sincronização geram retrabalho, atraso, erro de cobrança ou baixa rastreabilidade.",
     ],
     prerequisites: [
-      "Mapeamento dos sistemas envolvidos, donos dos dados e frequencia de atualizacao.",
+      "Mapeamento dos sistemas envolvidos, donos dos dados e frequência de atualização.",
       "Acesso a APIs, bancos, arquivos ou alternativas técnicas autorizadas.",
       "Definição de regras para tratamento de erro, conciliação, auditoria e segurança.",
     ],
     sectors: ["Financeiro", "Vendas", "Operações físico-digitais", "Indústria e logística"],
     risks: [
-      "APIs limitadas, dados sem padrao ou acessos restritos podem mudar a solucao.",
-      "Sem monitoramento, falhas de sincronizacao ficam invisiveis.",
+      "APIs limitadas, dados sem padrão ou acessos restritos podem mudar a solução.",
+      "Sem monitoramento, falhas de sincronização ficam invisíveis.",
       "Integração sem regra de conciliação pode propagar erro entre sistemas.",
     ],
   },

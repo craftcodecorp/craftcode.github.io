@@ -17,7 +17,7 @@ export const PageHero = ({
   description,
   primaryLocation,
   primaryHref = "/diagnostico-tecnologia-ia",
-  primaryLabel = "Agendar diagnóstico",
+  primaryLabel = "Solicitar diagnóstico",
   imageSrc = "/images/visuals/solucoes-sistemas-integrados.png",
 }: PageHeroProps) => (
   <section className="relative overflow-hidden bg-gradient-hero text-white py-20 md:py-28">
@@ -91,8 +91,8 @@ export const DiagnosticCta = ({ location = "page_cta" }: { location?: string }) 
           </p>
         </div>
         <Button variant="secondary" size="lg" className="relative z-10" asChild>
-          <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Agendar diagnóstico" eventLocation={location}>
-            Agendar diagnóstico
+          <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Solicitar diagnóstico" eventLocation={location}>
+            Solicitar diagnóstico
           </TrackedRouterLink>
         </Button>
       </div>

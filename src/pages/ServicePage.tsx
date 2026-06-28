@@ -38,7 +38,7 @@ const ServicePage = ({ slug, path, eyebrow, title, description, premise }: Servi
           <SectionHeader title={premise} description={solution.description} />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="border border-border rounded-lg bg-white p-6 shadow-soft">
-              <h2 className="text-2xl font-bold text-primary mb-5">Aplicacoes praticas</h2>
+              <h2 className="text-2xl font-bold text-primary mb-5">Aplicações práticas</h2>
               <div className="space-y-3">
                 {solution.examples.map((example) => (
                   <p key={example} className="text-foreground/80">• {example}</p>
@@ -46,7 +46,7 @@ const ServicePage = ({ slug, path, eyebrow, title, description, premise }: Servi
               </div>
             </div>
             <div className="border border-border rounded-lg bg-muted/30 p-6">
-              <h2 className="text-2xl font-bold text-primary mb-5">Beneficios esperados</h2>
+              <h2 className="text-2xl font-bold text-primary mb-5">Benefícios esperados</h2>
               <div className="space-y-3">
                 {solution.benefits.map((benefit) => (
                   <p key={benefit} className="text-foreground/80">• {benefit}</p>
@@ -73,7 +73,7 @@ const ServicePage = ({ slug, path, eyebrow, title, description, premise }: Servi
               </ul>
             </div>
             <div className="rounded-lg border border-border bg-white p-6 shadow-soft">
-              <h2 className="text-xl font-bold text-primary mb-4">Pre-requisitos</h2>
+              <h2 className="text-xl font-bold text-primary mb-4">Pré-requisitos</h2>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 {decisionContent.prerequisites.map((item) => (
                   <li key={item} className="leading-relaxed">• {item}</li>

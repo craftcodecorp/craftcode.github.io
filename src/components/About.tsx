@@ -10,7 +10,7 @@ type AboutProps = {
 };
 
 const About = ({ ctaHref = "/diagnostico-tecnologia-ia", ctaLocation = "about" }: AboutProps) => {
-  const ctaLabel = "Agendar diagnóstico";
+  const ctaLabel = "Solicitar diagnóstico";
 
   return (
     <section id="about" className="py-24 bg-background">
@@ -19,7 +19,7 @@ const About = ({ ctaHref = "/diagnostico-tecnologia-ia", ctaLocation = "about" }
           <div>
             <p className="text-secondary font-semibold mb-3">Sobre a CraftCode</p>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Tecnologia de alto nivel, sem discurso complicado.
+              Tecnologia de alto nível, sem discurso complicado.
             </h2>
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -28,6 +28,19 @@ const About = ({ ctaHref = "/diagnostico-tecnologia-ia", ctaLocation = "about" }
             <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
               A experiência vem de sistemas críticos, dados, produtos digitais, integrações e liderança técnica.
             </p>
+
+            <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                ["20+ anos", "Tecnologia aplicada a negócios reais."],
+                ["Sistemas críticos", "Ambientes com estabilidade e rastreabilidade."],
+                ["Dados e produto", "Decisão, evolução e operação em escala."],
+              ].map(([value, label]) => (
+                <div key={value} className="rounded-lg border border-border bg-white p-4 shadow-soft">
+                  <p className="text-2xl font-bold text-primary">{value}</p>
+                  <p className="text-sm text-muted-foreground">{label}</p>
+                </div>
+              ))}
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {[

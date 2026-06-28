@@ -66,8 +66,8 @@ const Solutions = () => {
             </p>
           </div>
           <Button variant="cta" size="lg" asChild>
-            <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Agendar diagnóstico" eventLocation="solutions_cta">
-              Agendar diagnóstico
+            <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Solicitar diagnóstico" eventLocation="solutions_cta">
+              Solicitar diagnóstico
             </TrackedRouterLink>
           </Button>
         </div>

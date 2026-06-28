@@ -7,7 +7,7 @@ const Conteudos = () => (
     <PageHero
       eyebrow="Conteúdos"
       title="Ideias práticas sobre IA, automação, dados e operação."
-      description="Um hub inicial para educar empresarios sobre aplicacoes reais de tecnologia, sem hype e sem jargao desnecessario."
+      description="Um hub inicial para educar empresários sobre aplicações reais de tecnologia, sem hype e sem jargão desnecessário."
       primaryLocation="content_page_hero"
       imageSrc="/images/visuals/page-conteudos-insights.png"
     />
@@ -16,7 +16,7 @@ const Conteudos = () => (
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
           title="Pautas iniciais de autoridade"
-          description="Esta area prepara a estrutura editorial. Os artigos completos podem ser publicados em uma proxima etapa sem mudar a arquitetura do site."
+          description="Temas que orientam conversas com empresas sobre IA aplicada, automação, dados, integração e sistemas sob medida."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {contentTopics.map((topic, index) => (

@@ -14,7 +14,7 @@ import { TrackedAnchor } from "@/components/TrackedLink";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Nome deve ter pelo menos 2 caracteres" }),
-  email: z.string().email({ message: "Email invalido" }),
+  email: z.string().email({ message: "Email inválido" }),
   company: z.string().min(2, { message: "Informe o nome da empresa" }),
   sector: z.string().optional(),
   message: z.string().min(10, { message: "Descreva brevemente o desafio da empresa" }),
@@ -105,7 +105,7 @@ const Contact = () => {
         }, 100);
       }
     } catch (error) {
-      const message = error instanceof Error ? error.message : "Ocorreu um erro ao enviar o formulario. Por favor, tente novamente.";
+      const message = error instanceof Error ? error.message : "Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.";
       setSubmitError(message);
       trackConversionEvent("contact_form_error", {
         form_name: "diagnostico_tecnologia_ia",
@@ -135,7 +135,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_.95fr] gap-12 lg:gap-16">
           <Card className="shadow-large border-border bg-white rounded-lg">
             <CardContent className="p-6 md:p-8">
-              <h3 className="text-2xl font-bold text-primary mb-2">Agendar diagnóstico</h3>
+              <h3 className="text-2xl font-bold text-primary mb-2">Solicitar diagnóstico</h3>
               <p className="text-muted-foreground mb-6">
                 Conte rapidamente o contexto da empresa.
               </p>

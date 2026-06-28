@@ -63,9 +63,8 @@ const Footer = () => {
             <ul className="space-y-3 text-primary-foreground/80">
               {[
                 ["Setores", "/setores"],
-                ["Método", "/diagnostico-tecnologia-ia"],
+                ["Diagnóstico", "/diagnostico-tecnologia-ia"],
                 ["Sobre", "/sobre"],
-                ["Conteúdos", "/conteudos"],
                 ["CardapioFacil como caso", "/cardapio-facil"],
               ].map(([label, href]) => (
                 <li key={label}>
@@ -83,8 +82,8 @@ const Footer = () => {
               Analise processos, sistemas, dados e oportunidades praticas de IA antes de investir em tecnologia.
             </p>
             <Button variant="secondary" size="sm" asChild>
-              <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Agendar diagnóstico" eventLocation="footer">
-                Agendar diagnóstico
+              <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Solicitar diagnóstico" eventLocation="footer">
+                Solicitar diagnóstico
               </TrackedRouterLink>
             </Button>
           </div>
@@ -97,9 +96,6 @@ const Footer = () => {
               <TrackedRouterLink to="/privacidade" eventName="navigation_click" eventLabel="Privacidade" eventLocation="footer_legal" className="hover:text-primary-foreground transition-colors">
                 Privacidade
               </TrackedRouterLink>
-              <a href={`mailto:${CONTACT_EMAIL}?subject=Termos%20de%20Uso`} className="hover:text-primary-foreground transition-colors">
-                Termos
-              </a>
             </div>
           </div>
         </div>

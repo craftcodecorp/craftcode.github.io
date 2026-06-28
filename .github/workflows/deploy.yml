@@ -58,6 +58,7 @@ jobs:
           # Dados não sensíveis como variáveis
           VITE_EMAILJS_REPLY_TO: ${{ vars.EMAILJS_REPLY_TO }}
           VITE_EMAILJS_TO_NAME: ${{ vars.EMAILJS_TO_NAME }}
+          VITE_REQUIRE_EMAILJS: "true"
        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

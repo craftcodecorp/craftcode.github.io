@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:spa && npm run build:ssr && npm run prerender",
+    "build": "node scripts/validate-emailjs-env.mjs && npm run build:spa && npm run build:ssr && npm run prerender",
     "build:spa": "vite build",
     "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist/server",
     "build:dev": "vite build --mode development",

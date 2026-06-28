@@ -2,6 +2,24 @@ import { Button } from "@/components/ui/button";
 import { authorityPillars, methodSteps, painPoints, sectors } from "@/lib/repositioning-content";
 import { TrackedRouterLink } from "@/components/TrackedLink";
 
+const projectExamples = [
+  {
+    title: "Atendimento com menos retrabalho",
+    context: "Quando mensagens, solicitações e históricos ficam espalhados entre WhatsApp, planilhas e sistemas.",
+    outcome: "Triagem, registro e encaminhamento com regras claras para a equipe responder melhor.",
+  },
+  {
+    title: "Dados confiáveis para gestão",
+    context: "Quando cada área acompanha números diferentes e os relatórios chegam tarde.",
+    outcome: "Indicadores conciliados, rotina de atualização e visão de operação, vendas ou margem.",
+  },
+  {
+    title: "Integração entre ferramentas",
+    context: "Quando ERP, CRM, pagamentos ou planilhas não conversam e geram controles paralelos.",
+    outcome: "Fluxos conectados, tratamento de erro e rastreabilidade para reduzir digitação duplicada.",
+  },
+];
+
 export const AuthorityBlock = () => (
   <section className="py-20 bg-background">
     <div className="container mx-auto px-4 lg:px-8">
@@ -61,7 +79,7 @@ export const MethodBlock = () => (
   <section id="method" className="py-24 bg-background">
     <div className="container mx-auto px-4 lg:px-8">
       <div className="max-w-3xl mb-14">
-        <p className="text-secondary font-semibold mb-3">Metodo</p>
+        <p className="text-secondary font-semibold mb-3">Método</p>
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Antes da tecnologia, vem o diagnóstico.</h2>
         <p className="text-xl text-muted-foreground leading-relaxed">
           Primeiro entendemos o processo. Depois escolhemos a tecnologia.
@@ -132,6 +150,34 @@ export const SectorsBlock = () => (
   </section>
 );
 
+export const ProjectExamplesBlock = () => (
+  <section className="py-24 bg-background">
+    <div className="container mx-auto px-4 lg:px-8">
+      <div className="max-w-3xl mb-12">
+        <p className="text-secondary font-semibold mb-3">Exemplos de aplicação</p>
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          Problemas concretos antes de qualquer ferramenta.
+        </h2>
+        <p className="text-xl text-muted-foreground leading-relaxed">
+          O diagnóstico transforma dores operacionais em próximos passos técnicos e comerciais viáveis.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        {projectExamples.map((example) => (
+          <article key={example.title} className="rounded-lg border border-border bg-white p-6 shadow-soft">
+            <h3 className="text-xl font-bold text-primary mb-4">{example.title}</h3>
+            <p className="text-sm font-semibold text-foreground mb-2">Sinal comum</p>
+            <p className="text-muted-foreground leading-relaxed mb-5">{example.context}</p>
+            <p className="text-sm font-semibold text-foreground mb-2">Caminho provável</p>
+            <p className="text-muted-foreground leading-relaxed">{example.outcome}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
 export const FinalCtaBlock = () => (
   <section className="py-20 bg-background">
     <div className="container mx-auto px-4 lg:px-8">
@@ -152,8 +198,8 @@ export const FinalCtaBlock = () => (
           </p>
         </div>
         <Button variant="secondary" size="lg" className="relative z-10" asChild>
-          <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Agendar diagnóstico" eventLocation="final_cta">
-            Agendar diagnóstico
+          <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Solicitar diagnóstico" eventLocation="final_cta">
+            Solicitar diagnóstico
           </TrackedRouterLink>
         </Button>
       </div>

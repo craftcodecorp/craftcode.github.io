@@ -1,6 +1,6 @@
 # Configuração do EmailJS para o Formulário de Contato
 
-Este documento explica como configurar o EmailJS para o formulário de contato do CraftCode Digital Hub.
+Este documento explica como configurar o EmailJS para o formulário de diagnóstico da CraftCode.
 
 ## Passo a Passo
 

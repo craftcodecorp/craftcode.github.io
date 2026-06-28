@@ -8,7 +8,7 @@ Default v1 scope:
 
 - Implement the repositioned core site, SEO, navigation, contact/diagnóstico conversion flow, WhatsApp CTA, analytics events, and prerendered routes.
 - Treat CardápioFácil as secondary proof/case content, not a primary product offer.
-- Prepare a “Conteúdos” hub structure with topic cards, but defer full blog publishing.
+- Keep “Conteúdos” outside the primary public navigation until real articles are published.
 - Use sober data/process/UI visuals from existing brand assets and code-native components, not AI cliché imagery.
 
 ## Key Changes
@@ -16,11 +16,11 @@ Default v1 scope:
 - Replace primary messaging with:
     - “IA, automação e sistemas sob medida para empresas do Vale do Paraíba.”
     - “IA sem hype. Tecnologia com aplicação real.”
-    - Primary CTA: Agendar diagnóstico
+    - Primary CTA: Solicitar diagnóstico
     - Secondary CTA: Conhecer soluções
 
 - Remove or demote generic/software-house framing:
-    - “Blockchain & Web3” from primary solutions.
+    - Product-first and generic software-house messaging from primary solutions.
     - “Fale com nossa equipe” as main CTA.
     - CardápioFácil as homepage product centerpiece.
     - Vague innovation/disruption language.
@@ -31,7 +31,6 @@ Default v1 scope:
     - Setores
     - Método
     - Sobre
-    - Conteúdos
     - Contato
 
 - Home section order:
@@ -64,7 +63,6 @@ Default v1 scope:
     - /sistemas-sob-medida
     - /setores
     - /sobre
-    - /conteudos
     - /cardapio-facil
 
 - Keep /cardapio-facil, but rewrite its framing as a CraftCode case/proof of IA aplicada, WhatsApp automation, integration and físico-digital operation.
@@ -118,7 +116,7 @@ Use the existing local agents as review gates during implementation:
 ## Assumptions
 
 - V1 is the core public site refactor, not the full ecosystem rollout.
-- “Conteúdos” is a prepared hub with initial topic cards, not a complete blog engine yet.
+- “Conteúdos” remains a non-primary route until the editorial area has complete articles.
 - No new backend infrastructure is needed.
 - No new visual asset production is required for v1.
 - The existing .agents/ and .codex/agents/ files remain untracked unless you explicitly decide to commit them.
@@ -135,14 +133,14 @@ All implementation steps are pending.
 - [ ] Align final v1 scope around the core public site refactor.
 - [ ] Preserve the proposal document as the source of truth.
 - [ ] Refactor primary positioning to “consultoria de tecnologia e IA aplicada”.
-- [ ] Replace the main CTA with “Agendar diagnóstico”.
+- [ ] Replace the main CTA with “Solicitar diagnóstico”.
 - [ ] Use “Conhecer soluções” as the secondary CTA.
 - [ ] Demote CardápioFácil from primary product offer to proof/case content.
-- [ ] Remove generic software house, Web3-first, and vague innovation messaging.
-- [ ] Update the main navigation: Início, Soluções, Setores, Método, Sobre, Conteúdos, Contato.
+- [ ] Remove generic software house, product-first, and vague innovation messaging.
+- [ ] Update the main navigation: Início, Soluções, Integração, Setores, Diagnóstico, Sobre, Contato.
 - [ ] Rebuild the home page with this sequence: hero, authority, pains, solutions, method, sectors, founder/about, CardápioFácil proof, final CTA, contact.
 - [ ] Create reusable content/data modules for solutions, sectors, method steps, pains, authority points, and content topics.
-- [ ] Add public routes for /solucoes, /diagnostico-tecnologia-ia, /ia-aplicada, /automacao-processos, /dados-bi, /sistemas-sob-medida, /setores, /sobre, and /conteudos.
+- [ ] Add public routes for /solucoes, /diagnostico-tecnologia-ia, /ia-aplicada, /automacao-processos, /dados-bi, /sistemas-sob-medida, /setores, and /sobre.
 - [ ] Update src/lib/site-metadata.ts with route metadata, canonical paths, sitemap priority, and descriptions.
 - [ ] Update src/App.tsx routing and lazy page imports.
 - [ ] Rewrite /cardapio-facil as a CraftCode case/proof page.
@@ -168,7 +166,7 @@ All implementation steps are pending.
 ## Assumptions
 
 - V1 focuses on the core public site, SEO, conversion flow, analytics, and contact experience.
-- “Conteúdos” is a prepared hub with initial topic cards, not a full blog engine yet.
+- “Conteúdos” should stay out of navigation and sitemap until the first complete articles are published.
 - No new backend infrastructure is required.
 - No new visual asset production is required for v1.
 - Existing .agents/ and .codex/agents/ files remain untracked unless explicitly committed later.

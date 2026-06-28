@@ -8,7 +8,7 @@ import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { AuthorityBlock, FinalCtaBlock, MethodBlock, PainBlock, SectorsBlock } from "@/components/HomeNarrative";
+import { AuthorityBlock, FinalCtaBlock, MethodBlock, PainBlock, ProjectExamplesBlock, SectorsBlock } from "@/components/HomeNarrative";
 
 const Index = () => {
   // Organization structured data for SEO
@@ -44,6 +44,7 @@ const Index = () => {
         <PainBlock />
         <Solutions />
         <MethodBlock />
+        <ProjectExamplesBlock />
         <SectorsBlock />
         <About />
         <ProductHighlight />

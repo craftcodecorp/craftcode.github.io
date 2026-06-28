@@ -42,8 +42,8 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12" role="group" aria-label="Acoes principais">
               <Button variant="cta" size="lg" className="group w-full sm:w-auto" asChild>
-                <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Agendar diagnóstico" eventLocation="hero">
-                  Agendar diagnóstico
+                <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Solicitar diagnóstico" eventLocation="hero">
+                  Solicitar diagnóstico
                   <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} aria-hidden="true" />
                 </TrackedRouterLink>
               </Button>
