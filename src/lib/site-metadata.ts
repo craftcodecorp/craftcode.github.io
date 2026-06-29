@@ -110,6 +110,15 @@ export const publicRoutes: PublicRoute[] = [
     changefreq: "monthly",
   },
   {
+    path: "/conteudos",
+    title: "Conteúdos sobre IA, Automação e Operação | CraftCode",
+    description:
+      "Ideias práticas sobre IA aplicada, automação, dados, integração de sistemas e tecnologia para operações reais, sem hype e sem jargão desnecessário.",
+    canonicalPath: "/conteudos",
+    priority: "0.6",
+    changefreq: "monthly",
+  },
+  {
     path: "/privacidade",
     title: "Política de Privacidade | CraftCode",
     description:
@@ -120,7 +129,7 @@ export const publicRoutes: PublicRoute[] = [
   },
   {
     path: "/cardapio-facil",
-    title: "Cardapio Facil como Caso de IA Aplicada | CraftCode",
+    title: "Cardápio Fácil como Caso de IA Aplicada | CraftCode",
     description:
       "Conheça o Cardápio Fácil como prova de IA aplicada, automação via WhatsApp, integração e produto digital criado pela CraftCode.",
     canonicalPath: "/cardapio-facil",

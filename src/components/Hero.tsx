@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import { authorityPillars } from "@/lib/repositioning-content";
+import { authorityPillars, primaryCta, secondaryCta } from "@/lib/repositioning-content";
 import { TrackedRouterLink } from "@/components/TrackedLink";
 
 const Hero = () => {
@@ -16,6 +16,8 @@ const Hero = () => {
         alt=""
         className="absolute inset-0 h-full w-full object-cover object-center"
         aria-hidden="true"
+        loading="eager"
+        decoding="async"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/35" />
       <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/25 to-primary/30" />
@@ -29,11 +31,11 @@ const Hero = () => {
             </div>
 
             <h1 id="hero-heading" className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              Tecnologia para sua empresa operar melhor.
+              Tecnologia para sua empresa crescer com mais controle.
             </h1>
 
             <p className="text-xl md:text-2xl text-white/80 mb-6 max-w-2xl leading-relaxed">
-              IA, automação, dados e sistemas sob medida para reduzir retrabalho e dar mais controle à operação.
+              IA, automação, dados e sistemas sob medida para simplificar rotinas, conectar informações e apoiar decisões melhores.
             </p>
 
             <p className="text-lg text-white font-semibold mb-8">
@@ -42,15 +44,15 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12" role="group" aria-label="Acoes principais">
               <Button variant="cta" size="lg" className="group w-full sm:w-auto" asChild>
-                <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Solicitar diagnóstico" eventLocation="hero">
-                  Solicitar diagnóstico
+                <TrackedRouterLink to={primaryCta.href} eventLabel={primaryCta.label} eventLocation="hero">
+                  {primaryCta.label}
                   <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} aria-hidden="true" />
                 </TrackedRouterLink>
               </Button>
 
               <Button variant="default" size="lg" className="bg-white text-primary hover:bg-white/90 w-full sm:w-auto" asChild>
-                <TrackedRouterLink to="/solucoes" eventLabel="Conhecer soluções" eventLocation="hero">
-                  Conhecer soluções
+                <TrackedRouterLink to={secondaryCta.href} eventLabel={secondaryCta.label} eventLocation="hero">
+                  {secondaryCta.label}
                 </TrackedRouterLink>
               </Button>
             </div>
@@ -65,7 +67,7 @@ const Hero = () => {
           </div>
 
           <div className="bg-white/10 border border-white/20 rounded-xl p-5 md:p-7 backdrop-blur-sm shadow-large">
-            <div className="text-white/70 text-sm mb-5">Diagnóstico aplicado à operação</div>
+            <div className="text-white/70 text-sm mb-5">Primeira conversa aplicada à operação</div>
             <div className="space-y-4">
               {[
                 ["Processos", "Onde a operação trava."],
@@ -78,14 +80,14 @@ const Hero = () => {
                     {index + 1}
                   </div>
                   <div className="border-b border-white/10 pb-4">
-                    <h2 className="text-white font-semibold">{title}</h2>
+                    <h3 className="text-white font-semibold">{title}</h3>
                     <p className="text-white/70 text-sm leading-relaxed">{description}</p>
                   </div>
                 </div>
               ))}
             </div>
             <Link to="/diagnostico-tecnologia-ia" className="inline-flex text-secondary font-semibold mt-6 hover:text-white transition-colors">
-              Ver como funciona
+              Entender por onde começar
             </Link>
           </div>
         </div>

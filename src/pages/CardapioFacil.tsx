@@ -8,13 +8,14 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { TrackedAnchor, TrackedRouterLink } from "@/components/TrackedLink";
+import { primaryCta } from "@/lib/repositioning-content";
 
 const CardapioFacil = () => {
   const route = publicRoutes.find((item) => item.path === "/cardapio-facil")!;
   const cardapioFacilJsonLd = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    name: "Cardapio Facil como caso de IA aplicada",
+    name: "Cardápio Fácil como caso de IA aplicada",
     description: "Caso técnico da CraftCode sobre IA aplicada, automação via WhatsApp, dados de uso, recorrência e operação físico-digital.",
     url: "https://craftcode.com.br/cardapio-facil",
   };
@@ -50,6 +51,8 @@ const CardapioFacil = () => {
           src="/images/visuals/service-integracao-sistemas.png" 
           alt="Fluxo técnico de integração, dados e automação" 
           className="w-full h-full object-cover"
+          loading="eager"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent flex items-center">
           <div className="container mx-auto px-4 lg:px-8 pt-24">
@@ -248,8 +251,8 @@ const CardapioFacil = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="secondary" size="lg" asChild>
-              <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Solicitar diagnóstico" eventLocation="cardapio_case">
-                Solicitar diagnóstico
+              <TrackedRouterLink to={primaryCta.href} eventLabel={primaryCta.label} eventLocation="cardapio_case">
+                {primaryCta.label}
               </TrackedRouterLink>
             </Button>
             <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white hover:text-primary group" asChild>

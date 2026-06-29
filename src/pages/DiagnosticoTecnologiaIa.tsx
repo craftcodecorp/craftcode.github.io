@@ -1,7 +1,18 @@
 import PageLayout from "@/components/PageLayout";
 import { DiagnosticCta, PageHero, SectionHeader } from "@/components/PageSections";
-import { methodSteps } from "@/lib/repositioning-content";
+import { methodSteps, primaryCta } from "@/lib/repositioning-content";
 import Contact from "@/components/Contact";
+
+const DiagnosticList = ({ items }: { items: readonly string[] }) => (
+  <ul className="space-y-3 text-sm text-muted-foreground">
+    {items.map((item) => (
+      <li key={item} className="flex gap-3 leading-relaxed">
+        <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-secondary" aria-hidden="true" />
+        <span>{item}</span>
+      </li>
+    ))}
+  </ul>
+);
 
 const diagnosticBlocks = [
   {
@@ -45,7 +56,7 @@ const DiagnosticoTecnologiaIa = () => (
       description="Uma análise prática dos processos, sistemas, dados e oportunidades de automação da sua empresa para identificar onde tecnologia e IA podem gerar impacto real."
       primaryLocation="diagnostic_page_hero"
       primaryHref="#contact"
-      primaryLabel="Solicitar diagnóstico"
+      primaryLabel={primaryCta.label}
       imageSrc="/images/visuals/diagnostico-plano-acao.png"
     />
 
@@ -59,12 +70,8 @@ const DiagnosticoTecnologiaIa = () => (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {diagnosticBlocks.map((block) => (
             <div key={block.title} className="rounded-lg border border-border bg-white p-6 shadow-soft">
-              <h2 className="text-xl font-bold text-primary mb-4">{block.title}</h2>
-              <ul className="space-y-3 text-sm text-muted-foreground">
-                {block.items.map((item) => (
-                  <li key={item} className="leading-relaxed">• {item}</li>
-                ))}
-              </ul>
+              <h3 className="text-xl font-bold text-primary mb-4">{block.title}</h3>
+              <DiagnosticList items={block.items} />
             </div>
           ))}
         </div>
@@ -80,7 +87,7 @@ const DiagnosticoTecnologiaIa = () => (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {objections.map(([title, description]) => (
             <div key={title} className="rounded-lg border border-border bg-white p-6 shadow-soft">
-              <h2 className="text-xl font-bold text-primary mb-3">{title}</h2>
+              <h3 className="text-xl font-bold text-primary mb-3">{title}</h3>
               <p className="text-muted-foreground leading-relaxed">{description}</p>
             </div>
           ))}
@@ -102,7 +109,7 @@ const DiagnosticoTecnologiaIa = () => (
               <div key={step.title} className="border border-border rounded-lg p-5 bg-white shadow-soft">
                 <Icon className="w-6 h-6 text-secondary mb-5" />
                 <span className="text-sm font-bold text-muted-foreground">{String(index + 1).padStart(2, "0")}</span>
-                <h2 className="text-xl font-bold text-primary mt-3 mb-2">{step.title}</h2>
+                <h3 className="text-xl font-bold text-primary mt-3 mb-2">{step.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
               </div>
             );
@@ -115,7 +122,7 @@ const DiagnosticoTecnologiaIa = () => (
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
           title="O que será analisado e entregue"
-          description="A profundidade depende do contexto, mas o objetivo é sair com clareza sobre processos, dados, sistemas, riscos e próximos passos."
+          description="A profundidade depende do contexto, mas a saída esperada é clareza sobre prioridades, riscos e o caminho mais seguro para começar."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {[
@@ -125,7 +132,7 @@ const DiagnosticoTecnologiaIa = () => (
             ["Próximos passos", "Recomendação de caminho: protótipo, integração, automação, dashboard, modernização ou ajuste de processo."],
           ].map(([title, description]) => (
             <div key={title} className="rounded-lg border border-border bg-white p-6 shadow-soft">
-              <h2 className="text-xl font-bold text-primary mb-3">{title}</h2>
+              <h3 className="text-xl font-bold text-primary mb-3">{title}</h3>
               <p className="text-muted-foreground leading-relaxed">{description}</p>
             </div>
           ))}
@@ -146,7 +153,7 @@ const DiagnosticoTecnologiaIa = () => (
             ["Não ignora adoção", "A solução só funciona se a equipe conseguir incorporar o novo fluxo à rotina real."],
           ].map(([title, description]) => (
             <div key={title} className="rounded-lg border border-border bg-muted/30 p-6">
-              <h2 className="text-xl font-bold text-primary mb-3">{title}</h2>
+              <h3 className="text-xl font-bold text-primary mb-3">{title}</h3>
               <p className="text-muted-foreground leading-relaxed">{description}</p>
             </div>
           ))}

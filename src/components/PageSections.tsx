@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { TrackedAnchor, TrackedRouterLink } from "@/components/TrackedLink";
+import { primaryCta, secondaryCta } from "@/lib/repositioning-content";
 
 type PageHeroProps = {
   eyebrow: string;
@@ -17,7 +18,7 @@ export const PageHero = ({
   description,
   primaryLocation,
   primaryHref = "/diagnostico-tecnologia-ia",
-  primaryLabel = "Solicitar diagnóstico",
+  primaryLabel = primaryCta.label,
   imageSrc = "/images/visuals/solucoes-sistemas-integrados.png",
 }: PageHeroProps) => (
   <section className="relative overflow-hidden bg-gradient-hero text-white py-20 md:py-28">
@@ -26,6 +27,8 @@ export const PageHero = ({
       alt=""
       className="absolute inset-0 h-full w-full object-cover object-center"
       aria-hidden="true"
+      loading="eager"
+      decoding="async"
     />
     <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/35" />
     <div className="absolute inset-0 bg-gradient-to-t from-primary/65 via-primary/20 to-primary/35" />
@@ -47,8 +50,8 @@ export const PageHero = ({
             )}
           </Button>
           <Button variant="default" size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
-            <TrackedRouterLink to="/solucoes" eventLabel="Conhecer soluções" eventLocation={primaryLocation}>
-              Conhecer soluções
+            <TrackedRouterLink to={secondaryCta.href} eventLabel={secondaryCta.label} eventLocation={primaryLocation}>
+              {secondaryCta.label}
             </TrackedRouterLink>
           </Button>
         </div>
@@ -69,7 +72,7 @@ export const SectionHeader = ({
   <div className="max-w-3xl mb-12">
     {eyebrow && <p className="text-secondary font-semibold mb-3">{eyebrow}</p>}
     <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-5">{title}</h2>
-    {description && <p className="text-xl text-muted-foreground leading-relaxed">{description}</p>}
+    {description && <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">{description}</p>}
   </div>
 );
 
@@ -82,17 +85,19 @@ export const DiagnosticCta = ({ location = "page_cta" }: { location?: string }) 
           alt=""
           className="absolute inset-0 h-full w-full object-cover object-center opacity-45"
           aria-hidden="true"
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-primary/35" />
         <div className="relative z-10">
-          <h2 className="text-3xl font-bold mb-3">Comece pelo Diagnóstico de Tecnologia e IA Aplicada.</h2>
+          <h2 className="text-3xl font-bold mb-3">Comece entendendo onde tecnologia pode destravar a operação.</h2>
           <p className="text-white/80 max-w-2xl">
-            Identifique gargalos, oportunidades de automação, riscos técnicos e aplicações práticas antes de investir em uma solução.
+            Avalie processos, dados, sistemas, riscos técnicos e oportunidades práticas antes de investir em uma solução.
           </p>
         </div>
         <Button variant="secondary" size="lg" className="relative z-10" asChild>
-          <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Solicitar diagnóstico" eventLocation={location}>
-            Solicitar diagnóstico
+          <TrackedRouterLink to={primaryCta.href} eventLabel={primaryCta.label} eventLocation={location}>
+            {primaryCta.label}
           </TrackedRouterLink>
         </Button>
       </div>

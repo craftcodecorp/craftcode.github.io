@@ -11,6 +11,7 @@ import { submitContactForm } from "@/services/contactService";
 import { CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/site-metadata";
 import { trackConversionEvent } from "@/lib/analytics-init";
 import { TrackedAnchor } from "@/components/TrackedLink";
+import { primaryCta } from "@/lib/repositioning-content";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Nome deve ter pelo menos 2 caracteres" }),
@@ -125,19 +126,19 @@ const Contact = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-secondary font-semibold mb-3">Diagnóstico</p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Vamos encontrar o primeiro gargalo.
+            Vamos entender onde a operação pode melhorar primeiro.
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Uma conversa objetiva para entender processo, sistema, dado e prioridade.
+            Uma conversa objetiva para avaliar processos, sistemas, dados e oportunidades antes de propor qualquer solução.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_.95fr] gap-12 lg:gap-16">
           <Card className="shadow-large border-border bg-white rounded-lg">
             <CardContent className="p-6 md:p-8">
-              <h3 className="text-2xl font-bold text-primary mb-2">Solicitar diagnóstico</h3>
+              <h3 className="text-2xl font-bold text-primary mb-2">Agendar uma conversa de diagnóstico</h3>
               <p className="text-muted-foreground mb-6">
-                Conte rapidamente o contexto da empresa.
+                Conte rapidamente o contexto da empresa para alinharmos o melhor ponto de partida.
               </p>
 
               <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
@@ -225,17 +226,24 @@ const Contact = () => {
                   ) : (
                     <span className="flex items-center justify-center">
                       <Send className="mr-2 h-5 w-5" />
-                      Solicitar diagnóstico
+                      {primaryCta.label}
                     </span>
                   )}
                 </Button>
 
-                <p className="text-sm text-gray-600 text-center">Resposta em até 24 horas úteis.</p>
+                <p className="text-sm text-gray-600 text-center">Resposta em até 24 horas úteis com orientação dos próximos passos.</p>
               </form>
             </CardContent>
           </Card>
 
           <div className="space-y-6">
+            <div className="border border-border rounded-lg p-6 bg-muted/30">
+              <h3 className="text-2xl font-bold text-foreground mb-4">O que acontece depois</h3>
+              <p className="text-muted-foreground leading-relaxed mb-5">
+                A primeira conversa organiza o problema, valida se faz sentido avançar e indica quais informações ajudam no diagnóstico.
+              </p>
+            </div>
+
             <div className="border border-border rounded-lg p-6 bg-muted/30">
               <h3 className="text-2xl font-bold text-foreground mb-4">O que avaliamos</h3>
               <ul className="space-y-3 text-muted-foreground">
@@ -262,7 +270,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-foreground">WhatsApp</h4>
-                <p className="text-muted-foreground">Atalho para pedir o diagnóstico</p>
+                <p className="text-muted-foreground">Atalho para iniciar a conversa</p>
               </div>
             </TrackedAnchor>
 
@@ -282,6 +290,8 @@ const Contact = () => {
                 alt=""
                 className="absolute inset-0 h-full w-full object-cover object-center opacity-35"
                 aria-hidden="true"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-primary/70" />
               <div className="relative z-10 flex items-center mb-3">

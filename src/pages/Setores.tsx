@@ -24,13 +24,16 @@ const Setores = () => (
             return (
               <article key={sector.title} className="border border-border rounded-lg bg-white p-6 shadow-soft">
                 <Icon className="w-8 h-8 text-secondary mb-5" />
-                <h2 className="text-2xl font-bold text-primary mb-3">{sector.title}</h2>
+                <h3 className="text-2xl font-bold text-primary mb-3">{sector.title}</h3>
                 <p className="text-muted-foreground leading-relaxed mb-5">{sector.description}</p>
-                <div className="space-y-2">
+                <ul className="space-y-2">
                   {sector.pains.map((pain) => (
-                    <p key={pain} className="text-foreground/80">• {pain}</p>
+                    <li key={pain} className="flex gap-3 text-foreground/80">
+                      <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-secondary" aria-hidden="true" />
+                      <span>{pain}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </article>
             );
           })}

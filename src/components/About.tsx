@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Award, Database, GitBranch, ShieldCheck } from "lucide-react";
-import { authorityPillars } from "@/lib/repositioning-content";
+import { authorityPillars, primaryCta } from "@/lib/repositioning-content";
 import { TrackedAnchor, TrackedRouterLink } from "@/components/TrackedLink";
 
 type AboutProps = {
@@ -10,7 +10,7 @@ type AboutProps = {
 };
 
 const About = ({ ctaHref = "/diagnostico-tecnologia-ia", ctaLocation = "about" }: AboutProps) => {
-  const ctaLabel = "Solicitar diagnóstico";
+  const ctaLabel = primaryCta.label;
 
   return (
     <section id="about" className="py-24 bg-background">
@@ -19,14 +19,14 @@ const About = ({ ctaHref = "/diagnostico-tecnologia-ia", ctaLocation = "about" }
           <div>
             <p className="text-secondary font-semibold mb-3">Sobre a CraftCode</p>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Tecnologia de alto nível, sem discurso complicado.
+              Consultoria técnica para simplificar operações complexas.
             </h2>
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              A CraftCode foi criada por Ítalo Castilho para aproximar tecnologia madura da rotina das empresas da região.
+              A CraftCode foi criada por Ítalo Castilho para aproximar tecnologia madura, IA aplicada e visão de negócio da rotina das empresas da região.
             </p>
             <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-              A experiência vem de sistemas críticos, dados, produtos digitais, integrações e liderança técnica.
+              A experiência vem de sistemas críticos, dados, produtos digitais, integrações e liderança técnica em contextos que exigem estabilidade e clareza.
             </p>
 
             <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -64,11 +64,11 @@ const About = ({ ctaHref = "/diagnostico-tecnologia-ia", ctaLocation = "about" }
             <Button variant="default" size="lg" asChild>
               {ctaHref.startsWith("/") ? (
                 <TrackedRouterLink to={ctaHref} eventLabel={ctaLabel} eventLocation={ctaLocation}>
-                  Conversar sobre minha operação
+                  {ctaLabel}
                 </TrackedRouterLink>
               ) : (
                 <TrackedAnchor href={ctaHref} eventLabel={ctaLabel} eventLocation={ctaLocation}>
-                  Conversar sobre minha operação
+                  {ctaLabel}
                 </TrackedAnchor>
               )}
             </Button>

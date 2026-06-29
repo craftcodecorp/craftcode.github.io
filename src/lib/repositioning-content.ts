@@ -19,12 +19,12 @@ import {
 } from "lucide-react";
 
 export const primaryCta = {
-  label: "Solicitar diagnóstico",
+  label: "Agendar diagnóstico",
   href: "/diagnostico-tecnologia-ia",
 };
 
 export const secondaryCta = {
-  label: "Conhecer soluções",
+  label: "Ver soluções possíveis",
   href: "/solucoes",
 };
 
@@ -43,7 +43,7 @@ export const painPoints = [
   "Indicadores confusos.",
   "Decisão sem dados.",
   "Processos na cabeça da equipe.",
-  "IA sem prioridade clara.",
+  "Crescimento travado pela operação.",
 ];
 
 export type Solution = {
@@ -62,8 +62,8 @@ export const solutions: Solution[] = [
     title: "IA aplicada",
     shortTitle: "IA aplicada",
     description:
-      "Assistentes, triagens e análises conectadas ao processo real da empresa.",
-    benefits: ["Menos trabalho manual", "Mais consistência", "Apoio para equipes"],
+      "Assistentes, triagens e análises aplicadas onde existe processo, dado e revisão humana.",
+    benefits: ["Menos esforço manual", "Mais padrão nas respostas", "Apoio para equipes"],
     examples: ["Triagem de solicitações", "Assistentes internos", "Organização de informações"],
     icon: Bot,
   },
@@ -72,8 +72,8 @@ export const solutions: Solution[] = [
     title: "Automação de processos",
     shortTitle: "Automação",
     description:
-      "Fluxos, alertas e rotinas automatizadas para liberar tempo da equipe.",
-    benefits: ["Menos retrabalho", "Rotina previsível", "Mais padrão operacional"],
+      "Fluxos, alertas e rotinas automatizadas para tirar tarefas repetitivas do caminho.",
+    benefits: ["Menos retrabalho", "Rotina mais previsível", "Mais padrão operacional"],
     examples: ["Alertas e notificações", "Fluxos internos", "Tarefas repetitivas automatizadas"],
     icon: Settings2,
   },
@@ -82,7 +82,7 @@ export const solutions: Solution[] = [
     title: "Integração de sistemas",
     shortTitle: "Integração",
     description:
-      "Conexão entre ERP, CRM, planilhas, pagamentos, APIs e bancos de dados.",
+      "Conexão entre ERP, CRM, planilhas, pagamentos, APIs e bancos de dados com regra e rastreabilidade.",
     benefits: ["Menos controles paralelos", "Dados sincronizados", "Mais rastreabilidade"],
     examples: ["APIs", "Sincronização de dados", "Integrações com pagamentos"],
     icon: Network,
@@ -92,7 +92,7 @@ export const solutions: Solution[] = [
     title: "Dados, BI e dashboards",
     shortTitle: "Dados e BI",
     description:
-      "Indicadores confiáveis para acompanhar a operação e decidir melhor.",
+      "Indicadores confiáveis para acompanhar a operação, margem, vendas e prioridades de gestão.",
     benefits: ["Indicadores confiáveis", "Relatórios automáticos", "Visão de gestão"],
     examples: ["Dashboards operacionais", "Painéis de performance", "Relatórios recorrentes"],
     icon: BarChart3,
@@ -102,7 +102,7 @@ export const solutions: Solution[] = [
     title: "Sistemas sob medida",
     shortTitle: "Sistemas",
     description:
-      "Ferramentas internas e portais quando o processo pede uma solução própria.",
+      "Ferramentas internas e portais quando integrar ferramentas prontas não resolve o processo central.",
     benefits: ["Aderente ao processo", "Pronto para evoluir", "Menos improviso"],
     examples: ["Portais", "Ferramentas internas", "Modernização de legados"],
     icon: Blocks,
@@ -112,7 +112,7 @@ export const solutions: Solution[] = [
     title: "Consultoria técnica e arquitetura",
     shortTitle: "Consultoria",
     description:
-      "Apoio para decidir com clareza antes de investir em tecnologia.",
+      "Apoio para decidir com clareza antes de comprar, construir ou automatizar.",
     benefits: ["Decisão mais segura", "Riscos conhecidos", "Roadmap claro"],
     examples: ["Revisão de arquitetura", "Avaliação técnica", "Plano de evolução"],
     icon: ClipboardCheck,
@@ -122,7 +122,7 @@ export const solutions: Solution[] = [
 export const methodSteps = [
   {
     title: "Diagnóstico",
-    description: "Mapeamos gargalos, sistemas, dados e oportunidades.",
+    description: "Mapeamos processos, sistemas, dados, gargalos e oportunidades.",
     icon: Target,
   },
   {
@@ -132,7 +132,7 @@ export const methodSteps = [
   },
   {
     title: "Prototipação",
-    description: "Validamos fluxo e dados antes de escalar.",
+    description: "Validamos fluxo, dados e adoção antes de escalar.",
     icon: GitBranch,
   },
   {
@@ -151,28 +151,28 @@ export const sectors = [
   {
     title: "Serviços em crescimento",
     description:
-      "Empresas que precisam organizar atendimento, vendas e gestão.",
+      "Empresas que cresceram mais rápido que seus processos de atendimento, vendas e gestão.",
     pains: ["Atendimento desorganizado", "Planilhas demais", "Pouca previsibilidade"],
     icon: Users,
   },
   {
     title: "Indústria e operações técnicas",
     description:
-      "Operações com manutenção, estoque, logística ou produção.",
+      "Operações com manutenção, estoque, logística ou produção que precisam de rastreabilidade.",
     pains: ["Controles paralelos", "Pouca integração", "Indicadores fracos"],
     icon: Factory,
   },
   {
     title: "Varejo e franquias",
     description:
-      "Redes, lojas e equipes com informação espalhada.",
+      "Redes, lojas e equipes que precisam manter padrão sem perder velocidade.",
     pains: ["Gestão descentralizada", "Dados divergentes", "Padrão difícil"],
     icon: Store,
   },
   {
     title: "Operações físico-digitais",
     description:
-      "Negócios que unem software, pagamento, atendimento e operação.",
+      "Negócios que unem software, pagamento, atendimento e operação no mesmo fluxo.",
     pains: ["Falhas de integração", "Pouca rastreabilidade", "Suporte reativo"],
     icon: Building2,
   },

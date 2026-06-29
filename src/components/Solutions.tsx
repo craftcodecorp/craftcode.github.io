@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { solutions } from "@/lib/repositioning-content";
+import { primaryCta, solutions } from "@/lib/repositioning-content";
 import { LazyLoad } from "@/components/ui/lazy-load";
 import { TrackedRouterLink } from "@/components/TrackedLink";
 
@@ -14,7 +14,7 @@ const Solutions = () => {
             Tecnologia certa para o gargalo certo.
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-              Nem tudo precisa virar sistema. Às vezes falta integrar, automatizar ou organizar dados.
+            Nem tudo precisa virar sistema. Às vezes falta integrar, automatizar, organizar dados ou simplificar a rotina.
           </p>
         </div>
 
@@ -46,10 +46,10 @@ const Solutions = () => {
                     <TrackedRouterLink
                       to={href}
                       className="text-sm font-semibold text-secondary hover:text-primary transition-colors"
-                      eventLabel={`Saiba mais: ${solution.title}`}
+                      eventLabel={`Entender esta solução: ${solution.title}`}
                       eventLocation="solutions_grid"
                     >
-                      Saiba mais
+                      Entender esta solução
                     </TrackedRouterLink>
                   </CardContent>
                 </Card>
@@ -62,12 +62,12 @@ const Solutions = () => {
           <div>
             <h3 className="text-2xl font-bold text-foreground mb-2">Não sabe por onde começar?</h3>
             <p className="text-muted-foreground max-w-2xl">
-              O diagnóstico mostra onde agir primeiro: IA, automação, dados, integração ou sistema.
+              O diagnóstico mostra onde agir primeiro sem transformar tecnologia em aposta.
             </p>
           </div>
           <Button variant="cta" size="lg" asChild>
-            <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Solicitar diagnóstico" eventLocation="solutions_cta">
-              Solicitar diagnóstico
+            <TrackedRouterLink to={primaryCta.href} eventLabel="Ver oportunidades de melhoria" eventLocation="solutions_cta">
+              Ver oportunidades de melhoria
             </TrackedRouterLink>
           </Button>
         </div>

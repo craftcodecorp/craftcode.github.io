@@ -22,7 +22,7 @@ const Conteudos = () => (
           {contentTopics.map((topic, index) => (
             <article key={topic} className="border border-border rounded-lg bg-white p-6 shadow-soft">
               <span className="text-sm font-bold text-secondary">{String(index + 1).padStart(2, "0")}</span>
-              <h2 className="text-xl font-bold text-primary mt-3">{topic}</h2>
+              <h3 className="text-xl font-bold text-primary mt-3">{topic}</h3>
             </article>
           ))}
         </div>

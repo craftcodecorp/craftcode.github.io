@@ -31,15 +31,18 @@ const Solucoes = () => (
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-5">
                     <Icon className="w-6 h-6 text-secondary" />
                   </div>
-                  <h2 className="text-2xl font-bold text-primary mb-3">{solution.title}</h2>
+                  <h3 className="text-2xl font-bold text-primary mb-3">{solution.title}</h3>
                   <p className="text-muted-foreground leading-relaxed mb-5">{solution.description}</p>
-                  <div className="space-y-2 mb-5">
+                  <ul className="space-y-2 mb-5">
                     {solution.examples.map((example) => (
-                      <p key={example} className="text-sm text-foreground/80">• {example}</p>
+                      <li key={example} className="flex gap-3 text-sm text-foreground/80">
+                        <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-secondary" aria-hidden="true" />
+                        <span>{example}</span>
+                      </li>
                     ))}
-                  </div>
-                  <TrackedRouterLink to={href} eventLabel={`Detalhe ${solution.title}`} eventLocation="solutions_page" className="text-secondary font-semibold hover:text-primary">
-                    Ver detalhes
+                  </ul>
+                  <TrackedRouterLink to={href} eventLabel={`Entender esta solução: ${solution.title}`} eventLocation="solutions_page" className="text-secondary font-semibold hover:text-primary">
+                    Entender esta solução
                   </TrackedRouterLink>
                 </CardContent>
               </Card>

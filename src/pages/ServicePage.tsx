@@ -2,6 +2,17 @@ import PageLayout from "@/components/PageLayout";
 import { DiagnosticCta, PageHero, SectionHeader } from "@/components/PageSections";
 import { serviceDecisionContent, solutionBySlug } from "@/lib/repositioning-content";
 
+const CheckList = ({ items }: { items: readonly string[] }) => (
+  <ul className="space-y-3 text-sm text-muted-foreground">
+    {items.map((item) => (
+      <li key={item} className="flex gap-3 leading-relaxed">
+        <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-secondary" aria-hidden="true" />
+        <span>{item}</span>
+      </li>
+    ))}
+  </ul>
+);
+
 type ServicePageProps = {
   slug: "ia-aplicada" | "automacao-processos" | "dados-bi" | "sistemas-sob-medida" | "integracao-sistemas";
   path: string;
@@ -30,6 +41,7 @@ const ServicePage = ({ slug, path, eyebrow, title, description, premise }: Servi
         title={title}
         description={description}
         primaryLocation={`${slug}_hero`}
+        primaryLabel="Agendar diagnóstico da operação"
         imageSrc={serviceHeroImages[slug]}
       />
 
@@ -38,20 +50,12 @@ const ServicePage = ({ slug, path, eyebrow, title, description, premise }: Servi
           <SectionHeader title={premise} description={solution.description} />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="border border-border rounded-lg bg-white p-6 shadow-soft">
-              <h2 className="text-2xl font-bold text-primary mb-5">Aplicações práticas</h2>
-              <div className="space-y-3">
-                {solution.examples.map((example) => (
-                  <p key={example} className="text-foreground/80">• {example}</p>
-                ))}
-              </div>
+              <h3 className="text-2xl font-bold text-primary mb-5">Aplicações práticas</h3>
+              <CheckList items={solution.examples} />
             </div>
             <div className="border border-border rounded-lg bg-muted/30 p-6">
-              <h2 className="text-2xl font-bold text-primary mb-5">Benefícios esperados</h2>
-              <div className="space-y-3">
-                {solution.benefits.map((benefit) => (
-                  <p key={benefit} className="text-foreground/80">• {benefit}</p>
-                ))}
-              </div>
+              <h3 className="text-2xl font-bold text-primary mb-5">Benefícios esperados</h3>
+              <CheckList items={solution.benefits} />
             </div>
           </div>
         </div>
@@ -65,28 +69,16 @@ const ServicePage = ({ slug, path, eyebrow, title, description, premise }: Servi
           />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
             <div className="rounded-lg border border-border bg-white p-6 shadow-soft">
-              <h2 className="text-xl font-bold text-primary mb-4">Sinais na operação</h2>
-              <ul className="space-y-3 text-sm text-muted-foreground">
-                {decisionContent.signals.map((item) => (
-                  <li key={item} className="leading-relaxed">• {item}</li>
-                ))}
-              </ul>
+              <h3 className="text-xl font-bold text-primary mb-4">Sinais na operação</h3>
+              <CheckList items={decisionContent.signals} />
             </div>
             <div className="rounded-lg border border-border bg-white p-6 shadow-soft">
-              <h2 className="text-xl font-bold text-primary mb-4">Pré-requisitos</h2>
-              <ul className="space-y-3 text-sm text-muted-foreground">
-                {decisionContent.prerequisites.map((item) => (
-                  <li key={item} className="leading-relaxed">• {item}</li>
-                ))}
-              </ul>
+              <h3 className="text-xl font-bold text-primary mb-4">Pré-requisitos</h3>
+              <CheckList items={decisionContent.prerequisites} />
             </div>
             <div className="rounded-lg border border-border bg-white p-6 shadow-soft">
-              <h2 className="text-xl font-bold text-primary mb-4">Exemplos por contexto</h2>
-              <ul className="space-y-3 text-sm text-muted-foreground">
-                {decisionContent.sectors.map((item) => (
-                  <li key={item} className="leading-relaxed">• {item}</li>
-                ))}
-              </ul>
+              <h3 className="text-xl font-bold text-primary mb-4">Exemplos por contexto</h3>
+              <CheckList items={decisionContent.sectors} />
               <p className="mt-5 text-sm text-foreground/80">
                 O diagnóstico define escopo, dependências, riscos técnicos e caminho de adoção com a equipe.
               </p>

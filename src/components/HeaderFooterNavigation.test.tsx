@@ -9,7 +9,7 @@ vi.mock("@/lib/analytics-init", () => ({
 }));
 
 describe("public navigation", () => {
-  it("uses the diagnostic label and hides the unfinished content hub from the header", () => {
+  it("uses the diagnostic label and keeps the content hub out of the header", () => {
     render(
       <MemoryRouter>
         <Header />
@@ -17,7 +17,7 @@ describe("public navigation", () => {
     );
 
     expect(screen.getAllByRole("link", { name: /diagnóstico/i }).length).toBeGreaterThan(0);
-    expect(screen.getByRole("link", { name: /solicitar diagnóstico/i })).toHaveAttribute("href", "/diagnostico-tecnologia-ia");
+    expect(screen.getByRole("link", { name: /agendar diagnóstico/i })).toHaveAttribute("href", "/diagnostico-tecnologia-ia");
     expect(screen.queryByRole("link", { name: /conteúdos/i })).not.toBeInTheDocument();
     expect(screen.queryByRole("link", { name: /^método$/i })).not.toBeInTheDocument();
   });

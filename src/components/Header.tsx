@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { TrackedRouterLink } from "@/components/TrackedLink";
+import { primaryCta } from "@/lib/repositioning-content";
 
 const navItems = [
   { label: "Início", href: "/" },
@@ -51,11 +52,11 @@ const Header = () => {
           <div className="hidden md:block">
             <Button variant="cta" size="lg" asChild>
               <TrackedRouterLink
-                to="/diagnostico-tecnologia-ia"
-                eventLabel="Solicitar diagnóstico"
+                to={primaryCta.href}
+                eventLabel={primaryCta.label}
                 eventLocation="header"
               >
-                Solicitar diagnóstico
+                {primaryCta.label}
               </TrackedRouterLink>
             </Button>
           </div>
@@ -96,12 +97,12 @@ const Header = () => {
             <div className="p-2">
               <Button variant="cta" size="sm" className="w-full justify-center" asChild>
                 <TrackedRouterLink
-                  to="/diagnostico-tecnologia-ia"
-                  eventLabel="Solicitar diagnóstico"
+                  to={primaryCta.href}
+                  eventLabel={primaryCta.label}
                   eventLocation="mobile_header"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Solicitar diagnóstico
+                  {primaryCta.label}
                 </TrackedRouterLink>
               </Button>
             </div>

@@ -31,7 +31,7 @@ describe("Contact", () => {
     await userEvent.type(screen.getByLabelText(/empresa/i), "Empresa ABC");
     await userEvent.type(screen.getByLabelText(/setor/i), "Serviços");
     await userEvent.type(screen.getByLabelText(/principal desafio/i), "Muitas planilhas e retrabalho entre áreas.");
-    await userEvent.click(screen.getByRole("button", { name: /solicitar diagnóstico/i }));
+    await userEvent.click(screen.getByRole("button", { name: /agendar diagnóstico/i }));
 
     await waitFor(() => {
       expect(submitContactForm).toHaveBeenCalledWith({
@@ -55,7 +55,7 @@ describe("Contact", () => {
   it("shows field validation before submitting incomplete data", async () => {
     render(<Contact />);
 
-    await userEvent.click(screen.getByRole("button", { name: /solicitar diagnóstico/i }));
+    await userEvent.click(screen.getByRole("button", { name: /agendar diagnóstico/i }));
 
     expect(await screen.findByText(/nome deve ter pelo menos 2 caracteres/i)).toBeInTheDocument();
     expect(screen.getByText(/email inválido/i)).toBeInTheDocument();

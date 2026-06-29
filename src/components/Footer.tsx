@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, MessageSquare } from "lucide-react";
 import { CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/site-metadata";
 import { TrackedAnchor, TrackedRouterLink } from "@/components/TrackedLink";
+import { primaryCta } from "@/lib/repositioning-content";
 
 const Footer = () => {
   return (
@@ -82,8 +83,8 @@ const Footer = () => {
               Analise processos, sistemas, dados e oportunidades praticas de IA antes de investir em tecnologia.
             </p>
             <Button variant="secondary" size="sm" asChild>
-              <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Solicitar diagnóstico" eventLocation="footer">
-                Solicitar diagnóstico
+              <TrackedRouterLink to={primaryCta.href} eventLabel={primaryCta.label} eventLocation="footer">
+                {primaryCta.label}
               </TrackedRouterLink>
             </Button>
           </div>

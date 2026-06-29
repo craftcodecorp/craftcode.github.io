@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { authorityPillars, methodSteps, painPoints, sectors } from "@/lib/repositioning-content";
+import { authorityPillars, methodSteps, painPoints, primaryCta, sectors } from "@/lib/repositioning-content";
 import { TrackedRouterLink } from "@/components/TrackedLink";
 
 const projectExamples = [
@@ -27,12 +27,12 @@ export const AuthorityBlock = () => (
         <div>
           <p className="text-secondary font-semibold mb-3">Autoridade</p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Experiência técnica para resolver problema real.
+            Experiência técnica para resolver problema de operação.
           </h2>
         </div>
         <div>
           <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-            Mais de 20 anos em sistemas críticos, dados e produtos digitais aplicados a empresas que precisam ganhar controle, reduzir retrabalho e decidir melhor.
+            Mais de 20 anos em sistemas críticos, dados e produtos digitais aplicados a empresas que precisam crescer com mais controle, menos improviso e decisões melhores.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {authorityPillars.map((pillar) => (
@@ -54,6 +54,8 @@ export const PainBlock = () => (
       alt=""
       className="absolute inset-0 h-full w-full object-cover object-center opacity-55"
       aria-hidden="true"
+      loading="lazy"
+      decoding="async"
     />
     <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/55" />
     <div className="absolute inset-0 bg-primary/35" />
@@ -61,7 +63,7 @@ export const PainBlock = () => (
       <div className="max-w-3xl mb-10">
         <p className="text-secondary font-semibold mb-3">Dores comuns</p>
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
-          Planilhas demais. Sistemas de menos. Decisão no escuro.
+          Quando a operação cresce mais rápido que os processos.
         </h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -82,7 +84,7 @@ export const MethodBlock = () => (
         <p className="text-secondary font-semibold mb-3">Método</p>
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Antes da tecnologia, vem o diagnóstico.</h2>
         <p className="text-xl text-muted-foreground leading-relaxed">
-          Primeiro entendemos o processo. Depois escolhemos a tecnologia.
+          Primeiro entendemos a operação. Depois escolhemos o que vale automatizar, integrar, medir ou construir.
         </p>
       </div>
 
@@ -159,7 +161,7 @@ export const ProjectExamplesBlock = () => (
           Problemas concretos antes de qualquer ferramenta.
         </h2>
         <p className="text-xl text-muted-foreground leading-relaxed">
-          O diagnóstico transforma dores operacionais em próximos passos técnicos e comerciais viáveis.
+          O diagnóstico transforma sinais da operação em próximos passos técnicos e comerciais viáveis.
         </p>
       </div>
 
@@ -187,19 +189,19 @@ export const FinalCtaBlock = () => (
           alt=""
           className="absolute inset-0 h-full w-full object-cover object-center opacity-45"
           aria-hidden="true"
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-primary/35" />
         <div className="relative z-10 max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Onde tecnologia pode gerar impacto agora?
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Onde a operação pode ganhar controle agora?</h2>
           <p className="text-lg text-white/80 leading-relaxed">
-            Comece com um diagnóstico claro: gargalos, prioridades e próximos passos.
+            Comece com uma leitura clara de processos, dados, riscos e prioridades.
           </p>
         </div>
         <Button variant="secondary" size="lg" className="relative z-10" asChild>
-          <TrackedRouterLink to="/diagnostico-tecnologia-ia" eventLabel="Solicitar diagnóstico" eventLocation="final_cta">
-            Solicitar diagnóstico
+          <TrackedRouterLink to={primaryCta.href} eventLabel={primaryCta.label} eventLocation="final_cta">
+            {primaryCta.label}
           </TrackedRouterLink>
         </Button>
       </div>
